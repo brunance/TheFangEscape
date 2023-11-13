@@ -7,30 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76FCDBF62B027BA900E55B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDBF52B027BA900E55B2A /* AppDelegate.swift */; };
-		76FCDBF82B027BA900E55B2A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDBF72B027BA900E55B2A /* GameScene.sks */; };
-		76FCDBFA2B027BA900E55B2A /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDBF92B027BA900E55B2A /* Actions.sks */; };
-		76FCDBFC2B027BA900E55B2A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDBFB2B027BA900E55B2A /* GameScene.swift */; };
-		76FCDBFE2B027BA900E55B2A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDBFD2B027BA900E55B2A /* GameViewController.swift */; };
-		76FCDC012B027BA900E55B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDBFF2B027BA900E55B2A /* Main.storyboard */; };
-		76FCDC032B027BAB00E55B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDC022B027BAB00E55B2A /* Assets.xcassets */; };
-		76FCDC062B027BAB00E55B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDC042B027BAB00E55B2A /* LaunchScreen.storyboard */; };
+		76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */; };
+		76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC1A2B027C2500E55B2A /* ContentView.swift */; };
+		76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDC1C2B027C2500E55B2A /* Assets.xcassets */; };
+		76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDC1F2B027C2500E55B2A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		76FCDBF22B027BA900E55B2A /* TheFangEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFangEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		76FCDBF52B027BA900E55B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		76FCDBF72B027BA900E55B2A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		76FCDBF92B027BA900E55B2A /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		76FCDBFB2B027BA900E55B2A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		76FCDBFD2B027BA900E55B2A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		76FCDC002B027BA900E55B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		76FCDC022B027BAB00E55B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		76FCDC052B027BAB00E55B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		76FCDC152B027C2500E55B2A /* TheFangScape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFangScape.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFangScapeApp.swift; sourceTree = "<group>"; };
+		76FCDC1A2B027C2500E55B2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		76FCDC1C2B027C2500E55B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76FCDC1F2B027C2500E55B2A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		76FCDBEF2B027BA900E55B2A /* Frameworks */ = {
+		76FCDC122B027C2500E55B2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,73 +32,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		76FCDBE92B027BA900E55B2A = {
+		76FCDC0C2B027C2400E55B2A = {
 			isa = PBXGroup;
 			children = (
-				76FCDBF42B027BA900E55B2A /* TheFangEscape */,
-				76FCDBF32B027BA900E55B2A /* Products */,
+				76FCDC172B027C2500E55B2A /* TheFangScape */,
+				76FCDC162B027C2500E55B2A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		76FCDBF32B027BA900E55B2A /* Products */ = {
+		76FCDC162B027C2500E55B2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				76FCDBF22B027BA900E55B2A /* TheFangEscape.app */,
+				76FCDC152B027C2500E55B2A /* TheFangScape.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		76FCDBF42B027BA900E55B2A /* TheFangEscape */ = {
+		76FCDC172B027C2500E55B2A /* TheFangScape */ = {
 			isa = PBXGroup;
 			children = (
-				76FCDBF52B027BA900E55B2A /* AppDelegate.swift */,
-				76FCDBF72B027BA900E55B2A /* GameScene.sks */,
-				76FCDBF92B027BA900E55B2A /* Actions.sks */,
-				76FCDBFB2B027BA900E55B2A /* GameScene.swift */,
-				76FCDBFD2B027BA900E55B2A /* GameViewController.swift */,
-				76FCDBFF2B027BA900E55B2A /* Main.storyboard */,
-				76FCDC022B027BAB00E55B2A /* Assets.xcassets */,
-				76FCDC042B027BAB00E55B2A /* LaunchScreen.storyboard */,
+				76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */,
+				76FCDC1A2B027C2500E55B2A /* ContentView.swift */,
+				76FCDC1C2B027C2500E55B2A /* Assets.xcassets */,
+				76FCDC1E2B027C2500E55B2A /* Preview Content */,
 			);
-			path = TheFangEscape;
+			path = TheFangScape;
+			sourceTree = "<group>";
+		};
+		76FCDC1E2B027C2500E55B2A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				76FCDC1F2B027C2500E55B2A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		76FCDBF12B027BA900E55B2A /* TheFangEscape */ = {
+		76FCDC142B027C2500E55B2A /* TheFangScape */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 76FCDC092B027BAB00E55B2A /* Build configuration list for PBXNativeTarget "TheFangEscape" */;
+			buildConfigurationList = 76FCDC232B027C2500E55B2A /* Build configuration list for PBXNativeTarget "TheFangScape" */;
 			buildPhases = (
-				76FCDBEE2B027BA900E55B2A /* Sources */,
-				76FCDBEF2B027BA900E55B2A /* Frameworks */,
-				76FCDBF02B027BA900E55B2A /* Resources */,
+				76FCDC112B027C2500E55B2A /* Sources */,
+				76FCDC122B027C2500E55B2A /* Frameworks */,
+				76FCDC132B027C2500E55B2A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = TheFangEscape;
-			productName = TheFangEscape;
-			productReference = 76FCDBF22B027BA900E55B2A /* TheFangEscape.app */;
+			name = TheFangScape;
+			productName = TheFangScape;
+			productReference = 76FCDC152B027C2500E55B2A /* TheFangScape.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		76FCDBEA2B027BA900E55B2A /* Project object */ = {
+		76FCDC0D2B027C2400E55B2A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					76FCDBF12B027BA900E55B2A = {
+					76FCDC142B027C2500E55B2A = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 76FCDBED2B027BA900E55B2A /* Build configuration list for PBXProject "TheFangEscape" */;
+			buildConfigurationList = 76FCDC102B027C2400E55B2A /* Build configuration list for PBXProject "TheFangScape" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,65 +110,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 76FCDBE92B027BA900E55B2A;
-			productRefGroup = 76FCDBF32B027BA900E55B2A /* Products */;
+			mainGroup = 76FCDC0C2B027C2400E55B2A;
+			productRefGroup = 76FCDC162B027C2500E55B2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				76FCDBF12B027BA900E55B2A /* TheFangEscape */,
+				76FCDC142B027C2500E55B2A /* TheFangScape */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		76FCDBF02B027BA900E55B2A /* Resources */ = {
+		76FCDC132B027C2500E55B2A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76FCDC012B027BA900E55B2A /* Main.storyboard in Resources */,
-				76FCDBF82B027BA900E55B2A /* GameScene.sks in Resources */,
-				76FCDC032B027BAB00E55B2A /* Assets.xcassets in Resources */,
-				76FCDC062B027BAB00E55B2A /* LaunchScreen.storyboard in Resources */,
-				76FCDBFA2B027BA900E55B2A /* Actions.sks in Resources */,
+				76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */,
+				76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		76FCDBEE2B027BA900E55B2A /* Sources */ = {
+		76FCDC112B027C2500E55B2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76FCDBFC2B027BA900E55B2A /* GameScene.swift in Sources */,
-				76FCDBFE2B027BA900E55B2A /* GameViewController.swift in Sources */,
-				76FCDBF62B027BA900E55B2A /* AppDelegate.swift in Sources */,
+				76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */,
+				76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		76FCDBFF2B027BA900E55B2A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				76FCDC002B027BA900E55B2A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		76FCDC042B027BAB00E55B2A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				76FCDC052B027BAB00E55B2A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		76FCDC072B027BAB00E55B2A /* Debug */ = {
+		76FCDC212B027C2500E55B2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +208,7 @@
 			};
 			name = Debug;
 		};
-		76FCDC082B027BAB00E55B2A /* Release */ = {
+		76FCDC222B027C2500E55B2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -291,19 +264,20 @@
 			};
 			name = Release;
 		};
-		76FCDC0A2B027BAB00E55B2A /* Debug */ = {
+		76FCDC242B027C2500E55B2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheFangScape/Preview Content\"";
 				DEVELOPMENT_TEAM = BD3VK3HR67;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,7 +285,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.ForafoStudios.TheFangEscape;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ForafaStudios.TheFangScape;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -319,19 +293,20 @@
 			};
 			name = Debug;
 		};
-		76FCDC0B2B027BAB00E55B2A /* Release */ = {
+		76FCDC252B027C2500E55B2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheFangScape/Preview Content\"";
 				DEVELOPMENT_TEAM = BD3VK3HR67;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -339,7 +314,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.ForafoStudios.TheFangEscape;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ForafaStudios.TheFangScape;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -350,25 +325,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76FCDBED2B027BA900E55B2A /* Build configuration list for PBXProject "TheFangEscape" */ = {
+		76FCDC102B027C2400E55B2A /* Build configuration list for PBXProject "TheFangScape" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				76FCDC072B027BAB00E55B2A /* Debug */,
-				76FCDC082B027BAB00E55B2A /* Release */,
+				76FCDC212B027C2500E55B2A /* Debug */,
+				76FCDC222B027C2500E55B2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		76FCDC092B027BAB00E55B2A /* Build configuration list for PBXNativeTarget "TheFangEscape" */ = {
+		76FCDC232B027C2500E55B2A /* Build configuration list for PBXNativeTarget "TheFangScape" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				76FCDC0A2B027BAB00E55B2A /* Debug */,
-				76FCDC0B2B027BAB00E55B2A /* Release */,
+				76FCDC242B027C2500E55B2A /* Debug */,
+				76FCDC252B027C2500E55B2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 76FCDBEA2B027BA900E55B2A /* Project object */;
+	rootObject = 76FCDC0D2B027C2400E55B2A /* Project object */;
 }
