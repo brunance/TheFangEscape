@@ -13,6 +13,7 @@
 		76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDC1F2B027C2500E55B2A /* Preview Assets.xcassets */; };
 		76FCDC282B027C5E00E55B2A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC272B027C5E00E55B2A /* GameScene.swift */; };
 		76FCDC2A2B027D7200E55B2A /* SKEntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC292B027D7200E55B2A /* SKEntityManager.swift */; };
+		76FCDC2D2B027F2100E55B2A /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC2C2B027F2100E55B2A /* PlayerEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		76FCDC1F2B027C2500E55B2A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		76FCDC272B027C5E00E55B2A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		76FCDC292B027D7200E55B2A /* SKEntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKEntityManager.swift; sourceTree = "<group>"; };
+		76FCDC2C2B027F2100E55B2A /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		76FCDC172B027C2500E55B2A /* TheFangScape */ = {
 			isa = PBXGroup;
 			children = (
+				76FCDC2B2B027F1400E55B2A /* Entity */,
 				76FCDC262B027C4F00E55B2A /* Controller */,
 				76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */,
 				76FCDC1A2B027C2500E55B2A /* ContentView.swift */,
@@ -79,6 +82,14 @@
 				76FCDC292B027D7200E55B2A /* SKEntityManager.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		76FCDC2B2B027F1400E55B2A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				76FCDC2C2B027F2100E55B2A /* PlayerEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76FCDC2D2B027F2100E55B2A /* PlayerEntity.swift in Sources */,
 				76FCDC282B027C5E00E55B2A /* GameScene.swift in Sources */,
 				76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */,
 				76FCDC2A2B027D7200E55B2A /* SKEntityManager.swift in Sources */,
