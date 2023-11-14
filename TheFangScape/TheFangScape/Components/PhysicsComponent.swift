@@ -44,8 +44,24 @@ public class PhysicsComponent: GKComponent {
         let rayDistance = CGPoint(x: node.position.x,
                                   y: node.position.y - (height/2) - 3)
         
-        var check = false
+        return raycast(checkFor: IsGroundComponent.self,
+                       rayDistance: rayDistance)
+    }
+    
+    public func touchedOnWall() -> Bool {
+        guard let node else { return false }
+        let width = node.calculateAccumulatedFrame().size.width
+        // TODO: Need to calculate based on direction
+        let rayDistance = CGPoint(x: node.position.x + width + 4 /* + direction */,
+                                  y: node.position.y)
+        return raycast(checkFor: IsWallComponent.self, 
+                       rayDistance: rayDistance)
+    }
+    
+    private func raycast(checkFor type: GKComponent.Type, rayDistance: CGPoint) -> Bool {
+        guard let node else { return false }
         
+        var check = false
         
         if physicsWorld == nil, let physicsWorld = body.node?.scene?.physicsWorld {
             self.physicsWorld = physicsWorld
@@ -53,7 +69,7 @@ public class PhysicsComponent: GKComponent {
         
         let _ = physicsWorld?.enumerateBodies(alongRayStart: node.position , end: rayDistance, using: { body, _, _, _ in
             // Check if the body founded has Groundo Component
-            if body.node?.entity?.component(ofType: IsGroundComponent.self) != nil {
+            if body.node?.entity?.component(ofType: type) != nil {
                 check = true
             }
         })
@@ -73,9 +89,4 @@ public class PhysicsComponent: GKComponent {
 #endif
         return check
     }
-    
-    public func touchedOnWall() -> Bool {
-        return false
-    }
-    
 }

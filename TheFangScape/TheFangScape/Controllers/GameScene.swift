@@ -36,6 +36,10 @@ public class GameScene: SKScene {
         // JUST FOR TEST GROUND CHECK
         let groundEntity = GroundEntity(position: .init(x: 0, y: -400))
         entityManager?.add(entity: groundEntity)
+        
+        // JUST FOR TEST WALL CHECK
+        let wall = WallEntity(position: .init(x: 48, y: -350))
+        entityManager?.add(entity: wall)
     }
     
     public override func update(_ currentTime: TimeInterval) {
@@ -48,5 +52,12 @@ public class GameScene: SKScene {
         entityManager?.update(atTime: deltaTime)
         
         lastUpdatedTime = currentTime
+    }
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let physicsComp = playerEntity?.component(ofType: PhysicsComponent.self) else { return }
+        if(physicsComp.isOnGround()) {
+            physicsComp.body.applyImpulse(.init(dx: 0, dy: 64))
+        }
     }
 }
