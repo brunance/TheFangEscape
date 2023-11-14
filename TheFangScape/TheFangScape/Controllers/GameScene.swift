@@ -12,6 +12,10 @@ public class GameScene: SKScene {
     
     public var entityManager: SKEntityManager?
     
+    private var lastUpdatedTime: TimeInterval = 0
+    
+    private weak var playerEntity: PlayerEntity?
+    
     public override init(size: CGSize) {
         super.init(size: size)
         self.anchorPoint = .init(x: 0.5, y: 0.5)
@@ -27,6 +31,40 @@ public class GameScene: SKScene {
         
         let playerEntity = PlayerEntity()
         entityManager?.add(entity: playerEntity)
+        self.playerEntity = playerEntity
+        
+        // JUST FOR TEST GROUND CHECK
+        let groundEntity = GroundEntity(position: .init(x: 0, y: -400))
+        entityManager?.add(entity: groundEntity)
+        
+        // JUST FOR TEST WALL CHECK
+        do {
+            let wall = WallEntity(position: .init(x: 225, y: -350))
+            entityManager?.add(entity: wall)
+        }
+        
+        do {
+            let wall = WallEntity(position: .init(x: -225, y: -350))
+            entityManager?.add(entity: wall)
+        }
     }
     
+    public override func update(_ currentTime: TimeInterval) {
+        if (lastUpdatedTime == 0) {
+            lastUpdatedTime = currentTime
+        }
+        
+        let deltaTime = currentTime - lastUpdatedTime
+        
+        entityManager?.update(atTime: deltaTime)
+        
+        lastUpdatedTime = currentTime
+    }
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let physicsComp = playerEntity?.component(ofType: PhysicsComponent.self) else { return }
+        if(physicsComp.isOnGround()) {
+            physicsComp.body.applyImpulse(.init(dx: 0, dy: 64))
+        }
+    }
 }

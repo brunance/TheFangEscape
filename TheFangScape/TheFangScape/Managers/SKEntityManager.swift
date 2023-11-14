@@ -11,7 +11,7 @@ import GameplayKit
 
 public class SKEntityManager {
     
-    private var entities = Set<GKEntity>()
+    public var entities = Set<GKEntity>()
     private weak var scene: SKScene?
     
     public init(scene: SKScene) {
