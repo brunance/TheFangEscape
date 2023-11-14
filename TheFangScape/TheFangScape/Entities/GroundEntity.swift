@@ -14,7 +14,7 @@ public class GroundEntity: GKEntity {
     public init(position: CGPoint = .zero) {
         super.init()
         
-        let node = SKSpriteNode(color: .brown, size: .init(width: 300, height: 50))
+        let node = SKSpriteNode(color: .brown, size: .init(width: 500, height: 50))
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         

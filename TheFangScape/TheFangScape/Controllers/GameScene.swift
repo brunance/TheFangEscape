@@ -38,8 +38,15 @@ public class GameScene: SKScene {
         entityManager?.add(entity: groundEntity)
         
         // JUST FOR TEST WALL CHECK
-        let wall = WallEntity(position: .init(x: 48, y: -350))
-        entityManager?.add(entity: wall)
+        do {
+            let wall = WallEntity(position: .init(x: 225, y: -350))
+            entityManager?.add(entity: wall)
+        }
+        
+        do {
+            let wall = WallEntity(position: .init(x: -225, y: -350))
+            entityManager?.add(entity: wall)
+        }
     }
     
     public override func update(_ currentTime: TimeInterval) {
