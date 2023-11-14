@@ -16,6 +16,7 @@
 		76FCDC2D2B027F2100E55B2A /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC2C2B027F2100E55B2A /* PlayerEntity.swift */; };
 		76FCDC682B03C4F800E55B2A /* PhysicsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC672B03C4F800E55B2A /* PhysicsComponent.swift */; };
 		76FCDC6A2B03C8A100E55B2A /* IsGroundComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC692B03C8A100E55B2A /* IsGroundComponent.swift */; };
+		76FCDC6C2B03CB3F00E55B2A /* GroundEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC6B2B03CB3F00E55B2A /* GroundEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		76FCDC2C2B027F2100E55B2A /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		76FCDC672B03C4F800E55B2A /* PhysicsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsComponent.swift; sourceTree = "<group>"; };
 		76FCDC692B03C8A100E55B2A /* IsGroundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsGroundComponent.swift; sourceTree = "<group>"; };
+		76FCDC6B2B03CB3F00E55B2A /* GroundEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				76FCDC2C2B027F2100E55B2A /* PlayerEntity.swift */,
+				76FCDC6B2B03CB3F00E55B2A /* GroundEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FCDC2D2B027F2100E55B2A /* PlayerEntity.swift in Sources */,
+				76FCDC6C2B03CB3F00E55B2A /* GroundEntity.swift in Sources */,
 				76FCDC682B03C4F800E55B2A /* PhysicsComponent.swift in Sources */,
 				76FCDC282B027C5E00E55B2A /* GameScene.swift in Sources */,
 				76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */,

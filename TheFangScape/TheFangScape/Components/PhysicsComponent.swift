@@ -42,7 +42,7 @@ public class PhysicsComponent: GKComponent {
         guard let node else { return false }
         let height = node.calculateAccumulatedFrame().size.height
         let rayDistance = CGPoint(x: node.position.x,
-                                y: node.position.y - (height/2) - 2)
+                                  y: node.position.y - (height/2) - 3)
         
         var check = false
         
@@ -64,23 +64,18 @@ public class PhysicsComponent: GKComponent {
         path.addLine(to: rayDistance)
         let debugNode = SKShapeNode(path: path)
         debugNode.strokeColor = check ? .green : .red
-        debugNode.lineWidth = 1
+        debugNode.lineWidth = 5
         node.scene?.addChild(debugNode)
         debugNode.run(.sequence([
             .wait(forDuration: 0.3),
             .removeFromParent()
         ]))
 #endif
-
         return check
     }
     
     public func touchedOnWall() -> Bool {
         return false
-    }
-    
-    public override func update(deltaTime seconds: TimeInterval) {
-        let _ = isOnGround()
     }
     
 }

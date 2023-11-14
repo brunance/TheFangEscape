@@ -14,6 +14,8 @@ public class GameScene: SKScene {
     
     private var lastUpdatedTime: TimeInterval = 0
     
+    private weak var playerEntity: PlayerEntity?
+    
     public override init(size: CGSize) {
         super.init(size: size)
         self.anchorPoint = .init(x: 0.5, y: 0.5)
@@ -29,6 +31,11 @@ public class GameScene: SKScene {
         
         let playerEntity = PlayerEntity()
         entityManager?.add(entity: playerEntity)
+        self.playerEntity = playerEntity
+        
+        // JUST FOR TEST GROUND CHECK
+        let groundEntity = GroundEntity(position: .init(x: 0, y: -400))
+        entityManager?.add(entity: groundEntity)
     }
     
     public override func update(_ currentTime: TimeInterval) {
@@ -42,5 +49,4 @@ public class GameScene: SKScene {
         
         lastUpdatedTime = currentTime
     }
-    
 }
