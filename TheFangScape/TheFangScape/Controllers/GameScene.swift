@@ -12,6 +12,8 @@ public class GameScene: SKScene {
     
     public var entityManager: SKEntityManager?
     
+    private var lastUpdatedTime: TimeInterval = 0
+    
     public override init(size: CGSize) {
         super.init(size: size)
         self.anchorPoint = .init(x: 0.5, y: 0.5)
@@ -27,6 +29,18 @@ public class GameScene: SKScene {
         
         let playerEntity = PlayerEntity()
         entityManager?.add(entity: playerEntity)
+    }
+    
+    public override func update(_ currentTime: TimeInterval) {
+        if (lastUpdatedTime == 0) {
+            lastUpdatedTime = currentTime
+        }
+        
+        let deltaTime = currentTime - lastUpdatedTime
+        
+        entityManager?.update(atTime: deltaTime)
+        
+        lastUpdatedTime = currentTime
     }
     
 }

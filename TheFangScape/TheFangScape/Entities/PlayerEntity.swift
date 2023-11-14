@@ -17,6 +17,9 @@ public class PlayerEntity: GKEntity {
         let node = SKSpriteNode(color: .blue, size: .init(width: 100, height: 100))
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
+        
+        let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
+        self.addComponent(physicsComp)
     }
     
     required init?(coder: NSCoder) {
