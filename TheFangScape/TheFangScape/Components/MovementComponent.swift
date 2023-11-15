@@ -18,15 +18,13 @@ class MovementComponent: GKComponent {
     
     weak var physicsComp: PhysicsComponent?
     
-    var forceY: CGFloat
-    var forceX: CGFloat
+    var velocityX: CGFloat
     var direction: Direction = .right
     
     private var hasChangedDirection = false
     
-    public init(forceY: CGFloat, forceX: CGFloat) {
-        self.forceY = forceY
-        self.forceX = forceX
+    public init(velocityX: CGFloat) {
+        self.velocityX = velocityX
         super.init()
     }
     
@@ -50,18 +48,22 @@ class MovementComponent: GKComponent {
             hasChangedDirection = false
         }
     }
-
     
     func moveNode() {
         guard let physicsComp = physicsComp else { return }
         
+        var velocity = physicsComp.body.velocity
+        
         switch direction {
         case .left:
-            physicsComp.body.applyImpulse(CGVector(dx: -forceX, dy: 0))
+            velocity.dx = -velocityX
         case .right:
-            physicsComp.body.applyImpulse(CGVector(dx: forceX, dy: 0))
+            velocity.dx = velocityX
         }
+        
+        physicsComp.body.velocity = velocity
     }
+
     
     public func changeDirection() {
         switch direction {
@@ -71,4 +73,5 @@ class MovementComponent: GKComponent {
             self.direction = .left
         }
     }
+    
 }
