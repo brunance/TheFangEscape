@@ -25,6 +25,7 @@ public class PlayerEntity: GKEntity {
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
         self.addComponent(physicsComp)
         
+        self.addComponent(MovementComponent(velocityX: 100))
         self.addComponent(JumpComponent(forceY: 32, forceX: 16))
     }
     
