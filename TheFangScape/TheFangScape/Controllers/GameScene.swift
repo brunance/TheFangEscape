@@ -62,9 +62,6 @@ public class GameScene: SKScene {
     }
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let physicsComp = playerEntity?.component(ofType: PhysicsComponent.self) else { return }
-        if(physicsComp.isOnGround()) {
-            physicsComp.body.applyImpulse(.init(dx: 0, dy: 64))
-        }
+        playerEntity?.jumpComponent?.jump()
     }
 }

@@ -11,6 +11,10 @@ import SpriteKit
 
 public class PlayerEntity: GKEntity {
     
+    public var jumpComponent: JumpComponent? {
+        return self.component(ofType: JumpComponent.self)
+    }
+    
     public init(position: CGPoint = .zero) {
         super.init()
         
@@ -20,6 +24,8 @@ public class PlayerEntity: GKEntity {
         
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
         self.addComponent(physicsComp)
+        
+        self.addComponent(JumpComponent(forceY: 32, forceX: 16))
     }
     
     required init?(coder: NSCoder) {
