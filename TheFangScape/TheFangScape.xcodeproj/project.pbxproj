@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6792B04E0BB00F7940E /* MovementComponent.swift */; };
+		66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6812B06635600F7940E /* WallSlideComponent.swift */; };
 		76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */; };
 		76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC1A2B027C2500E55B2A /* ContentView.swift */; };
 		76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDC1C2B027C2500E55B2A /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		66CAD6792B04E0BB00F7940E /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
+		66CAD6812B06635600F7940E /* WallSlideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallSlideComponent.swift; sourceTree = "<group>"; };
 		76FCDC152B027C2500E55B2A /* TheFangScape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFangScape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFangScapeApp.swift; sourceTree = "<group>"; };
 		76FCDC1A2B027C2500E55B2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				76FCDC6D2B03CF1600E55B2A /* IsWallComponent.swift */,
 				76FCDC752B04742E00E55B2A /* JumpComponent.swift */,
 				66CAD6792B04E0BB00F7940E /* MovementComponent.swift */,
+				66CAD6812B06635600F7940E /* WallSlideComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				76FCDC762B04742E00E55B2A /* JumpComponent.swift in Sources */,
 				76FCDC6E2B03CF1600E55B2A /* IsWallComponent.swift in Sources */,
+				66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */,
 				76FCDC2D2B027F2100E55B2A /* PlayerEntity.swift in Sources */,
 				76FCDC6C2B03CB3F00E55B2A /* GroundEntity.swift in Sources */,
 				66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */,

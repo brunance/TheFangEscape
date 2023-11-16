@@ -59,6 +59,10 @@ public class PhysicsComponent: GKComponent {
                        rayDistance: rayDistance)
     }
     
+    public func isWallSlinding(direction: Direction) -> Bool  {
+        return touchedOnWall(direction: direction) && !isOnGround()
+    }
+    
     private func raycast(checkFor type: GKComponent.Type, rayDistance: CGPoint) -> Bool {
         guard let node else { return false }
         
@@ -75,19 +79,19 @@ public class PhysicsComponent: GKComponent {
             }
         })
         
-#if DEBUG
-        let path = CGMutablePath()
-        path.move(to: node.position)
-        path.addLine(to: rayDistance)
-        let debugNode = SKShapeNode(path: path)
-        debugNode.strokeColor = check ? .green : .red
-        debugNode.lineWidth = 5
-        node.scene?.addChild(debugNode)
-        debugNode.run(.sequence([
-            .wait(forDuration: 0.3),
-            .removeFromParent()
-        ]))
-#endif
+//#if DEBUG
+//        let path = CGMutablePath()
+//        path.move(to: node.position)
+//        path.addLine(to: rayDistance)
+//        let debugNode = SKShapeNode(path: path)
+//        debugNode.strokeColor = check ? .green : .red
+//        debugNode.lineWidth = 5
+//        node.scene?.addChild(debugNode)
+//        debugNode.run(.sequence([
+//            .wait(forDuration: 0.3),
+//            .removeFromParent()
+//        ]))
+//#endif
         return check
     }
 }
