@@ -52,7 +52,5 @@ class WallSlideComponent: GKComponent {
         print(physicsComp.body.velocity.dy)
     }
 
-
-
 }
 

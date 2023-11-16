@@ -45,7 +45,7 @@ class MovementComponent: GKComponent {
         if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSlinding(direction: self.direction) {
             changeDirection()
             hasChangedDirection = true
-        } else if !physicsComp.touchedOnWall() {
+        } else if !physicsComp.touchedOnWall(direction: self.direction) {
             hasChangedDirection = false
         }
     }

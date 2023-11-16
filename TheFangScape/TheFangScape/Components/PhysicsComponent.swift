@@ -48,21 +48,19 @@ public class PhysicsComponent: GKComponent {
                        rayDistance: rayDistance)
     }
     
-    public func touchedOnWall() -> Bool {
+    public func touchedOnWall(direction: PlayerDirection) -> Bool {
         guard let node else { return false }
-        
-        guard let moveComp = entity?.component(ofType: MovementComponent.self) else { return false }
         
         let width = node.calculateAccumulatedFrame().size.width
         // TODO: Need to calculate based on direction
         
-        let rayDistance = CGPoint(x: node.position.x + (width + 1) * moveComp.getDirection(),
+        let rayDistance = CGPoint(x: node.position.x + (width + 1) * direction.rawValue,
                                   y: node.position.y)
         return raycast(checkFor: IsWallComponent.self, 
                        rayDistance: rayDistance)
     }
     
-    public func isWallSlinding(direction: Direction) -> Bool  {
+    public func isWallSlinding(direction: PlayerDirection) -> Bool  {
         return touchedOnWall(direction: direction) && !isOnGround()
     }
     
