@@ -54,7 +54,7 @@ public class PhysicsComponent: GKComponent {
         let width = node.calculateAccumulatedFrame().size.width
         // TODO: Need to calculate based on direction
         
-        let rayDistance = CGPoint(x: node.position.x + (width + 1) * direction.rawValue,
+        let rayDistance = CGPoint(x: node.position.x + (width - 10) * direction.rawValue,
                                   y: node.position.y)
         return raycast(checkFor: IsWallComponent.self, 
                        rayDistance: rayDistance)
