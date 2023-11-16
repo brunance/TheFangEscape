@@ -9,7 +9,7 @@ import Foundation
 import GameplayKit
 import SpriteKit
 
-public enum Direction: CGFloat {
+public enum PlayerDirection: CGFloat {
     case left = -1.0
     case right = 1.0
 }
@@ -19,7 +19,7 @@ class MovementComponent: GKComponent {
     weak var physicsComp: PhysicsComponent?
     
     var velocityX: CGFloat
-    var direction: Direction = .right
+    var direction: PlayerDirection = .right
     
     private var hasChangedDirection = false
     
@@ -41,10 +41,10 @@ class MovementComponent: GKComponent {
 
         moveNode()
 
-        if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection {
+        if physicsComp.touchedOnWall() && !hasChangedDirection {
             changeDirection()
             hasChangedDirection = true
-        } else if !physicsComp.touchedOnWall(direction: self.direction) {
+        } else if !physicsComp.touchedOnWall() {
             hasChangedDirection = false
         }
     }
@@ -63,7 +63,10 @@ class MovementComponent: GKComponent {
         
         physicsComp.body.velocity = velocity
     }
-
+    
+    public func getDirection() -> CGFloat {
+        return direction.rawValue
+    }
     
     public func changeDirection() {
         switch direction {
@@ -73,5 +76,4 @@ class MovementComponent: GKComponent {
             self.direction = .left
         }
     }
-    
 }
