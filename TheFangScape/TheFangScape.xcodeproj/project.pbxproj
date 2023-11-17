@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6792B04E0BB00F7940E /* MovementComponent.swift */; };
 		66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6812B06635600F7940E /* WallSlideComponent.swift */; };
+		66CAD6842B06D54600F7940E /* AnimationStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */; };
+		66CAD6872B06D59E00F7940E /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6862B06D59E00F7940E /* Run.swift */; };
+		66CAD68A2B06D67400F7940E /* SKTextureArray+TextureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6892B06D67400F7940E /* SKTextureArray+TextureBuilder.swift */; };
+		66CAD68C2B06D6D500F7940E /* Jump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD68B2B06D6D500F7940E /* Jump.swift */; };
+		66CAD68E2B06D6F800F7940E /* WallSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD68D2B06D6F800F7940E /* WallSlide.swift */; };
+		66CAD6902B06D71600F7940E /* DeathByDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD68F2B06D71600F7940E /* DeathByDark.swift */; };
+		66CAD6922B06D72700F7940E /* DeathByTrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6912B06D72700F7940E /* DeathByTrap.swift */; };
+		66CAD6942B06D73D00F7940E /* Win.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6932B06D73D00F7940E /* Win.swift */; };
 		76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */; };
 		76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC1A2B027C2500E55B2A /* ContentView.swift */; };
 		76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDC1C2B027C2500E55B2A /* Assets.xcassets */; };
@@ -31,6 +39,14 @@
 /* Begin PBXFileReference section */
 		66CAD6792B04E0BB00F7940E /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		66CAD6812B06635600F7940E /* WallSlideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallSlideComponent.swift; sourceTree = "<group>"; };
+		66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStateComponent.swift; sourceTree = "<group>"; };
+		66CAD6862B06D59E00F7940E /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		66CAD6892B06D67400F7940E /* SKTextureArray+TextureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureArray+TextureBuilder.swift"; sourceTree = "<group>"; };
+		66CAD68B2B06D6D500F7940E /* Jump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jump.swift; sourceTree = "<group>"; };
+		66CAD68D2B06D6F800F7940E /* WallSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallSlide.swift; sourceTree = "<group>"; };
+		66CAD68F2B06D71600F7940E /* DeathByDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathByDark.swift; sourceTree = "<group>"; };
+		66CAD6912B06D72700F7940E /* DeathByTrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathByTrap.swift; sourceTree = "<group>"; };
+		66CAD6932B06D73D00F7940E /* Win.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Win.swift; sourceTree = "<group>"; };
 		76FCDC152B027C2500E55B2A /* TheFangScape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFangScape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFangScapeApp.swift; sourceTree = "<group>"; };
 		76FCDC1A2B027C2500E55B2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +78,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66CAD6852B06D57C00F7940E /* AnimationStates */ = {
+			isa = PBXGroup;
+			children = (
+				66CAD6862B06D59E00F7940E /* Run.swift */,
+				66CAD68B2B06D6D500F7940E /* Jump.swift */,
+				66CAD68D2B06D6F800F7940E /* WallSlide.swift */,
+				66CAD68F2B06D71600F7940E /* DeathByDark.swift */,
+				66CAD6912B06D72700F7940E /* DeathByTrap.swift */,
+				66CAD6932B06D73D00F7940E /* Win.swift */,
+			);
+			path = AnimationStates;
+			sourceTree = "<group>";
+		};
+		66CAD6882B06D65A00F7940E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				66CAD6892B06D67400F7940E /* SKTextureArray+TextureBuilder.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		76FCDC0C2B027C2400E55B2A = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				76FCDC7F2B080E6000E55B2A /* Extensions */,
+				66CAD6852B06D57C00F7940E /* AnimationStates */,
 				76FCDC2F2B0280B700E55B2A /* Managers */,
 				76FCDC2E2B02809F00E55B2A /* Components */,
 				76FCDC2B2B027F1400E55B2A /* Entities */,
@@ -132,6 +170,7 @@
 				66CAD6792B04E0BB00F7940E /* MovementComponent.swift */,
 				66CAD6812B06635600F7940E /* WallSlideComponent.swift */,
 				76FCDC7B2B080C6D00E55B2A /* ChangeStateComponent.swift */,
+				66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -225,18 +264,26 @@
 				76FCDC7E2B080E5800E55B2A /* NotificationsNames.swift in Sources */,
 				76FCDC782B080C0600E55B2A /* ChangeStateBlockEntity.swift in Sources */,
 				76FCDC762B04742E00E55B2A /* JumpComponent.swift in Sources */,
+				66CAD68E2B06D6F800F7940E /* WallSlide.swift in Sources */,
 				76FCDC6E2B03CF1600E55B2A /* IsWallComponent.swift in Sources */,
 				66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */,
 				76FCDC2D2B027F2100E55B2A /* PlayerEntity.swift in Sources */,
 				76FCDC6C2B03CB3F00E55B2A /* GroundEntity.swift in Sources */,
 				76FCDC7A2B080C2000E55B2A /* BlockEntity.swift in Sources */,
 				66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */,
+				66CAD6842B06D54600F7940E /* AnimationStateComponent.swift in Sources */,
+				66CAD68A2B06D67400F7940E /* SKTextureArray+TextureBuilder.swift in Sources */,
 				76FCDC682B03C4F800E55B2A /* PhysicsComponent.swift in Sources */,
 				76FCDC282B027C5E00E55B2A /* GameScene.swift in Sources */,
 				76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */,
+				66CAD6942B06D73D00F7940E /* Win.swift in Sources */,
 				76FCDC702B03CF2B00E55B2A /* WallEntity.swift in Sources */,
 				76FCDC6A2B03C8A100E55B2A /* IsGroundComponent.swift in Sources */,
 				76FCDC2A2B027D7200E55B2A /* SKEntityManager.swift in Sources */,
+				66CAD6922B06D72700F7940E /* DeathByTrap.swift in Sources */,
+				66CAD68C2B06D6D500F7940E /* Jump.swift in Sources */,
+				66CAD6872B06D59E00F7940E /* Run.swift in Sources */,
+				66CAD6902B06D71600F7940E /* DeathByDark.swift in Sources */,
 				76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */,
 				76FCDC7C2B080C6D00E55B2A /* ChangeStateComponent.swift in Sources */,
 			);
