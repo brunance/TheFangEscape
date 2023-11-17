@@ -52,7 +52,6 @@ public class PhysicsComponent: GKComponent {
         guard let node else { return false }
         
         let width = node.calculateAccumulatedFrame().size.width
-        // TODO: Need to calculate based on direction
         
         let rayDistance = CGPoint(x: node.position.x + (width - 10) * direction.rawValue,
                                   y: node.position.y)
@@ -74,25 +73,25 @@ public class PhysicsComponent: GKComponent {
         }
         
         let _ = physicsWorld?.enumerateBodies(alongRayStart: node.position , end: rayDistance, using: { body, _, _, _ in
-            // Check if the body founded has Groundo Component
+            // Check if the body founded has Ground Component
             if body.node?.entity?.component(ofType: type) != nil {
                 check = true
             }
         })
         
-//#if DEBUG
-//        let path = CGMutablePath()
-//        path.move(to: node.position)
-//        path.addLine(to: rayDistance)
-//        let debugNode = SKShapeNode(path: path)
-//        debugNode.strokeColor = check ? .green : .red
-//        debugNode.lineWidth = 5
-//        node.scene?.addChild(debugNode)
-//        debugNode.run(.sequence([
-//            .wait(forDuration: 0.3),
-//            .removeFromParent()
-//        ]))
-//#endif
+#if DEBUG
+        let path = CGMutablePath()
+        path.move(to: node.position)
+        path.addLine(to: rayDistance)
+        let debugNode = SKShapeNode(path: path)
+        debugNode.strokeColor = check ? .green : .red
+        debugNode.lineWidth = 5
+        node.scene?.addChild(debugNode)
+        debugNode.run(.sequence([
+            .wait(forDuration: 0.3),
+            .removeFromParent()
+        ]))
+#endif
         return check
     }
 }
