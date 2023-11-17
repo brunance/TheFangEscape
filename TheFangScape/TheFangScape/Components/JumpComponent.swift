@@ -11,6 +11,7 @@ import GameplayKit
 public class JumpComponent: GKComponent {
     
     weak var physicsComp: PhysicsComponent?
+    weak var movementComp: MovementComponent?
     
     var forceY: CGFloat
     var forceX: CGFloat
@@ -27,16 +28,32 @@ public class JumpComponent: GKComponent {
     
     public override func didAddToEntity() {
         physicsComp = entity?.component(ofType: PhysicsComponent.self)
+        movementComp = entity?.component(ofType: MovementComponent.self)
     }
     
     public func jump() {
         
-        guard let physicsComp = physicsComp else { return }
+        guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
         
         if (physicsComp.isOnGround()) {
             physicsComp.body.applyImpulse(.init(dx: 0, dy: forceY))
+        } else if physicsComp.isWallSlinding(direction: movementComp.direction) {
+            performWallJump()
         }
         
     }
     
+    private func performJump() {
+        physicsComp?.body.applyImpulse(CGVector(dx: forceX, dy: forceY))
+    }
+    
+    private func performWallJump() {
+        guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
+        
+        physicsComp.body.applyImpulse(.init(
+            dx: movementComp.direction.rawValue * forceX,
+            dy: forceY))
+        
+        movementComp.changeDirection()
+    }
 }

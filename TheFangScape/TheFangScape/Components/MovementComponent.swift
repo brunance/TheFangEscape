@@ -41,7 +41,6 @@ class MovementComponent: GKComponent {
 
         moveNode()
 
-
         if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSlinding(direction: self.direction) {
             changeDirection()
             hasChangedDirection = true
@@ -52,17 +51,7 @@ class MovementComponent: GKComponent {
     
     func moveNode() {
         guard let physicsComp = physicsComp else { return }
-        
-        var velocity = physicsComp.body.velocity
-        
-        switch direction {
-        case .left:
-            velocity.dx = -velocityX
-        case .right:
-            velocity.dx = velocityX
-        }
-        
-        physicsComp.body.velocity = velocity
+        physicsComp.body.velocity.dx = velocityX * getDirection()
     }
     
     public func getDirection() -> CGFloat {
@@ -70,11 +59,6 @@ class MovementComponent: GKComponent {
     }
     
     public func changeDirection() {
-        switch direction {
-        case .left:
-            self.direction = .right
-        case .right:
-            self.direction = .left
-        }
+        self.direction = self.direction == .right ? .left : .right
     }
 }
