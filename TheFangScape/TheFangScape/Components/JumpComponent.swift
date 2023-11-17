@@ -50,10 +50,9 @@ public class JumpComponent: GKComponent {
     private func performWallJump() {
         guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
         
-        let wallJumpVelocityX: CGFloat = 700.0
-        let wallJumpVelocityY: CGFloat = 700.0
-        
-        physicsComp.body.velocity = CGVector(dx: movementComp.direction.rawValue * wallJumpVelocityX, dy: wallJumpVelocityY)
+        physicsComp.body.applyImpulse(.init(
+            dx: movementComp.direction.rawValue * forceX,
+            dy: forceY))
         
         movementComp.changeDirection()
     }
