@@ -17,6 +17,7 @@
 		66CAD6902B06D71600F7940E /* DeathByDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD68F2B06D71600F7940E /* DeathByDark.swift */; };
 		66CAD6922B06D72700F7940E /* DeathByTrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6912B06D72700F7940E /* DeathByTrap.swift */; };
 		66CAD6942B06D73D00F7940E /* Win.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6932B06D73D00F7940E /* Win.swift */; };
+		66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6952B07A4F600F7940E /* PlatformEntity.swift */; };
 		76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */; };
 		76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC1A2B027C2500E55B2A /* ContentView.swift */; };
 		76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDC1C2B027C2500E55B2A /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		66CAD68F2B06D71600F7940E /* DeathByDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathByDark.swift; sourceTree = "<group>"; };
 		66CAD6912B06D72700F7940E /* DeathByTrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathByTrap.swift; sourceTree = "<group>"; };
 		66CAD6932B06D73D00F7940E /* Win.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Win.swift; sourceTree = "<group>"; };
+		66CAD6952B07A4F600F7940E /* PlatformEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformEntity.swift; sourceTree = "<group>"; };
 		76FCDC152B027C2500E55B2A /* TheFangScape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFangScape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFangScapeApp.swift; sourceTree = "<group>"; };
 		76FCDC1A2B027C2500E55B2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				76FCDC2C2B027F2100E55B2A /* PlayerEntity.swift */,
 				76FCDC6B2B03CB3F00E55B2A /* GroundEntity.swift */,
 				76FCDC6F2B03CF2B00E55B2A /* WallEntity.swift */,
+				66CAD6952B07A4F600F7940E /* PlatformEntity.swift */,
 				76FCDC772B080C0600E55B2A /* ChangeStateBlockEntity.swift */,
 				76FCDC792B080C2000E55B2A /* BlockEntity.swift */,
 			);
@@ -283,6 +286,7 @@
 				66CAD6922B06D72700F7940E /* DeathByTrap.swift in Sources */,
 				66CAD68C2B06D6D500F7940E /* Jump.swift in Sources */,
 				66CAD6872B06D59E00F7940E /* Run.swift in Sources */,
+				66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */,
 				66CAD6902B06D71600F7940E /* DeathByDark.swift in Sources */,
 				76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */,
 				76FCDC7C2B080C6D00E55B2A /* ChangeStateComponent.swift in Sources */,

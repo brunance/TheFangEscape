@@ -27,7 +27,7 @@ public class PhysicsComponent: GKComponent {
         body.restitution = 0.0
         return PhysicsComponent(body: body)
     }
-     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -61,7 +61,7 @@ public class PhysicsComponent: GKComponent {
                        rayDistance: rayDistance)
     }
     
-    public func isWallSlinding(direction: PlayerDirection) -> Bool  {
+    public func isWallSliding(direction: PlayerDirection) -> Bool  {
         return touchedOnWall(direction: direction) && !isOnGround()
     }
     

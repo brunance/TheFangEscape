@@ -39,7 +39,7 @@ public class JumpComponent: GKComponent {
         
         if (physicsComp.isOnGround()) {
             performJump()
-        } else if physicsComp.isWallSlinding(direction: movementComp.direction) {
+        } else if physicsComp.isWallSliding(direction: movementComp.direction) {
             performWallJump()
         } else { return }
         

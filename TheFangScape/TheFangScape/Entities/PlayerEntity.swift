@@ -34,9 +34,12 @@ public class PlayerEntity: GKEntity {
         self.addComponent(GKSKNodeComponent(node: node))
         
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
+        physicsComp.body.allowsRotation = false
+        physicsComp.body.linearDamping = 0.5
+        physicsComp.body.restitution = 0.0
         self.addComponent(physicsComp)
         
-        self.addComponent(MovementComponent(velocityX: 32 * 8))
+        self.addComponent(MovementComponent(velocityX: 32 * 8, direction: .right))
         self.addComponent(JumpComponent(forceY: 64, forceX: 32))
         self.addComponent(WallSlideComponent())
     }
