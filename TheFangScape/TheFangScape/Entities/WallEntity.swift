@@ -14,7 +14,7 @@ public class WallEntity: GKEntity {
     public init(position: CGPoint = .zero) {
         super.init()
         
-        let node = SKSpriteNode(color: .yellow, size: .init(width: 50, height: 500))
+        let node = SKSpriteNode(color: .yellow, size: .init(width: 50, height: 1000))
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
