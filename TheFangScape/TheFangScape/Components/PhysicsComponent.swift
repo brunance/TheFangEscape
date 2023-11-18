@@ -23,6 +23,7 @@ public class PhysicsComponent: GKComponent {
     
     public static func rectangleBody(ofSize size: CGSize) -> PhysicsComponent {
         let body = SKPhysicsBody(rectangleOf: size)
+        body.allowsRotation = false
         return PhysicsComponent(body: body)
     }
      
