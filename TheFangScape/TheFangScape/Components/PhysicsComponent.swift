@@ -94,4 +94,8 @@ public class PhysicsComponent: GKComponent {
 #endif
         return check
     }
+    
+    public func isActive(_ value: Bool = true) {
+        self.node?.physicsBody = value ? body : nil
+    }
 }

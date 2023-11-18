@@ -31,7 +31,7 @@ public class JumpComponent: GKComponent {
         movementComp = entity?.component(ofType: MovementComponent.self)
     }
     
-    public func jump() {
+    public func tryJump() {
         
         guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
         
@@ -39,8 +39,9 @@ public class JumpComponent: GKComponent {
             physicsComp.body.applyImpulse(.init(dx: 0, dy: forceY))
         } else if physicsComp.isWallSlinding(direction: movementComp.direction) {
             performWallJump()
-        }
+        } else { return }
         
+        NotificationCenter.default.post(name: .jumped, object: nil)
     }
     
     private func performJump() {

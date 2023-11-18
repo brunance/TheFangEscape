@@ -47,6 +47,11 @@ public class GameScene: SKScene {
             let wall = WallEntity(position: .init(x: -225, y: -350))
             entityManager?.add(entity: wall)
         }
+        
+        for i in 1...4 {
+            let block = ChangeStateBlockEntity(position: .init(x: 45 * i , y: -300))
+            entityManager?.add(entity: block)
+        }
     }
     
     public override func update(_ currentTime: TimeInterval) {
@@ -62,6 +67,6 @@ public class GameScene: SKScene {
     }
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        playerEntity?.jumpComponent?.jump()
+        playerEntity?.jumpComponent?.tryJump()
     }
 }
