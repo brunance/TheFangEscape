@@ -23,10 +23,12 @@ public class PhysicsComponent: GKComponent {
     
     public static func rectangleBody(ofSize size: CGSize) -> PhysicsComponent {
         let body = SKPhysicsBody(rectangleOf: size)
+        body.linearDamping = 0.5
+        body.restitution = 0.0
         body.allowsRotation = false
         return PhysicsComponent(body: body)
     }
-     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -54,13 +56,13 @@ public class PhysicsComponent: GKComponent {
         
         let width = node.calculateAccumulatedFrame().size.width
         
-        let rayDistance = CGPoint(x: node.position.x + (width - 10) * direction.rawValue,
-                                  y: node.position.y)
-        return raycast(checkFor: IsWallComponent.self, 
+        let rayDistance = CGPoint(x: node.position.x + (width / 2 + 1) * direction.rawValue, // Ajuste o valor conforme necessário
+                                      y: node.position.y)
+        return raycast(checkFor: IsWallComponent.self,
                        rayDistance: rayDistance)
     }
     
-    public func isWallSlinding(direction: PlayerDirection) -> Bool  {
+    public func isWallSliding(direction: PlayerDirection) -> Bool  {
         return touchedOnWall(direction: direction) && !isOnGround()
     }
     

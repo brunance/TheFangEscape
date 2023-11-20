@@ -17,14 +17,17 @@ public enum PlayerDirection: CGFloat {
 class MovementComponent: GKComponent {
     
     weak var physicsComp: PhysicsComponent?
+    weak var stateMachineComp: AnimationStateMachineComponent?
     
     var velocityX: CGFloat
-    var direction: PlayerDirection = .right
+    var direction: PlayerDirection
     
     private var hasChangedDirection = false
+    private var isRunning = false
     
-    public init(velocityX: CGFloat) {
+    public init(velocityX: CGFloat, direction: PlayerDirection) {
         self.velocityX = velocityX
+        self.direction = direction
         super.init()
     }
     
@@ -34,24 +37,61 @@ class MovementComponent: GKComponent {
     
     override func didAddToEntity() {
         physicsComp = entity?.component(ofType: PhysicsComponent.self)
+        stateMachineComp = entity?.component(ofType: AnimationStateMachineComponent.self)
     }
     
     override func update(deltaTime seconds: TimeInterval) {
         guard let physicsComp = physicsComp else { return }
-
+        
         moveNode()
-
-        if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSlinding(direction: self.direction) {
-            changeDirection()
-            hasChangedDirection = true
-        } else if !physicsComp.touchedOnWall(direction: self.direction) {
-            hasChangedDirection = false
+        
+        if entity is PlayerEntity {
+            if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSliding(direction: self.direction) {
+                changeDirection()
+                hasChangedDirection = true
+            } else if !physicsComp.touchedOnWall(direction: self.direction) {
+                hasChangedDirection = false
+            }
+        } else {
+            if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection {
+                changeDirection()
+                hasChangedDirection = true
+            } else if !physicsComp.touchedOnWall(direction: self.direction) {
+                hasChangedDirection = false
+            }
+        }
+        
+        if !isRunning {
+            isRunning.toggle()
+        } else if !physicsComp.isOnGround() {
+            isRunning = false
+        }
+        
+    }
+    
+    func verifyAnimation() {
+        guard let physicsComp = physicsComp else { return }
+        
+        if physicsComp.body.velocity.dy < -0.5 {
+            // Is falling, run aniamtion "Jump" or "Fall"
+            stateMachineComp?.stateMachine.enter(Jump.self)
+            print("FALL STATE")
+        } else if physicsComp.body.velocity.dy > 0.5 {
+            stateMachineComp?.stateMachine.enter(Jump.self)
+            print("JUMP STATE")
+        } else if physicsComp.body.velocity.dx != 0 {
+            stateMachineComp?.stateMachine.enter(Run.self)
+            print("RUN STATE")
         }
     }
     
     func moveNode() {
         guard let physicsComp = physicsComp else { return }
         physicsComp.body.velocity.dx = velocityX * getDirection()
+        
+        entity?.component(ofType: GKSKNodeComponent.self)?.node.xScale = getDirection()
+        
+        verifyAnimation()
     }
     
     public func getDirection() -> CGFloat {

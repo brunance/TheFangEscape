@@ -12,12 +12,14 @@ class WallSlideComponent: GKComponent {
     
     weak var physicsComp: PhysicsComponent?
     weak var movementComp: MovementComponent?
+    weak var stateMachineComp: AnimationStateMachineComponent?
     
     private var isSliding: Bool = false
     
     override func didAddToEntity() {
         physicsComp = entity?.component(ofType: PhysicsComponent.self)
         movementComp = entity?.component(ofType: MovementComponent.self)
+        stateMachineComp = entity?.component(ofType: AnimationStateMachineComponent.self)
     }
     
     override func update(deltaTime seconds: TimeInterval) {
@@ -35,7 +37,11 @@ class WallSlideComponent: GKComponent {
     }
     
     private func startWallSlide() {
+        guard let stateMachine = stateMachineComp else {return}
+        
+        stateMachine.stateMachine.enter(WallSlide.self)
         isSliding = true
+        
     }
     
     private func stopWallSlide() {

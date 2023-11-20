@@ -12,6 +12,7 @@ public class JumpComponent: GKComponent {
     
     weak var physicsComp: PhysicsComponent?
     weak var movementComp: MovementComponent?
+    weak var stateMachineComp: AnimationStateMachineComponent?
     
     var forceY: CGFloat
     var forceX: CGFloat
@@ -29,6 +30,7 @@ public class JumpComponent: GKComponent {
     public override func didAddToEntity() {
         physicsComp = entity?.component(ofType: PhysicsComponent.self)
         movementComp = entity?.component(ofType: MovementComponent.self)
+        stateMachineComp = entity?.component(ofType: AnimationStateMachineComponent.self)
     }
     
     public func tryJump() {
@@ -36,8 +38,8 @@ public class JumpComponent: GKComponent {
         guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
         
         if (physicsComp.isOnGround()) {
-            physicsComp.body.applyImpulse(.init(dx: 0, dy: forceY))
-        } else if physicsComp.isWallSlinding(direction: movementComp.direction) {
+            performJump()
+        } else if physicsComp.isWallSliding(direction: movementComp.direction) {
             performWallJump()
         } else { return }
         
@@ -45,12 +47,17 @@ public class JumpComponent: GKComponent {
     }
     
     private func performJump() {
-        physicsComp?.body.applyImpulse(CGVector(dx: forceX, dy: forceY))
+        guard let stateMachine = stateMachineComp else { return }
+        stateMachine.stateMachine.enter(Jump.self)
+        
+        physicsComp?.body.applyImpulse(CGVector(dx: 0, dy: forceY))
     }
     
     private func performWallJump() {
         guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
         
+        guard let stateMachine = stateMachineComp else { return }
+        stateMachine.stateMachine.enter(Jump.self)
         physicsComp.body.applyImpulse(.init(
             dx: movementComp.direction.rawValue * forceX,
             dy: forceY))
