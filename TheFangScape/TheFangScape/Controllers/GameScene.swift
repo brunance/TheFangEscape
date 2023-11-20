@@ -29,10 +29,8 @@ public class GameScene: SKScene {
     public override func sceneDidLoad() {
         entityManager = SKEntityManager(scene: self)
         
-        let playerEntity = PlayerEntity()
-        entityManager?.add(entity: playerEntity)
-        self.playerEntity = playerEntity
-        
+        setupScene()
+
         // JUST FOR TEST GROUND CHECK
         let groundEntity = GroundEntity(position: .init(x: 0, y: -400))
         entityManager?.add(entity: groundEntity)
@@ -52,6 +50,14 @@ public class GameScene: SKScene {
             let block = ChangeStateBlockEntity(position: .init(x: 45 * i , y: -300))
             entityManager?.add(entity: block)
         }
+    }
+    
+    private func setupScene() {
+        self.backgroundColor = .black
+        
+        let playerEntity = PlayerEntity()
+        entityManager?.add(entity: playerEntity)
+        self.playerEntity = playerEntity
     }
     
     public override func update(_ currentTime: TimeInterval) {

@@ -25,6 +25,7 @@ public class PhysicsComponent: GKComponent {
         let body = SKPhysicsBody(rectangleOf: size)
         body.linearDamping = 0.5
         body.restitution = 0.0
+        body.allowsRotation = false
         return PhysicsComponent(body: body)
     }
     

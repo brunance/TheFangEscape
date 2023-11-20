@@ -42,6 +42,8 @@ public class PlayerEntity: GKEntity {
         self.addComponent(MovementComponent(velocityX: 32 * 8, direction: .right))
         self.addComponent(JumpComponent(forceY: 64, forceX: 32))
         self.addComponent(WallSlideComponent())
+        
+        self.addComponent(TorchComponent())
     }
     
     required init?(coder: NSCoder) {
