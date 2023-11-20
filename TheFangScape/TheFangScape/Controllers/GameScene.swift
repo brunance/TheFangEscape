@@ -50,6 +50,11 @@ public class GameScene: SKScene {
             let block = ChangeStateBlockEntity(position: .init(x: 45 * i , y: -300))
             entityManager?.add(entity: block)
         }
+        
+        do {
+            let enemy = EnemyEntity(position: .init(x: 0, y: 0))
+            entityManager?.add(entity: enemy)
+        }
     }
     
     private func setupScene() {

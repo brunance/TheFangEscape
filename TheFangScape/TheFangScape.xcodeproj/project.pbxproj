@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */; };
+		660633E92B0AF6A6005D184B /* EnemyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633E82B0AF6A6005D184B /* EnemyEntity.swift */; };
+		660633EB2B0AFA21005D184B /* UInt32+CollisionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633EA2B0AFA21005D184B /* UInt32+CollisionCategories.swift */; };
 		66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6792B04E0BB00F7940E /* MovementComponent.swift */; };
 		66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6812B06635600F7940E /* WallSlideComponent.swift */; };
 		66CAD6842B06D54600F7940E /* AnimationStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureArray+TextureBuilder.swift"; sourceTree = "<group>"; };
+		660633E82B0AF6A6005D184B /* EnemyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyEntity.swift; sourceTree = "<group>"; };
+		660633EA2B0AFA21005D184B /* UInt32+CollisionCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt32+CollisionCategories.swift"; sourceTree = "<group>"; };
 		66CAD6792B04E0BB00F7940E /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		66CAD6812B06635600F7940E /* WallSlideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallSlideComponent.swift; sourceTree = "<group>"; };
 		66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStateComponent.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				66CAD6952B07A4F600F7940E /* PlatformEntity.swift */,
 				76FCDC772B080C0600E55B2A /* ChangeStateBlockEntity.swift */,
 				76FCDC792B080C2000E55B2A /* BlockEntity.swift */,
+				660633E82B0AF6A6005D184B /* EnemyEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */,
 				76FCDC822B08ED3400E55B2A /* LightMask.swift */,
 				76FCDC862B08F5DF00E55B2A /* GKSKNodeComponent+Light.swift */,
+				660633EA2B0AFA21005D184B /* UInt32+CollisionCategories.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 				76FCDC7E2B080E5800E55B2A /* NotificationsNames.swift in Sources */,
 				76FCDC782B080C0600E55B2A /* ChangeStateBlockEntity.swift in Sources */,
 				76FCDC762B04742E00E55B2A /* JumpComponent.swift in Sources */,
+				660633E92B0AF6A6005D184B /* EnemyEntity.swift in Sources */,
 				66CAD68E2B06D6F800F7940E /* WallSlide.swift in Sources */,
 				76FCDC6E2B03CF1600E55B2A /* IsWallComponent.swift in Sources */,
 				66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */,
@@ -294,6 +301,7 @@
 				66CAD6922B06D72700F7940E /* DeathByTrap.swift in Sources */,
 				66CAD68C2B06D6D500F7940E /* Jump.swift in Sources */,
 				66CAD6872B06D59E00F7940E /* Run.swift in Sources */,
+				660633EB2B0AFA21005D184B /* UInt32+CollisionCategories.swift in Sources */,
 				66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */,
 				66CAD6902B06D71600F7940E /* DeathByDark.swift in Sources */,
 				76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */,

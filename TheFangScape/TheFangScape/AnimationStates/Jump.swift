@@ -10,9 +10,9 @@ import GameplayKit
 
 class Jump: GKState {
     
-    weak var entity: PlayerEntity?
+    weak var entity: GKEntity?
     
-    init(_ entity: PlayerEntity) {
+    init(_ entity: GKEntity) {
         self.entity = entity
     }
     
