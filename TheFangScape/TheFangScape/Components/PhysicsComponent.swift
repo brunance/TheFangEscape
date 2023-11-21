@@ -62,6 +62,16 @@ public class PhysicsComponent: GKComponent {
                        rayDistance: rayDistance)
     }
     
+    public func touchedOnItem() -> Bool{
+        guard let node else{ return false}
+        
+        let width = node.calculateAccumulatedFrame().size.width
+        
+        let rayDistance = CGPoint(x: node.position.x , y: node.position.y)
+        
+        return raycast(checkFor: IsItemComponent.self, rayDistance: rayDistance)
+    }
+    
     public func isWallSliding(direction: PlayerDirection) -> Bool  {
         return touchedOnWall(direction: direction) && !isOnGround()
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5177CFB82B0CD8F000896444 /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177CFB72B0CD8F000896444 /* ItemEntity.swift */; };
+		5177CFBA2B0CF7CA00896444 /* IsItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177CFB92B0CF7CA00896444 /* IsItemComponent.swift */; };
 		660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */; };
 		660633E92B0AF6A6005D184B /* EnemyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633E82B0AF6A6005D184B /* EnemyEntity.swift */; };
 		660633EB2B0AFA21005D184B /* UInt32+CollisionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633EA2B0AFA21005D184B /* UInt32+CollisionCategories.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		5177CFB72B0CD8F000896444 /* ItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntity.swift; sourceTree = "<group>"; };
+		5177CFB92B0CF7CA00896444 /* IsItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsItemComponent.swift; sourceTree = "<group>"; };
 		660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureArray+TextureBuilder.swift"; sourceTree = "<group>"; };
 		660633E82B0AF6A6005D184B /* EnemyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyEntity.swift; sourceTree = "<group>"; };
 		660633EA2B0AFA21005D184B /* UInt32+CollisionCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt32+CollisionCategories.swift"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				76FCDC752B04742E00E55B2A /* JumpComponent.swift */,
 				66CAD6792B04E0BB00F7940E /* MovementComponent.swift */,
 				66CAD6812B06635600F7940E /* WallSlideComponent.swift */,
+				5177CFB92B0CF7CA00896444 /* IsItemComponent.swift */,
 				76FCDC7B2B080C6D00E55B2A /* ChangeStateComponent.swift */,
 				66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */,
 				76FCDC802B08ECB300E55B2A /* TorchComponent.swift */,
@@ -294,6 +297,7 @@
 				76FCDC7E2B080E5800E55B2A /* NotificationsNames.swift in Sources */,
 				76FCDC782B080C0600E55B2A /* ChangeStateBlockEntity.swift in Sources */,
 				76FCDC762B04742E00E55B2A /* JumpComponent.swift in Sources */,
+				5177CFBA2B0CF7CA00896444 /* IsItemComponent.swift in Sources */,
 				660633E92B0AF6A6005D184B /* EnemyEntity.swift in Sources */,
 				66CAD68E2B06D6F800F7940E /* WallSlide.swift in Sources */,
 				76FCDC6E2B03CF1600E55B2A /* IsWallComponent.swift in Sources */,

@@ -21,10 +21,15 @@ public class ItemEntity : GKEntity {
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
+        physicsComp.body.categoryBitMask = .item
+        physicsComp.body.collisionBitMask = .contactWithAllCategories(less:[.enemy,.ground,.trap,.bullet,.ice,.wall,.endPoint,.player] )
         self.addComponent(physicsComp)
        
-        let lightComp = LightComponent(color: .init(red: 1, green: 0.8, blue: 0.7, alpha: 1))
+        let lightComp = LightComponent(color: .init(red: 1, green: 1, blue: 1, alpha: 1))
+        lightComp.setIntensity(0.3)
         self.addComponent(lightComp)
+        
+        self.addComponent(IsItemComponent())
     }
     
     required init?(coder: NSCoder) {

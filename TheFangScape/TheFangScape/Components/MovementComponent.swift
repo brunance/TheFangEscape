@@ -46,6 +46,7 @@ class MovementComponent: GKComponent {
         moveNode()
         
         if entity is PlayerEntity {
+            
             if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSliding(direction: self.direction) {
                 changeDirection()
                 hasChangedDirection = true
