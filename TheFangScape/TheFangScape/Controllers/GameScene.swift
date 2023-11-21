@@ -58,6 +58,9 @@ public class GameScene: SKScene {
         let playerEntity = PlayerEntity()
         entityManager?.add(entity: playerEntity)
         self.playerEntity = playerEntity
+        
+        let itemEntity = ItemEntity(position: .init(x: -150, y: -250))
+        entityManager?.add(entity: itemEntity)
     }
     
     public override func update(_ currentTime: TimeInterval) {

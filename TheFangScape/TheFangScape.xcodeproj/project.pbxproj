@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5177CFB82B0CD8F000896444 /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177CFB72B0CD8F000896444 /* ItemEntity.swift */; };
 		660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */; };
 		66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6792B04E0BB00F7940E /* MovementComponent.swift */; };
 		66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6812B06635600F7940E /* WallSlideComponent.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5177CFB72B0CD8F000896444 /* ItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntity.swift; sourceTree = "<group>"; };
 		660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureArray+TextureBuilder.swift"; sourceTree = "<group>"; };
 		66CAD6792B04E0BB00F7940E /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		66CAD6812B06635600F7940E /* WallSlideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallSlideComponent.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				66CAD6952B07A4F600F7940E /* PlatformEntity.swift */,
 				76FCDC772B080C0600E55B2A /* ChangeStateBlockEntity.swift */,
 				76FCDC792B080C2000E55B2A /* BlockEntity.swift */,
+				5177CFB72B0CD8F000896444 /* ItemEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				76FCDC282B027C5E00E55B2A /* GameScene.swift in Sources */,
 				76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */,
 				660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */,
+				5177CFB82B0CD8F000896444 /* ItemEntity.swift in Sources */,
 				66CAD6942B06D73D00F7940E /* Win.swift in Sources */,
 				76FCDC872B08F5DF00E55B2A /* GKSKNodeComponent+Light.swift in Sources */,
 				76FCDC702B03CF2B00E55B2A /* WallEntity.swift in Sources */,
