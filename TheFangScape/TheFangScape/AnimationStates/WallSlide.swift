@@ -10,10 +10,12 @@ import GameplayKit
 
 class WallSlide: GKState {
     
-    weak var entity: PlayerEntity?
+    weak var entity: GKEntity?
+    var action: SKAction
     
-    init(_ entity: PlayerEntity) {
+    init(_ entity: GKEntity, action: SKAction) {
         self.entity = entity
+        self.action = action
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
@@ -22,9 +24,8 @@ class WallSlide: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        let arraySprite = Array<SKTexture>.init(withFormat: "WallSlide", range: 1...1)
-        if let node = entity?.component(ofType: GKSKNodeComponent.self)?.node{
-            node.run(.repeatForever(.animate(with: arraySprite, timePerFrame: 0.15)))
+        if let node = entity?.component(ofType: GKSKNodeComponent.self)?.node {
+            node.run(action)
         }
     }
 }
