@@ -49,7 +49,7 @@ extension SKTileMapNode {
                     let group = SKTileGroup(tileDefinition: tileDef)
                     mapNode.tileSet.tileGroups.append(group)
                     mapNode.setTileGroup(group, forColumn: col, row: row)
-                    mapNode.lightingBitMask = LightMask.contactWithAllCategories()
+//                    mapNode.lightingBitMask = LightMask.contactWithAllCategories()
                 }
                 
                 // Factory Entities

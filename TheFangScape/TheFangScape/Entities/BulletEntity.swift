@@ -31,6 +31,8 @@ public class BulletEntity: GKEntity {
         
         self.addComponent(MovementComponent(velocityX: 320, direction: bulletDirection))
         self.addComponent(LightComponent(color: .white))
+        
+        self.addComponent(RemoveWhenTouchWall())
     }
     
     required init?(coder: NSCoder) {

@@ -20,7 +20,7 @@ class MovementComponent: GKComponent {
     weak var stateMachineComp: AnimationStateMachineComponent?
     
     var velocityX: CGFloat
-    var direction: PlayerDirection
+    public var direction: PlayerDirection
     
     private var hasChangedDirection = false
     private var isRunning = false
