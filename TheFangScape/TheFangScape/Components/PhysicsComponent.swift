@@ -59,7 +59,7 @@ public class PhysicsComponent: GKComponent {
                        rayDistance: rayDistance)
     }
     
-    public func touchedOnWall(direction: PlayerDirection) -> Bool {
+    public func touchedOnWall(direction: Direction) -> Bool {
         guard let node else { return false }
         
         let width = node.calculateAccumulatedFrame().size.width
@@ -70,7 +70,7 @@ public class PhysicsComponent: GKComponent {
                        rayDistance: rayDistance)
     }
     
-    public func isWallSliding(direction: PlayerDirection) -> Bool  {
+    public func isWallSliding(direction: Direction) -> Bool  {
         return touchedOnWall(direction: direction) && !isOnGround()
     }
     

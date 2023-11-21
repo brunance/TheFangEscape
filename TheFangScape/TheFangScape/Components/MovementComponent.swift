@@ -9,7 +9,7 @@ import Foundation
 import GameplayKit
 import SpriteKit
 
-public enum PlayerDirection: CGFloat {
+public enum Direction: CGFloat {
     case left = -1.0
     case right = 1.0
 }
@@ -20,12 +20,12 @@ class MovementComponent: GKComponent {
     weak var stateMachineComp: AnimationStateMachineComponent?
     
     var velocityX: CGFloat
-    var direction: PlayerDirection
+    var direction: Direction
     
     private var hasChangedDirection = false
     private var isRunning = false
     
-    public init(velocityX: CGFloat, direction: PlayerDirection) {
+    public init(velocityX: CGFloat, direction: Direction) {
         self.velocityX = velocityX
         self.direction = direction
         super.init()
@@ -45,20 +45,11 @@ class MovementComponent: GKComponent {
         
         moveNode()
         
-        if entity is PlayerEntity {
-            if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSliding(direction: self.direction) {
-                changeDirection()
-                hasChangedDirection = true
-            } else if !physicsComp.touchedOnWall(direction: self.direction) {
-                hasChangedDirection = false
-            }
-        } else {
-            if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection {
-                changeDirection()
-                hasChangedDirection = true
-            } else if !physicsComp.touchedOnWall(direction: self.direction) {
-                hasChangedDirection = false
-            }
+        if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSliding(direction: self.direction) {
+            changeDirection()
+            hasChangedDirection = true
+        } else if !physicsComp.touchedOnWall(direction: self.direction) {
+            hasChangedDirection = false
         }
         
         if !isRunning {
@@ -98,7 +89,7 @@ class MovementComponent: GKComponent {
         return direction.rawValue
     }
     
-    public func getPlayerDirection() -> PlayerDirection {
+    public func getPlayerDirection() -> Direction {
         return direction
     }
     
