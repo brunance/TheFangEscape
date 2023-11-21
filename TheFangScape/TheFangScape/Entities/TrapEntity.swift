@@ -12,8 +12,10 @@ import SpriteKit
 public class TrapEntity: GKEntity {
     
     weak var entityManager: SKEntityManager?
+    var shootDirection: PlayerDirection
     
-    public init(position: CGPoint = .zero, entityManager : SKEntityManager) {
+    public init(position: CGPoint = .zero, entityManager : SKEntityManager, shootDirection: PlayerDirection) {
+        self.shootDirection = shootDirection
         self.entityManager = entityManager
         super.init()
         
@@ -28,7 +30,7 @@ public class TrapEntity: GKEntity {
         
         self.addComponent(physicsComp)
         
-        self.addComponent(ShootComponent(bulletVelocity: 500.0, entityManager: entityManager))
+        self.addComponent(ShootComponent(bulletVelocity: 500.0, entityManager: entityManager, bulletDirection: shootDirection))
     }
     
     required init?(coder: NSCoder) {
