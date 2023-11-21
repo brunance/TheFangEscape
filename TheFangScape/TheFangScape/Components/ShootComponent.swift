@@ -10,16 +10,17 @@ import GameplayKit
 
 class ShootComponent: GKComponent {
     
-    private var shootTimerCounter: TimeInterval = 0.0
-    private let shootInterval: TimeInterval = 1.0
-    
-    var bulletVelocity: CGFloat
     weak var entityManager: SKEntityManager?
-    var bullets: [BulletEntity] = []
+    weak var node: SKNode?
     
-    public init(bulletVelocity: CGFloat, entityManager: SKEntityManager) {
-        self.bulletVelocity = bulletVelocity
+    private var shootTimerCounter: TimeInterval = 0.0
+    private let shootInterval: TimeInterval = 0.5
+    
+    var bulletDirection: PlayerDirection
+    
+    public init(entityManager: SKEntityManager, bulletDirection: PlayerDirection) {
         self.entityManager = entityManager
+        self.bulletDirection = bulletDirection
         super.init()
     }
     
@@ -27,9 +28,15 @@ class ShootComponent: GKComponent {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func didAddToEntity() {
+        node = entity?.component(ofType: GKSKNodeComponent.self)?.node
+    }
+    
     func shoot() {
-        let bullet = BulletEntity(position: (entity?.component(ofType: GKSKNodeComponent.self)?.node.position)!)
-        bullets.append(bullet)
+        
+        guard let node = node else { return }
+        
+        let bullet = BulletEntity(position: node.position, bulletDirection: bulletDirection)
         entityManager?.add(entity: bullet)
     }
     
@@ -40,19 +47,7 @@ class ShootComponent: GKComponent {
             shoot()
             shootTimerCounter = 0.0
         }
-        
-        var indexToRemove: Int?
-        for (index, bullet) in bullets.enumerated() {
-            if bullet.component(ofType: PhysicsComponent.self)?.touchedOnWall(direction: .right) == true {
-                entityManager?.remove(entity: bullet)
-                indexToRemove = index
-                break
-            }
-        }
-        
-        if let index = indexToRemove {
-            bullets.remove(at: index)
-        }
     }
 }
+
 
