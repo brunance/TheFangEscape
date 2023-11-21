@@ -222,11 +222,8 @@
 				66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */,
 				76FCDC802B08ECB300E55B2A /* TorchComponent.swift */,
 				76FCDC882B08F7DD00E55B2A /* LightComponent.swift */,
-<<<<<<< HEAD
 				764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */,
-=======
 				6653EEE52B0CD23A00D841FD /* ShootComponent.swift */,
->>>>>>> develop
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -328,11 +325,8 @@
 				76FCDC7E2B080E5800E55B2A /* NotificationsNames.swift in Sources */,
 				76FCDC782B080C0600E55B2A /* ChangeStateBlockEntity.swift in Sources */,
 				76FCDC762B04742E00E55B2A /* JumpComponent.swift in Sources */,
-<<<<<<< HEAD
 				764BF4482B0CEB1E00EDB700 /* ScenarioEntity.swift in Sources */,
-=======
 				660633E92B0AF6A6005D184B /* EnemyEntity.swift in Sources */,
->>>>>>> develop
 				66CAD68E2B06D6F800F7940E /* WallSlide.swift in Sources */,
 				76F6963D2B0BCF7E000B4ED4 /* TileSetManager.swift in Sources */,
 				76FCDC6E2B03CF1600E55B2A /* IsWallComponent.swift in Sources */,
