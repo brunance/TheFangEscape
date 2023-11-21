@@ -11,10 +11,10 @@ import SpriteKit
 
 public class WallEntity: GKEntity {
     
-    public init(position: CGPoint = .zero) {
+    public init(position: CGPoint = .zero, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .yellow, size: .init(width: 50, height: 1000))
+        let node = SKSpriteNode(color: .yellow, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         

@@ -18,6 +18,8 @@ public class PlayerEntity: GKEntity {
     public init(position: CGPoint = .zero) {
         super.init()
         
+        self.addComponent(IsPlayerComponent())
+        
         let animationStateMachine : GKStateMachine = .init(states: [
             Run(self),
             Jump(self),
@@ -29,18 +31,18 @@ public class PlayerEntity: GKEntity {
         
         self.addComponent(AnimationStateMachineComponent(stateMachine: animationStateMachine))
         
-        let node = SKSpriteNode(color: .blue, size: .init(width: 48, height: 48))
+        let node = SKSpriteNode(imageNamed: "run1")
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
+        let physicsComp = PhysicsComponent.circle(ofRadius: node.size.width/2)
         physicsComp.body.allowsRotation = false
         physicsComp.body.linearDamping = 0.5
         physicsComp.body.restitution = 0.0
         self.addComponent(physicsComp)
         
-        self.addComponent(MovementComponent(velocityX: 32 * 8, direction: .right))
-        self.addComponent(JumpComponent(forceY: 64, forceX: 32))
+        self.addComponent(MovementComponent(velocityX: 32 * 5, direction: .right))
+        self.addComponent(JumpComponent(forceY: 32, forceX: 32))
         self.addComponent(WallSlideComponent())
         
         self.addComponent(TorchComponent())

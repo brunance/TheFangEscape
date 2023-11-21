@@ -18,6 +18,14 @@
 		66CAD6922B06D72700F7940E /* DeathByTrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6912B06D72700F7940E /* DeathByTrap.swift */; };
 		66CAD6942B06D73D00F7940E /* Win.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6932B06D73D00F7940E /* Win.swift */; };
 		66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6952B07A4F600F7940E /* PlatformEntity.swift */; };
+		764BF4462B0CE7F100EDB700 /* SKTileNode+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */; };
+		764BF4482B0CEB1E00EDB700 /* ScenarioEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */; };
+		764BF44A2B0CEEC700EDB700 /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 764BF4492B0CEEC700EDB700 /* Ground.json */; };
+		764BF44C2B0CF17C00EDB700 /* IsPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */; };
+		764BF44E2B0CF46F00EDB700 /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = 764BF44D2B0CF46F00EDB700 /* level1.json */; };
+		76F6963C2B0BCF7E000B4ED4 /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F696392B0BCF7E000B4ED4 /* LevelData.swift */; };
+		76F6963D2B0BCF7E000B4ED4 /* TileSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */; };
+		76F6963E2B0BCF7E000B4ED4 /* TileSetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */; };
 		76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */; };
 		76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC1A2B027C2500E55B2A /* ContentView.swift */; };
 		76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FCDC1C2B027C2500E55B2A /* Assets.xcassets */; };
@@ -53,6 +61,14 @@
 		66CAD6912B06D72700F7940E /* DeathByTrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathByTrap.swift; sourceTree = "<group>"; };
 		66CAD6932B06D73D00F7940E /* Win.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Win.swift; sourceTree = "<group>"; };
 		66CAD6952B07A4F600F7940E /* PlatformEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformEntity.swift; sourceTree = "<group>"; };
+		764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKTileNode+Tools.swift"; sourceTree = "<group>"; };
+		764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioEntity.swift; sourceTree = "<group>"; };
+		764BF4492B0CEEC700EDB700 /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ground.json; sourceTree = "<group>"; };
+		764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPlayerComponent.swift; sourceTree = "<group>"; };
+		764BF44D2B0CF46F00EDB700 /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
+		76F696392B0BCF7E000B4ED4 /* LevelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
+		76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSetManager.swift; sourceTree = "<group>"; };
+		76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSetData.swift; sourceTree = "<group>"; };
 		76FCDC152B027C2500E55B2A /* TheFangScape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFangScape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFangScapeApp.swift; sourceTree = "<group>"; };
 		76FCDC1A2B027C2500E55B2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +117,19 @@
 			path = AnimationStates;
 			sourceTree = "<group>";
 		};
+		76F696372B0BCF51000B4ED4 /* TileMap Tools */ = {
+			isa = PBXGroup;
+			children = (
+				764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */,
+				764BF4492B0CEEC700EDB700 /* Ground.json */,
+				764BF44D2B0CF46F00EDB700 /* level1.json */,
+				76F696392B0BCF7E000B4ED4 /* LevelData.swift */,
+				76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */,
+				76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */,
+			);
+			path = "TileMap Tools";
+			sourceTree = "<group>";
+		};
 		76FCDC0C2B027C2400E55B2A = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +149,7 @@
 		76FCDC172B027C2500E55B2A /* TheFangScape */ = {
 			isa = PBXGroup;
 			children = (
+				76F696372B0BCF51000B4ED4 /* TileMap Tools */,
 				76FCDC7F2B080E6000E55B2A /* Extensions */,
 				66CAD6852B06D57C00F7940E /* AnimationStates */,
 				76FCDC2F2B0280B700E55B2A /* Managers */,
@@ -154,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				76FCDC2C2B027F2100E55B2A /* PlayerEntity.swift */,
+				764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */,
 				76FCDC6B2B03CB3F00E55B2A /* GroundEntity.swift */,
 				76FCDC6F2B03CF2B00E55B2A /* WallEntity.swift */,
 				66CAD6952B07A4F600F7940E /* PlatformEntity.swift */,
@@ -176,6 +207,7 @@
 				66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */,
 				76FCDC802B08ECB300E55B2A /* TorchComponent.swift */,
 				76FCDC882B08F7DD00E55B2A /* LightComponent.swift */,
+				764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -257,7 +289,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				764BF44E2B0CF46F00EDB700 /* level1.json in Resources */,
 				76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */,
+				764BF44A2B0CEEC700EDB700 /* Ground.json in Resources */,
 				76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +306,9 @@
 				76FCDC7E2B080E5800E55B2A /* NotificationsNames.swift in Sources */,
 				76FCDC782B080C0600E55B2A /* ChangeStateBlockEntity.swift in Sources */,
 				76FCDC762B04742E00E55B2A /* JumpComponent.swift in Sources */,
+				764BF4482B0CEB1E00EDB700 /* ScenarioEntity.swift in Sources */,
 				66CAD68E2B06D6F800F7940E /* WallSlide.swift in Sources */,
+				76F6963D2B0BCF7E000B4ED4 /* TileSetManager.swift in Sources */,
 				76FCDC6E2B03CF1600E55B2A /* IsWallComponent.swift in Sources */,
 				66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */,
 				76FCDC2D2B027F2100E55B2A /* PlayerEntity.swift in Sources */,
@@ -286,6 +322,7 @@
 				660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */,
 				66CAD6942B06D73D00F7940E /* Win.swift in Sources */,
 				76FCDC872B08F5DF00E55B2A /* GKSKNodeComponent+Light.swift in Sources */,
+				76F6963E2B0BCF7E000B4ED4 /* TileSetData.swift in Sources */,
 				76FCDC702B03CF2B00E55B2A /* WallEntity.swift in Sources */,
 				76FCDC892B08F7DD00E55B2A /* LightComponent.swift in Sources */,
 				76FCDC6A2B03C8A100E55B2A /* IsGroundComponent.swift in Sources */,
@@ -296,8 +333,11 @@
 				66CAD6872B06D59E00F7940E /* Run.swift in Sources */,
 				66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */,
 				66CAD6902B06D71600F7940E /* DeathByDark.swift in Sources */,
+				764BF4462B0CE7F100EDB700 /* SKTileNode+Tools.swift in Sources */,
+				76F6963C2B0BCF7E000B4ED4 /* LevelData.swift in Sources */,
 				76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */,
 				76FCDC832B08ED3400E55B2A /* LightMask.swift in Sources */,
+				764BF44C2B0CF17C00EDB700 /* IsPlayerComponent.swift in Sources */,
 				76FCDC7C2B080C6D00E55B2A /* ChangeStateComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

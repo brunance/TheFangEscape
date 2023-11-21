@@ -73,7 +73,6 @@ class MovementComponent: GKComponent {
         guard let physicsComp = physicsComp else { return }
         
         if physicsComp.body.velocity.dy < -0.5 {
-            // Is falling, run aniamtion "Jump" or "Fall"
             stateMachineComp?.stateMachine.enter(Jump.self)
             print("FALL STATE")
         } else if physicsComp.body.velocity.dy > 0.5 {
