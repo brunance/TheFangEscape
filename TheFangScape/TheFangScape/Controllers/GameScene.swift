@@ -30,11 +30,40 @@ public class GameScene: SKScene {
         entityManager = SKEntityManager(scene: self)
         
         setupScene()
+<<<<<<< HEAD
+=======
+
+        // JUST FOR TEST GROUND CHECK
+        let groundEntity = GroundEntity(position: .init(x: 0, y: -400))
+        entityManager?.add(entity: groundEntity)
+        
+        // JUST FOR TEST WALL CHECK
+        do {
+            let wall = WallEntity(position: .init(x: 225, y: -350))
+            entityManager?.add(entity: wall)
+        }
+        
+        do {
+            let wall = WallEntity(position: .init(x: -225, y: -350))
+            entityManager?.add(entity: wall)
+        }
+        
+        for i in 1...4 {
+            let block = ChangeStateBlockEntity(position: .init(x: 45 * i , y: -300))
+            entityManager?.add(entity: block)
+        }
+        
+        do {
+            let enemy = TrapEntity(position: .init(x: -220, y: -300), entityManager: entityManager!)
+            entityManager?.add(entity: enemy)
+        }
+>>>>>>> develop
     }
     
     private func setupScene() {
         self.backgroundColor = .black
         
+<<<<<<< HEAD
         guard let entityManager,
         let levelData = TileSetManager.shared.loadScenarioData(named: "level1") else { return }
         
@@ -42,6 +71,11 @@ public class GameScene: SKScene {
         entityManager.add(entity: scenario)
 
         playerEntity = entityManager.first(withComponent: IsPlayerComponent.self) as? PlayerEntity
+=======
+//        let playerEntity = PlayerEntity()
+//        entityManager?.add(entity: playerEntity)
+//        self.playerEntity = playerEntity
+>>>>>>> develop
     }
     
     public override func update(_ currentTime: TimeInterval) {
