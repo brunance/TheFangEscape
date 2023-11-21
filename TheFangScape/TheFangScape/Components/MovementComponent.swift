@@ -98,6 +98,10 @@ class MovementComponent: GKComponent {
         return direction.rawValue
     }
     
+    public func getPlayerDirection() -> PlayerDirection {
+        return direction
+    }
+    
     public func changeDirection() {
         self.direction = self.direction == .right ? .left : .right
     }

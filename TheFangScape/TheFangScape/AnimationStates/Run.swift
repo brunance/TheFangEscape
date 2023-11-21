@@ -11,9 +11,11 @@ import GameplayKit
 class Run: GKState {
     
     weak var entity: GKEntity?
+    var action: SKAction
     
-    init(_ entity: GKEntity) {
+    init(_ entity: GKEntity, action: SKAction) {
         self.entity = entity
+        self.action = action
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
@@ -22,9 +24,8 @@ class Run: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        let arraySprite = Array<SKTexture>.init(withFormat: "run%@", range: 1...8)
         if let node = entity?.component(ofType: GKSKNodeComponent.self)?.node {
-            node.run(.repeatForever(.animate(with: arraySprite, timePerFrame: 0.1)))
+            node.run(action)
         }
     }
 }

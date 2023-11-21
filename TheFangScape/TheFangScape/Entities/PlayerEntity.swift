@@ -19,9 +19,9 @@ public class PlayerEntity: GKEntity {
         super.init()
         
         let animationStateMachine : GKStateMachine = .init(states: [
-            Run(self),
-            Jump(self),
-            WallSlide(self),
+            Run(self, action: SKAction.playerRun()),
+            Jump(self, action: SKAction.playerJump()),
+            WallSlide(self, action: SKAction.playerWallSlide()),
             DeathByDark(self),
             DeathByTrap(self),
             Win(self)

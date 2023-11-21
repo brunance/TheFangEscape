@@ -14,7 +14,6 @@ public class EnemyEntity: GKEntity {
     public init(position: CGPoint = .zero) {
         super.init()
         
-        
         let node = SKSpriteNode(color: .red, size: .init(width: 48, height: 48))
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))

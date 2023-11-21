@@ -52,7 +52,7 @@ public class GameScene: SKScene {
         }
         
         do {
-            let enemy = EnemyEntity(position: .init(x: 0, y: 0))
+            let enemy = TrapEntity(position: .init(x: -220, y: -300), entityManager: entityManager!)
             entityManager?.add(entity: enemy)
         }
     }
@@ -60,9 +60,9 @@ public class GameScene: SKScene {
     private func setupScene() {
         self.backgroundColor = .black
         
-        let playerEntity = PlayerEntity()
-        entityManager?.add(entity: playerEntity)
-        self.playerEntity = playerEntity
+//        let playerEntity = PlayerEntity()
+//        entityManager?.add(entity: playerEntity)
+//        self.playerEntity = playerEntity
     }
     
     public override func update(_ currentTime: TimeInterval) {
