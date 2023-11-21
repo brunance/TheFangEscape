@@ -43,7 +43,6 @@
 		76FCDC6A2B03C8A100E55B2A /* IsGroundComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC692B03C8A100E55B2A /* IsGroundComponent.swift */; };
 		76FCDC6C2B03CB3F00E55B2A /* GroundEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC6B2B03CB3F00E55B2A /* GroundEntity.swift */; };
 		76FCDC6E2B03CF1600E55B2A /* IsWallComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC6D2B03CF1600E55B2A /* IsWallComponent.swift */; };
-		76FCDC702B03CF2B00E55B2A /* WallEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC6F2B03CF2B00E55B2A /* WallEntity.swift */; };
 		76FCDC762B04742E00E55B2A /* JumpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC752B04742E00E55B2A /* JumpComponent.swift */; };
 		76FCDC782B080C0600E55B2A /* ChangeStateBlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC772B080C0600E55B2A /* ChangeStateBlockEntity.swift */; };
 		76FCDC7A2B080C2000E55B2A /* BlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCDC792B080C2000E55B2A /* BlockEntity.swift */; };
@@ -93,7 +92,6 @@
 		76FCDC692B03C8A100E55B2A /* IsGroundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsGroundComponent.swift; sourceTree = "<group>"; };
 		76FCDC6B2B03CB3F00E55B2A /* GroundEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundEntity.swift; sourceTree = "<group>"; };
 		76FCDC6D2B03CF1600E55B2A /* IsWallComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsWallComponent.swift; sourceTree = "<group>"; };
-		76FCDC6F2B03CF2B00E55B2A /* WallEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallEntity.swift; sourceTree = "<group>"; };
 		76FCDC752B04742E00E55B2A /* JumpComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpComponent.swift; sourceTree = "<group>"; };
 		76FCDC772B080C0600E55B2A /* ChangeStateBlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStateBlockEntity.swift; sourceTree = "<group>"; };
 		76FCDC792B080C2000E55B2A /* BlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockEntity.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				76FCDC2C2B027F2100E55B2A /* PlayerEntity.swift */,
 				764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */,
 				76FCDC6B2B03CB3F00E55B2A /* GroundEntity.swift */,
-				76FCDC6F2B03CF2B00E55B2A /* WallEntity.swift */,
 				66CAD6952B07A4F600F7940E /* PlatformEntity.swift */,
 				76FCDC772B080C0600E55B2A /* ChangeStateBlockEntity.swift */,
 				76FCDC792B080C2000E55B2A /* BlockEntity.swift */,
@@ -343,7 +340,6 @@
 				66CAD6942B06D73D00F7940E /* Win.swift in Sources */,
 				76FCDC872B08F5DF00E55B2A /* GKSKNodeComponent+Light.swift in Sources */,
 				76F6963E2B0BCF7E000B4ED4 /* TileSetData.swift in Sources */,
-				76FCDC702B03CF2B00E55B2A /* WallEntity.swift in Sources */,
 				6653EEE22B0CD13300D841FD /* TrapEntity.swift in Sources */,
 				76FCDC892B08F7DD00E55B2A /* LightComponent.swift in Sources */,
 				6653EEE62B0CD23A00D841FD /* ShootComponent.swift in Sources */,

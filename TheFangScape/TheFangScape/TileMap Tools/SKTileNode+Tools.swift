@@ -77,9 +77,6 @@ extension SKTileMapNode {
         case TileType.ground.rawValue:
             let groundEntity = GroundEntity(position: tilePosition, size: tileSize)
             entityManager.add(entity: groundEntity)
-        case TileType.wall.rawValue:
-            let wall = WallEntity(position: tilePosition, size: tileSize)
-            entityManager.add(entity: wall)
         case TileType.player.rawValue:
             let player = PlayerEntity(position: tilePosition)
             entityManager.add(entity: player)

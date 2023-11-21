@@ -24,6 +24,7 @@ public class GroundEntity: GKEntity {
         self.addComponent(physicsComp)
         
         self.addComponent(IsGroundComponent())
+        self.addComponent(IsWallComponent())
     }
     
     required init?(coder: NSCoder) {

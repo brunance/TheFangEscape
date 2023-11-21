@@ -100,7 +100,7 @@
                 {
                  "name":"type",
                  "type":"string",
-                 "value":"wall"
+                 "value":"ground"
                 }]
         }, 
         {
@@ -118,7 +118,7 @@
                 {
                  "name":"type",
                  "type":"string",
-                 "value":"wall"
+                 "value":"ground"
                 }]
         }, 
         {
