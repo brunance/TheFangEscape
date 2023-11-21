@@ -22,7 +22,7 @@
 		764BF4482B0CEB1E00EDB700 /* ScenarioEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */; };
 		764BF44A2B0CEEC700EDB700 /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 764BF4492B0CEEC700EDB700 /* Ground.json */; };
 		764BF44C2B0CF17C00EDB700 /* IsPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */; };
-		764BF44E2B0CF46F00EDB700 /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = 764BF44D2B0CF46F00EDB700 /* level1.json */; };
+		767C75122B0CF7B000D5E61B /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = 767C75112B0CF7B000D5E61B /* level1.json */; };
 		76F6963C2B0BCF7E000B4ED4 /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F696392B0BCF7E000B4ED4 /* LevelData.swift */; };
 		76F6963D2B0BCF7E000B4ED4 /* TileSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */; };
 		76F6963E2B0BCF7E000B4ED4 /* TileSetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */; };
@@ -65,7 +65,7 @@
 		764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioEntity.swift; sourceTree = "<group>"; };
 		764BF4492B0CEEC700EDB700 /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ground.json; sourceTree = "<group>"; };
 		764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPlayerComponent.swift; sourceTree = "<group>"; };
-		764BF44D2B0CF46F00EDB700 /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
+		767C75112B0CF7B000D5E61B /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
 		76F696392B0BCF7E000B4ED4 /* LevelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
 		76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSetManager.swift; sourceTree = "<group>"; };
 		76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSetData.swift; sourceTree = "<group>"; };
@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */,
+				767C75112B0CF7B000D5E61B /* level1.json */,
 				764BF4492B0CEEC700EDB700 /* Ground.json */,
-				764BF44D2B0CF46F00EDB700 /* level1.json */,
 				76F696392B0BCF7E000B4ED4 /* LevelData.swift */,
 				76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */,
 				76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */,
@@ -289,7 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				764BF44E2B0CF46F00EDB700 /* level1.json in Resources */,
+				767C75122B0CF7B000D5E61B /* level1.json in Resources */,
 				76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */,
 				764BF44A2B0CEEC700EDB700 /* Ground.json in Resources */,
 				76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */,
