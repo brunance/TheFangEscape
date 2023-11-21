@@ -11,19 +11,20 @@ import SpriteKit
 
 public class GroundEntity: GKEntity {
     
-    public init(position: CGPoint = .zero) {
+    public init(position: CGPoint, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .brown, size: .init(width: 500, height: 50))
+        let node = SKSpriteNode(color: .brown, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
+        let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.calculateAccumulatedFrame().size)
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
         self.addComponent(physicsComp)
         
         self.addComponent(IsGroundComponent())
+        self.addComponent(IsWallComponent())
     }
     
     required init?(coder: NSCoder) {
