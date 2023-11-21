@@ -19,9 +19,9 @@ public class PlayerEntity: GKEntity {
         super.init()
         
         let animationStateMachine : GKStateMachine = .init(states: [
-            Run(self),
-            Jump(self),
-            WallSlide(self),
+            Run(self, action: SKAction.playerRun()),
+            Jump(self, action: SKAction.playerJump()),
+            WallSlide(self, action: SKAction.playerWallSlide()),
             DeathByDark(self),
             DeathByTrap(self),
             Win(self)
@@ -37,6 +37,9 @@ public class PlayerEntity: GKEntity {
         physicsComp.body.allowsRotation = false
         physicsComp.body.linearDamping = 0.5
         physicsComp.body.restitution = 0.0
+        physicsComp.body.categoryBitMask = .player
+        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.enemy])
+        
         self.addComponent(physicsComp)
         
         self.addComponent(MovementComponent(velocityX: 32 * 8, direction: .right))
