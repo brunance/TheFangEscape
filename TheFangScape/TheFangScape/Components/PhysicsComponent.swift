@@ -29,6 +29,14 @@ public class PhysicsComponent: GKComponent {
         return PhysicsComponent(body: body)
     }
     
+    public static func circle(ofRadius radius: CGFloat) -> PhysicsComponent {
+        let body = SKPhysicsBody(circleOfRadius: radius)
+        body.linearDamping = 0.5
+        body.restitution = 0.0
+        body.allowsRotation = false
+        return PhysicsComponent(body: body)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

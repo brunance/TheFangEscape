@@ -71,10 +71,10 @@ class MovementComponent: GKComponent {
     }
     
     func verifyAnimation() {
-        guard let physicsComp = physicsComp else { return }
+        guard let physicsComp = physicsComp ,
+            !physicsComp.isWallSliding(direction: self.direction) else { return }
         
         if physicsComp.body.velocity.dy < -0.5 {
-            // Is falling, run aniamtion "Jump" or "Fall"
             stateMachineComp?.stateMachine.enter(Jump.self)
             print("FALL STATE")
         } else if physicsComp.body.velocity.dy > 0.5 {
