@@ -25,6 +25,7 @@
 		66CAD6922B06D72700F7940E /* DeathByTrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6912B06D72700F7940E /* DeathByTrap.swift */; };
 		66CAD6942B06D73D00F7940E /* Win.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6932B06D73D00F7940E /* Win.swift */; };
 		66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6952B07A4F600F7940E /* PlatformEntity.swift */; };
+		761097062B0E5AE8003BA736 /* CGPath+Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097052B0E5AE8003BA736 /* CGPath+Primitives.swift */; };
 		763E454A2B0D223900C4F3B0 /* RemoveWhenTouchWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E45492B0D223900C4F3B0 /* RemoveWhenTouchWall.swift */; };
 		764BF4462B0CE7F100EDB700 /* SKTileNode+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */; };
 		764BF4482B0CEB1E00EDB700 /* ScenarioEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */; };
@@ -75,6 +76,7 @@
 		66CAD6912B06D72700F7940E /* DeathByTrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathByTrap.swift; sourceTree = "<group>"; };
 		66CAD6932B06D73D00F7940E /* Win.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Win.swift; sourceTree = "<group>"; };
 		66CAD6952B07A4F600F7940E /* PlatformEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformEntity.swift; sourceTree = "<group>"; };
+		761097052B0E5AE8003BA736 /* CGPath+Primitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+Primitives.swift"; sourceTree = "<group>"; };
 		763E45492B0D223900C4F3B0 /* RemoveWhenTouchWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveWhenTouchWall.swift; sourceTree = "<group>"; };
 		764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKTileNode+Tools.swift"; sourceTree = "<group>"; };
 		764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioEntity.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				76FCDC7D2B080E5800E55B2A /* NotificationsNames.swift */,
+				761097052B0E5AE8003BA736 /* CGPath+Primitives.swift */,
 				660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */,
 				76FCDC822B08ED3400E55B2A /* LightMask.swift */,
 				76FCDC862B08F5DF00E55B2A /* GKSKNodeComponent+Light.swift */,
@@ -332,6 +335,7 @@
 				764BF4482B0CEB1E00EDB700 /* ScenarioEntity.swift in Sources */,
 				660633E92B0AF6A6005D184B /* EnemyEntity.swift in Sources */,
 				66CAD68E2B06D6F800F7940E /* WallSlide.swift in Sources */,
+				761097062B0E5AE8003BA736 /* CGPath+Primitives.swift in Sources */,
 				76F6963D2B0BCF7E000B4ED4 /* TileSetManager.swift in Sources */,
 				76FCDC6E2B03CF1600E55B2A /* IsWallComponent.swift in Sources */,
 				66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */,
