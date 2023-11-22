@@ -11,11 +11,14 @@ import SpriteKit
 
 public class PlayerEntity: GKEntity {
     
+//    weak var entityManager: SKEntityManager?
+    
     public var jumpComponent: JumpComponent? {
         return self.component(ofType: JumpComponent.self)
     }
     
     public init(position: CGPoint = .zero) {
+//        self.entityManager = entityManager
         super.init()
         
         self.addComponent(IsPlayerComponent())
@@ -49,6 +52,8 @@ public class PlayerEntity: GKEntity {
         self.addComponent(WallSlideComponent())
         
         self.addComponent(TorchComponent())
+        
+//        self.addComponent(DeathComponent(entityManager: entityManager))
     }
     
     required init?(coder: NSCoder) {
