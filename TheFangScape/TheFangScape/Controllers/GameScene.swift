@@ -28,12 +28,17 @@ public class GameScene: SKScene {
     
     public override func sceneDidLoad() {
         entityManager = SKEntityManager(scene: self)
-        
+        physicsWorld.contactDelegate = self
         setupScene()
         
+//        do {
+//            let enemy = TrapEntity(position: .init(x: -90, y: 0), entityManager: entityManager!, shootDirection: .right)
+//            entityManager?.add(entity: enemy)
+//        }
+        
         do {
-            let enemy = TrapEntity(position: .init(x: -90, y: 0), entityManager: entityManager!, shootDirection: .right)
-            entityManager?.add(entity: enemy)
+            let ice = IceEntity(position: .init(x: 80, y: 0), size: .init(width: 30, height: 30))
+            entityManager?.add(entity: ice)
         }
     }
 
@@ -63,5 +68,31 @@ public class GameScene: SKScene {
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         playerEntity?.jumpComponent?.tryJump()
+    }
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+    public func didBegin(_ contact: SKPhysicsContact) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        checkForContactPlayerAndIceBegin(contactMask)
+    }
+    
+    public func didEnd(_ contact: SKPhysicsContact) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        checkForContactPlayerAndIceEndend(contactMask)
+    }
+    
+    public func checkForContactPlayerAndIceBegin(_ contactMask: UInt32) {
+        if contactMask == .player | .ice {
+            playerEntity?.torchComponent?.accelerateProgress()
+        }
+    }
+    
+    public func checkForContactPlayerAndIceEndend(_ contactMask: UInt32) {
+        if contactMask == .player | .ice {
+            playerEntity?.torchComponent?.normalizeProgress()
+        }
     }
 }

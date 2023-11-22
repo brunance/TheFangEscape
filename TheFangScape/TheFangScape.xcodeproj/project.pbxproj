@@ -15,6 +15,8 @@
 		6653EEE62B0CD23A00D841FD /* ShootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653EEE52B0CD23A00D841FD /* ShootComponent.swift */; };
 		6653EEE82B0CD34300D841FD /* SKAction+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653EEE72B0CD34300D841FD /* SKAction+Animations.swift */; };
 		6653EEEA2B0D00AF00D841FD /* DeathComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653EEE92B0D00AF00D841FD /* DeathComponent.swift */; };
+		668B07122B0E4A3C00D4B0A5 /* IceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B07112B0E4A3C00D4B0A5 /* IceEntity.swift */; };
+		668B07142B0E4A7300D4B0A5 /* IsIceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B07132B0E4A7300D4B0A5 /* IsIceComponent.swift */; };
 		66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6792B04E0BB00F7940E /* MovementComponent.swift */; };
 		66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6812B06635600F7940E /* WallSlideComponent.swift */; };
 		66CAD6842B06D54600F7940E /* AnimationStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */; };
@@ -65,6 +67,8 @@
 		6653EEE52B0CD23A00D841FD /* ShootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootComponent.swift; sourceTree = "<group>"; };
 		6653EEE72B0CD34300D841FD /* SKAction+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKAction+Animations.swift"; sourceTree = "<group>"; };
 		6653EEE92B0D00AF00D841FD /* DeathComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathComponent.swift; sourceTree = "<group>"; };
+		668B07112B0E4A3C00D4B0A5 /* IceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceEntity.swift; sourceTree = "<group>"; };
+		668B07132B0E4A7300D4B0A5 /* IsIceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsIceComponent.swift; sourceTree = "<group>"; };
 		66CAD6792B04E0BB00F7940E /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		66CAD6812B06635600F7940E /* WallSlideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallSlideComponent.swift; sourceTree = "<group>"; };
 		66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStateComponent.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				660633E82B0AF6A6005D184B /* EnemyEntity.swift */,
 				6653EEE12B0CD13300D841FD /* TrapEntity.swift */,
 				6653EEE32B0CD13F00D841FD /* BulletEntity.swift */,
+				668B07112B0E4A3C00D4B0A5 /* IceEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				6653EEE52B0CD23A00D841FD /* ShootComponent.swift */,
 				6653EEE92B0D00AF00D841FD /* DeathComponent.swift */,
 				763E45492B0D223900C4F3B0 /* RemoveWhenTouchWall.swift */,
+				668B07132B0E4A7300D4B0A5 /* IsIceComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 				66CAD6942B06D73D00F7940E /* Win.swift in Sources */,
 				76FCDC872B08F5DF00E55B2A /* GKSKNodeComponent+Light.swift in Sources */,
 				76F6963E2B0BCF7E000B4ED4 /* TileSetData.swift in Sources */,
+				668B07142B0E4A7300D4B0A5 /* IsIceComponent.swift in Sources */,
 				6653EEEA2B0D00AF00D841FD /* DeathComponent.swift in Sources */,
 				6653EEE22B0CD13300D841FD /* TrapEntity.swift in Sources */,
 				76FCDC892B08F7DD00E55B2A /* LightComponent.swift in Sources */,
@@ -356,6 +363,7 @@
 				76FCDC2A2B027D7200E55B2A /* SKEntityManager.swift in Sources */,
 				6653EEE82B0CD34300D841FD /* SKAction+Animations.swift in Sources */,
 				66CAD6922B06D72700F7940E /* DeathByTrap.swift in Sources */,
+				668B07122B0E4A3C00D4B0A5 /* IceEntity.swift in Sources */,
 				66CAD68C2B06D6D500F7940E /* Jump.swift in Sources */,
 				66CAD6872B06D59E00F7940E /* Run.swift in Sources */,
 				660633EB2B0AFA21005D184B /* UInt32+CollisionCategories.swift in Sources */,
