@@ -14,7 +14,8 @@ public class IceEntity: GKEntity {
     public init(position: CGPoint, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .blue, size: size)
+        let nodeColor = UIColor(red: 173/255.0, green: 216/255.0, blue: 230/255.0, alpha: 1.0)
+        let node = SKSpriteNode(color: nodeColor, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
