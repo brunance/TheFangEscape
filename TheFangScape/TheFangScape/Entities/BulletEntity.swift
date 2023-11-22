@@ -11,9 +11,9 @@ import SpriteKit
 
 public class BulletEntity: GKEntity {
     
-    var bulletDirection: PlayerDirection
+    var bulletDirection: Direction
     
-    public init(position: CGPoint = .zero, bulletDirection: PlayerDirection) {
+    public init(position: CGPoint = .zero, bulletDirection: Direction) {
         self.bulletDirection = bulletDirection
         super.init()
         

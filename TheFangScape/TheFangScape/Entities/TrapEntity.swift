@@ -11,7 +11,7 @@ import SpriteKit
 
 public class TrapEntity: GKEntity {
 
-    public init(position: CGPoint = .zero, entityManager : SKEntityManager, shootDirection: PlayerDirection) {
+    public init(position: CGPoint = .zero, entityManager : SKEntityManager, shootDirection: Direction) {
         super.init()
         
         let node = SKSpriteNode(color: .blue, size: .init(width: 48, height: 48))
