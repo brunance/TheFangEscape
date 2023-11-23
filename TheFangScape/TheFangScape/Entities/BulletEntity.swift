@@ -30,9 +30,14 @@ public class BulletEntity: GKEntity {
         self.addComponent(physicsComp)
         
         self.addComponent(MovementComponent(velocityX: 320, direction: bulletDirection))
-        self.addComponent(LightComponent(color: .white))
+        
+        let light = LightComponent(color: .white)
+        self.addComponent(light)
+        light.lightNode.falloff = 3
+        light.setIntensity(0.8)
         
         self.addComponent(RemoveWhenTouchWall())
+        self.addComponent(DestructableComponent())
     }
     
     required init?(coder: NSCoder) {

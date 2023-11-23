@@ -18,7 +18,7 @@ public class TrapEntity: GKEntity {
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: .init(width: 48, height: 48))
+        let physicsComp = PhysicsComponent.capsule(size: node.size, cornerRadius: 2)
         physicsComp.body.allowsRotation = false
         physicsComp.body.categoryBitMask = .trap
         physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.bullet])

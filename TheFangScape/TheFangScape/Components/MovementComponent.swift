@@ -18,6 +18,7 @@ class MovementComponent: GKComponent {
     
     weak var physicsComp: PhysicsComponent?
     weak var stateMachineComp: AnimationStateMachineComponent?
+    weak var node: SKNode?
     
     var velocityX: CGFloat
     var direction: Direction
@@ -38,6 +39,7 @@ class MovementComponent: GKComponent {
     override func didAddToEntity() {
         physicsComp = entity?.component(ofType: PhysicsComponent.self)
         stateMachineComp = entity?.component(ofType: AnimationStateMachineComponent.self)
+        node = entity?.component(ofType: GKSKNodeComponent.self)?.node
     }
     
     override func update(deltaTime seconds: TimeInterval) {
@@ -64,15 +66,14 @@ class MovementComponent: GKComponent {
         guard let physicsComp = physicsComp ,
             !physicsComp.isWallSliding(direction: self.direction) else { return }
         
-        if physicsComp.body.velocity.dy < -0.5 {
-            stateMachineComp?.stateMachine.enter(Jump.self)
-            print("FALL STATE")
-        } else if physicsComp.body.velocity.dy > 0.5 {
-            stateMachineComp?.stateMachine.enter(Jump.self)
-            print("JUMP STATE")
-        } else if physicsComp.body.velocity.dx != 0 {
+        if (physicsComp.isOnGround() && physicsComp.body.velocity.dx != 0) {
             stateMachineComp?.stateMachine.enter(Run.self)
-            print("RUN STATE")
+        } else {
+            if physicsComp.body.velocity.dy < -2 {
+                stateMachineComp?.stateMachine.enter(Jump.self)
+            } else if physicsComp.body.velocity.dy > 2 {
+                stateMachineComp?.stateMachine.enter(Jump.self)
+            }
         }
     }
     
@@ -80,17 +81,13 @@ class MovementComponent: GKComponent {
         guard let physicsComp = physicsComp else { return }
         physicsComp.body.velocity.dx = velocityX * getDirection()
         
-        entity?.component(ofType: GKSKNodeComponent.self)?.node.xScale = getDirection()
+        node?.xScale = getDirection()
         
         verifyAnimation()
     }
     
     public func getDirection() -> CGFloat {
         return direction.rawValue
-    }
-    
-    public func getPlayerDirection() -> Direction {
-        return direction
     }
     
     public func changeDirection() {

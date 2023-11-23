@@ -36,9 +36,8 @@ public class PlayerEntity: GKEntity {
         self.addComponent(GKSKNodeComponent(node: node))
         
         let size: CGSize = .init(width: node.size.width/2, height: node.size.height - 4)
-        let physicsComp = PhysicsComponent.capsule(size: size, cornerRadius: 4)
+        let physicsComp = PhysicsComponent.capsule(size: size, cornerRadius: 10)
         physicsComp.body.allowsRotation = false
-        physicsComp.body.linearDamping = 0.5
         physicsComp.body.restitution = 0.0
         physicsComp.body.categoryBitMask = .player
         physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.enemy])

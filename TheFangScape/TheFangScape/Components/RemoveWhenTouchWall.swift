@@ -37,13 +37,12 @@ public class RemoveWhenTouchWall: GKComponent {
         physicsComp.body.applyImpulse(.init(
             dx: -moveComp.direction.rawValue * 0.2,
             dy: 0))
-        
-        guard let scene = node?.scene as? GameScene else { return }
+
 
         let sequence = SKAction.sequence([.wait(forDuration: 0.15)])
-        node?.run(sequence) {
-            guard let entity = self.entity else { return }
-            scene.entityManager?.remove(entity: entity)
+        node?.run(sequence) { [weak self] in
+            guard let entity = self?.entity else { return }
+            entity.component(ofType: DestructableComponent.self)?.destroy()
         }
     }
 }
