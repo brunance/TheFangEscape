@@ -11,7 +11,10 @@ import SpriteKit
 
 public class BulletEntity: GKEntity {
     
-    public init(position: CGPoint = .zero) {
+    var bulletDirection: PlayerDirection
+    
+    public init(position: CGPoint = .zero, bulletDirection: PlayerDirection) {
+        self.bulletDirection = bulletDirection
         super.init()
         
         let node = SKSpriteNode(color: .yellow, size: .init(width: 10, height: 10))
@@ -26,8 +29,10 @@ public class BulletEntity: GKEntity {
         
         self.addComponent(physicsComp)
         
-        self.addComponent(MovementComponent(velocityX: 320, direction: .right))
+        self.addComponent(MovementComponent(velocityX: 320, direction: bulletDirection))
         self.addComponent(LightComponent(color: .white))
+        
+        self.addComponent(RemoveWhenTouchWall())
     }
     
     required init?(coder: NSCoder) {
