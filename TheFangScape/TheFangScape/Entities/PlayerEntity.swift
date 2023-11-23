@@ -44,7 +44,7 @@ public class PlayerEntity: GKEntity {
         physicsComp.body.allowsRotation = false
         physicsComp.body.restitution = 0.0
         physicsComp.body.categoryBitMask = .player
-        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.enemy])
+        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.enemy,.item])
         
         self.addComponent(physicsComp)
         

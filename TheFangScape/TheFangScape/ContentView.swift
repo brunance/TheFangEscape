@@ -15,10 +15,15 @@ struct ContentView: View {
     }
     
     var body: some View {
-        SpriteView(scene: gameScene, 
+        #if DEBUG
+        SpriteView(scene: gameScene,
                    debugOptions: [
                     .showsPhysics,
                    ]).ignoresSafeArea()
+        #else
+        SpriteView(scene: gameScene).ignoresSafeArea()
+        #endif
+        
     }
 }
 

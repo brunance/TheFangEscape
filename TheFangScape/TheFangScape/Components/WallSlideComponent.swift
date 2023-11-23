@@ -26,11 +26,6 @@ class WallSlideComponent: GKComponent {
         guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
         
         if isSliding {
-            // Checa se parou de dar Wall Slide
-            
-            // Condições de parada
-            // Tocou no chão
-            
             if physicsComp.isOnGround() {
                 stopWallSlide()
             } else {
@@ -38,11 +33,6 @@ class WallSlideComponent: GKComponent {
             }
 
         } else if physicsComp.isWallSliding(direction: movementComp.direction) {
-            
-            // Check se pode entrar em wall slide
-            
-            // Condição de entrada
-            // Está tocando numa wall E não está tocando no chão
             startWallSlide()
         }
     }
@@ -54,7 +44,7 @@ class WallSlideComponent: GKComponent {
         isSliding = true
     }
     
-    private func stopWallSlide() {
+    public func stopWallSlide() {
         isSliding = false
     }
     

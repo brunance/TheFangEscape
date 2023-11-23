@@ -7,6 +7,7 @@
 
 import Foundation
 import SpriteKit
+import GameplayKit
 
 public class GameScene: SKScene {
     
@@ -15,6 +16,7 @@ public class GameScene: SKScene {
     private var lastUpdatedTime: TimeInterval = 0
     
     private weak var playerEntity: PlayerEntity?
+    
     
     public override init(size: CGSize) {
         super.init(size: size)
@@ -31,17 +33,27 @@ public class GameScene: SKScene {
         physicsWorld.contactDelegate = self
         setupScene()
         
+//        do {
+//            let enemy = TrapEntity(position: .init(x: -90, y: 0), entityManager: entityManager!, shootDirection: .right)
+//            entityManager?.add(entity: enemy)
+//        }
+        
         do {
             let ice = IceEntity(position: .init(x: 80, y: 0), size: .init(width: 30, height: 30))
             entityManager?.add(entity: ice)
             let enemy = TrapEntity(position: .init(x: -200, y: 0), entityManager: entityManager!, shootDirection: .right)
             entityManager?.add(entity: enemy)
         }
+        do{
+            let fogoFatuo = ItemEntity(position: .init(x: 40, y: 0))
+            entityManager?.add(entity: fogoFatuo)
+        }
     }
 
     private func setupScene() {
         self.backgroundColor = .black
-        
+
+
         guard let entityManager,
         let levelData = TileSetManager.shared.loadScenarioData(named: "level1") else { return }
         
@@ -49,6 +61,7 @@ public class GameScene: SKScene {
         entityManager.add(entity: scenario)
 
         playerEntity = entityManager.first(withComponent: IsPlayerComponent.self) as? PlayerEntity
+
     }
     
     public override func update(_ currentTime: TimeInterval) {
@@ -71,14 +84,28 @@ public class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     public func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        
         checkForContactPlayerAndIceBegin(contactMask)
+        
+        guard let entityA = contact.bodyA.node?.entity,
+              let entityB = contact.bodyB.node?.entity else { return }
+        
+        checkForContactPlayerAndItemBegind(entityA: entityA, entityB: entityB)
+        checkForContactPlayerAndItemBegind(entityA: entityB, entityB: entityA)
     }
     
     public func didEnd(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         checkForContactPlayerAndIceEndend(contactMask)
+    }
+    
+    
+    public func checkForContactPlayerAndItemBegind(entityA: GKEntity, entityB: GKEntity) {
+        if (entityA.component(ofType: IsPlayerComponent.self) != nil &&
+            entityB.component(ofType: IsItemComponent.self) != nil) {
+            entityA.component(ofType: TorchComponent.self)?.restore()
+            entityManager?.remove(entity: entityB)
+        }
     }
     
     public func checkForContactPlayerAndIceBegin(_ contactMask: UInt32) {
