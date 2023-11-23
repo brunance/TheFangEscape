@@ -27,7 +27,9 @@ public class ItemEntity : GKEntity {
        
         let lightComp = LightComponent(color: .init(red: 1, green: 1, blue: 1, alpha: 1))
         lightComp.setIntensity(0.3)
+        lightComp.lightNode.falloff = 2
         self.addComponent(lightComp)
+        
         self.addComponent(DestructableComponent())
         self.addComponent(IsItemComponent())
     }

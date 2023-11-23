@@ -7,6 +7,7 @@
 
 import Foundation
 import SpriteKit
+import GameplayKit
 
 public class GameScene: SKScene {
     
@@ -83,8 +84,13 @@ public class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     public func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        checkForContactPlayerAndItemBegind(contact)
         checkForContactPlayerAndIceBegin(contactMask)
+        
+        guard let entityA = contact.bodyA.node?.entity,
+              let entityB = contact.bodyB.node?.entity else { return }
+        
+        checkForContactPlayerAndItemBegind(entityA: entityA, entityB: entityB)
+        checkForContactPlayerAndItemBegind(entityA: entityB, entityB: entityA)
     }
     
     public func didEnd(_ contact: SKPhysicsContact) {
@@ -93,16 +99,13 @@ extension GameScene: SKPhysicsContactDelegate {
         checkForContactPlayerAndIceEndend(contactMask)
     }
     
-
-    public func checkForContactPlayerAndItemBegind(_ contact : SKPhysicsContact){
-        playerEntity?.torchComponent?.restore()
-        if contact.bodyA.categoryBitMask == .item{
-            entityManager?.remove(entity: (contact.bodyA.node?.entity)!)
+    
+    public func checkForContactPlayerAndItemBegind(entityA: GKEntity, entityB: GKEntity) {
+        if (entityA.component(ofType: IsPlayerComponent.self) != nil &&
+            entityB.component(ofType: IsItemComponent.self) != nil) {
+            entityA.component(ofType: TorchComponent.self)?.restore()
+            entityManager?.remove(entity: entityB)
         }
-        if contact.bodyB.categoryBitMask == .item{
-            entityManager?.remove(entity: (contact.bodyB.node?.entity)!)
-        }
-        
     }
     
     public func checkForContactPlayerAndIceBegin(_ contactMask: UInt32) {

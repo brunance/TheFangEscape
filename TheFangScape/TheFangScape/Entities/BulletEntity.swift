@@ -33,8 +33,8 @@ public class BulletEntity: GKEntity {
         
         let light = LightComponent(color: .white)
         self.addComponent(light)
-        light.lightNode.falloff = 3
-        light.setIntensity(0.8)
+        light.lightNode.falloff = 5
+        light.setIntensity(0.5)
         
         self.addComponent(RemoveWhenTouchWall())
         self.addComponent(DestructableComponent())
