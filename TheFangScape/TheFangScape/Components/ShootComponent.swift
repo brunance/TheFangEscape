@@ -16,9 +16,9 @@ class ShootComponent: GKComponent {
     private var shootTimerCounter: TimeInterval = 0.0
     private let shootInterval: TimeInterval = 0.5
     
-    var bulletDirection: PlayerDirection
+    var bulletDirection: Direction
     
-    public init(entityManager: SKEntityManager, bulletDirection: PlayerDirection) {
+    public init(entityManager: SKEntityManager, bulletDirection: Direction) {
         self.entityManager = entityManager
         self.bulletDirection = bulletDirection
         super.init()

@@ -10,7 +10,7 @@ import SpriteKit
 
 extension SKAction {
     public static func playerRun() -> SKAction {
-        return .repeatForever(.animate(with: .init(withFormat: "run%@", range: 1...8), timePerFrame: 0.15))
+        return .repeatForever(.animate(with: .init(withFormat: "run%@", range: 1...8), timePerFrame: 0.1))
     }
     
     public static func playerJump() -> SKAction {

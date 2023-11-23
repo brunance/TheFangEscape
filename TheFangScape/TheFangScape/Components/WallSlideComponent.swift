@@ -25,14 +25,25 @@ class WallSlideComponent: GKComponent {
     override func update(deltaTime seconds: TimeInterval) {
         guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
         
-        if physicsComp.touchedOnWall(direction: movementComp.direction) && !physicsComp.isOnGround() {
-            startWallSlide()
-        } else if isSliding {
-            stopWallSlide()
-        }
-        
         if isSliding {
-            adjustVelocityForWallSlide()
+            // Checa se parou de dar Wall Slide
+            
+            // Condições de parada
+            // Tocou no chão
+            
+            if physicsComp.isOnGround() {
+                stopWallSlide()
+            } else {
+                adjustVelocityForWallSlide()
+            }
+
+        } else if physicsComp.isWallSliding(direction: movementComp.direction) {
+            
+            // Check se pode entrar em wall slide
+            
+            // Condição de entrada
+            // Está tocando numa wall E não está tocando no chão
+            startWallSlide()
         }
     }
     
@@ -41,7 +52,6 @@ class WallSlideComponent: GKComponent {
         
         stateMachine.stateMachine.enter(WallSlide.self)
         isSliding = true
-        
     }
     
     private func stopWallSlide() {
@@ -51,11 +61,9 @@ class WallSlideComponent: GKComponent {
     private func adjustVelocityForWallSlide() {
         guard let physicsComp = physicsComp else { return }
         
-        physicsComp.body.velocity.dy -= physicsComp.body.velocity.dy * 0.3
+        physicsComp.body.velocity.dy += -8
+        physicsComp.body.velocity.dy.fixedMin(-100)
         physicsComp.body.velocity.dx = 0
-        
-        // Verifique a saída da velocidade para depuração
-        print(physicsComp.body.velocity.dy)
     }
 
 }

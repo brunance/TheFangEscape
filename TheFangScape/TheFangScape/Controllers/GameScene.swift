@@ -32,7 +32,7 @@ public class GameScene: SKScene {
         setupScene()
         
         do {
-            let enemy = TrapEntity(position: .init(x: -90, y: 0), entityManager: entityManager!, shootDirection: .right)
+            let enemy = TrapEntity(position: .init(x: -200, y: 0), entityManager: entityManager!, shootDirection: .right)
             entityManager?.add(entity: enemy)
         }
     }

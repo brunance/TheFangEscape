@@ -11,14 +11,14 @@ import SpriteKit
 
 public class TrapEntity: GKEntity {
 
-    public init(position: CGPoint = .zero, entityManager : SKEntityManager, shootDirection: PlayerDirection) {
+    public init(position: CGPoint = .zero, entityManager : SKEntityManager, shootDirection: Direction) {
         super.init()
         
         let node = SKSpriteNode(color: .blue, size: .init(width: 48, height: 48))
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: .init(width: 48, height: 48))
+        let physicsComp = PhysicsComponent.capsule(size: node.size, cornerRadius: 2)
         physicsComp.body.allowsRotation = false
         physicsComp.body.categoryBitMask = .trap
         physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.bullet])

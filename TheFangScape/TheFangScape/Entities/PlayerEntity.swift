@@ -10,15 +10,12 @@ import GameplayKit
 import SpriteKit
 
 public class PlayerEntity: GKEntity {
-    
-//    weak var entityManager: SKEntityManager?
-    
+
     public var jumpComponent: JumpComponent? {
         return self.component(ofType: JumpComponent.self)
     }
     
     public init(position: CGPoint = .zero) {
-//        self.entityManager = entityManager
         super.init()
         
         self.addComponent(IsPlayerComponent())
@@ -38,22 +35,20 @@ public class PlayerEntity: GKEntity {
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.circle(ofRadius: node.size.width/2)
+        let size: CGSize = .init(width: node.size.width/2, height: node.size.height - 4)
+        let physicsComp = PhysicsComponent.capsule(size: size, cornerRadius: 10)
         physicsComp.body.allowsRotation = false
-        physicsComp.body.linearDamping = 0.5
         physicsComp.body.restitution = 0.0
         physicsComp.body.categoryBitMask = .player
         physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.enemy])
         
         self.addComponent(physicsComp)
         
-        self.addComponent(MovementComponent(velocityX: 32 * 5, direction: .right))
-        self.addComponent(JumpComponent(forceY: 32, forceX: 32))
+        self.addComponent(MovementComponent(velocityX: 32 * 4, direction: .right))
+        self.addComponent(JumpComponent(forceY: 25, forceX: 32))
         self.addComponent(WallSlideComponent())
         
         self.addComponent(TorchComponent())
-        
-//        self.addComponent(DeathComponent(entityManager: entityManager))
     }
     
     required init?(coder: NSCoder) {
