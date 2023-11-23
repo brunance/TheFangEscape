@@ -17,6 +17,10 @@ public class PlayerEntity: GKEntity {
         return self.component(ofType: JumpComponent.self)
     }
     
+    public var torchComponent: TorchComponent? {
+        return self.component(ofType: TorchComponent.self)
+    }
+    
     public init(position: CGPoint = .zero) {
 //        self.entityManager = entityManager
         super.init()
