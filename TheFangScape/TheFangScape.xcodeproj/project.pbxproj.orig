@@ -238,8 +238,11 @@
 				6653EEE52B0CD23A00D841FD /* ShootComponent.swift */,
 				6653EEE92B0D00AF00D841FD /* DeathComponent.swift */,
 				763E45492B0D223900C4F3B0 /* RemoveWhenTouchWall.swift */,
+<<<<<<< HEAD
 				668B07132B0E4A7300D4B0A5 /* IsIceComponent.swift */,
+=======
 				761097072B0F7868003BA736 /* DestructableComponent.swift */,
+>>>>>>> develop
 			);
 			path = Components;
 			sourceTree = "<group>";

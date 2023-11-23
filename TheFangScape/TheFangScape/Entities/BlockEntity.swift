@@ -18,7 +18,7 @@ public class BlockEntity: GKEntity {
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
+        let physicsComp = PhysicsComponent.capsule(size: node.size, cornerRadius: 1)
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
         self.addComponent(physicsComp)
