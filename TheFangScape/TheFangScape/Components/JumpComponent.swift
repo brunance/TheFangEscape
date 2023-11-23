@@ -56,6 +56,8 @@ public class JumpComponent: GKComponent {
     private func performWallJump() {
         guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
         
+        entity?.component(ofType: WallSlideComponent.self)?.stopWallSlide()
+        
         guard let stateMachine = stateMachineComp else { return }
         stateMachine.stateMachine.enter(Jump.self)
         physicsComp.body.applyImpulse(.init(

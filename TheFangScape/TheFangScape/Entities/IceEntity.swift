@@ -23,11 +23,10 @@ public class IceEntity: GKEntity {
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
 
-        physicsComp.body.categoryBitMask = .ice
+        physicsComp.body.categoryBitMask = 0
         physicsComp.body.contactTestBitMask = .player
         self.addComponent(physicsComp)    
-        self.addComponent(IsGroundComponent())
-        self.addComponent(IsWallComponent())
+
         self.addComponent(IsIceComponent())
     }
     
