@@ -12,6 +12,7 @@ enum TileType: String {
     case ground = "ground"
     case player = "player"
     case wall = "wall"
+    case trapShoot = "trapShoot"
 }
 
 extension SKTileMapNode {
@@ -80,6 +81,12 @@ extension SKTileMapNode {
         case TileType.player.rawValue:
             let player = PlayerEntity(position: tilePosition)
             entityManager.add(entity: player)
+        case TileType.trapShoot.rawValue:
+            let data = (tileDefinition.userData?.value(forKey: "direction") as? String)
+            let direction: Direction = data == "1" ? .right : .left
+
+            let trap = TrapEntity(position: tilePosition, entityManager: entityManager, shootDirection: direction)
+            entityManager.add(entity: trap)
         default:
             break
         }
