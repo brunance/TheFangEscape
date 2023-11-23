@@ -112,4 +112,13 @@ extension GameScene: SKPhysicsContactDelegate {
             playerEntity?.torchComponent?.normalizeProgress()
         }
     }
+    
+    public func checkForContactPlayerAndTrapBegin(_ contactMask: UInt32) {
+        let isPlayerAndTrapContact = contactMask == (.player | .trap)
+        let isPlayerAndBulletContact = contactMask == (.player | .bullet)
+
+        if isPlayerAndTrapContact || isPlayerAndBulletContact {
+            playerEntity?.deathComponent?.startDeath(by: isPlayerAndTrapContact ? .trap : .dark)
+        }
+    }
 }

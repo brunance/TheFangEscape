@@ -8,37 +8,39 @@
 import Foundation
 import GameplayKit
 
-class DeathComponent: GKComponent {
+public enum DeathType {
+    case dark, trap
+}
+
+public class DeathComponent: GKComponent {
     
-    weak var physicsComp: PhysicsComponent?
-    weak var stateMachineComp: AnimationStateMachineComponent?
-    weak var entityManager: SKEntityManager?
+    weak var stateComp: AnimationStateMachineComponent?
+    weak var node: SKNode?
     
-    init(entityManager: SKEntityManager) {
-        self.entityManager = entityManager
-        super.init()
+    public override func didAddToEntity() {
+        node = entity?.component(ofType: GKSKNodeComponent.self)?.node
+        stateComp = entity?.component(ofType: AnimationStateMachineComponent.self)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func didAddToEntity() {
-        physicsComp = entity?.component(ofType: PhysicsComponent.self)
-        stateMachineComp = entity?.component(ofType: AnimationStateMachineComponent.self)
-    }
-    
-    override func update(deltaTime seconds: TimeInterval) {
-        guard let physicsComp = physicsComp else {return}
+    public func startDeath(by deathType: DeathType) {
+        guard let stateMachine = stateComp?.stateMachine else {return}
         
-        if physicsComp.touchedOnWall(direction: .right){
-            destroyEntity()
+        entity?.removeComponent(ofType: MovementComponent.self)
+        entity?.removeComponent(ofType: JumpComponent.self)
+        
+        switch deathType {
+        case .dark:
+            stateMachine.enter(DeathByDark.self)
+        case .trap:
+            stateMachine.enter(DeathByTrap.self)
         }
-    }
-    
-    private func destroyEntity() {
-        if let entityManager = entityManager {
-            entityManager.remove(entity: entity!)
+        
+        let sequence = SKAction.sequence([.wait(forDuration: 1.5)])
+       
+        node?.run(sequence) { [weak self] in
+            guard let entity = self?.entity else { return }
+            entity.component(ofType: DestructableComponent.self)?.destroy()
         }
     }
 }
+

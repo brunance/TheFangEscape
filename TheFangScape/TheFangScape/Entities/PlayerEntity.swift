@@ -19,6 +19,10 @@ public class PlayerEntity: GKEntity {
         return self.component(ofType: TorchComponent.self)
     }
     
+    public var deathComponent: DeathComponent? {
+        return self.component(ofType: DeathComponent.self)
+    }
+    
     public init(position: CGPoint = .zero) {
         super.init()
         
@@ -53,6 +57,9 @@ public class PlayerEntity: GKEntity {
         self.addComponent(WallSlideComponent())
         
         self.addComponent(TorchComponent())
+        
+        self.addComponent(DestructableComponent())
+        self.addComponent(DeathComponent())
     }
     
     required init?(coder: NSCoder) {
