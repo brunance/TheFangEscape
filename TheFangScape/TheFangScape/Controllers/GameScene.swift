@@ -37,8 +37,12 @@ public class GameScene: SKScene {
 //        }
         
         do {
-            let ice = IceEntity(position: .init(x: 80, y: 0), size: .init(width: 30, height: 30))
+            let ice = IceEntity(position: .init(x: 80, y: 0), size: .init(width: 40, height: 40))
             entityManager?.add(entity: ice)
+        }
+        do{
+            let fogoFatuo = ItemEntity(position: .init(x: 40, y: 0))
+            entityManager?.add(entity: fogoFatuo)
         }
     }
 
@@ -76,7 +80,7 @@ public class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     public func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        
+        checkForContactPlayerAndItemBegind(contactMask)
         checkForContactPlayerAndIceBegin(contactMask)
     }
     
@@ -86,7 +90,15 @@ extension GameScene: SKPhysicsContactDelegate {
         checkForContactPlayerAndIceEndend(contactMask)
     }
     
+    public func checkForContactPlayerAndItemBegind(_ contactMask : UInt32){
+        if contactMask == .player | .item{
+            playerEntity?.torchComponent?.restore()
+            entityManager?.remove(entity: <#T##GKEntity#>)
+        }
+    }
+    
     public func checkForContactPlayerAndIceBegin(_ contactMask: UInt32) {
+        
         if contactMask == .player | .ice {
             playerEntity?.torchComponent?.accelerateProgress()
         }
