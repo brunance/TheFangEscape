@@ -465,9 +465,14 @@
          "imagewidth":16,
          "properties":[
                 {
+                 "name":"direction",
+                 "type":"string",
+                 "value":"1"
+                }, 
+                {
                  "name":"type",
                  "type":"string",
-                 "value":"enemy"
+                 "value":"trapShoot"
                 }]
         }, 
         {
