@@ -37,8 +37,8 @@ public class GameScene: SKScene {
 //        }
         
         do {
-            let ice = IceEntity(position: .init(x: 80, y: 0), size: .init(width: 40, height: 40))
-            entityManager?.add(entity: ice)
+            let enemy = TrapEntity(position: .init(x: -200, y: 0), entityManager: entityManager!, shootDirection: .right)
+            entityManager?.add(entity: enemy)
         }
         do{
             let fogoFatuo = ItemEntity(position: .init(x: 40, y: 0))

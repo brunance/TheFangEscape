@@ -37,6 +37,14 @@ public class PhysicsComponent: GKComponent {
         return PhysicsComponent(body: body)
     }
     
+    public static func capsule(size: CGSize, cornerRadius: CGFloat) -> PhysicsComponent {
+        let body = SKPhysicsBody(polygonFrom: .capsule(size: size, cornerRadius: cornerRadius))
+        body.linearDamping = 0.5
+        body.restitution = 0.0
+        body.allowsRotation = false
+        return PhysicsComponent(body: body)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -59,7 +67,7 @@ public class PhysicsComponent: GKComponent {
                        rayDistance: rayDistance)
     }
     
-    public func touchedOnWall(direction: PlayerDirection) -> Bool {
+    public func touchedOnWall(direction: Direction) -> Bool {
         guard let node else { return false }
         
         let width = node.calculateAccumulatedFrame().size.width
@@ -69,17 +77,7 @@ public class PhysicsComponent: GKComponent {
                        rayDistance: rayDistance)
     }
     
-    public func touchedOnItem() -> Bool{
-        guard let node else{ return false}
-        
-        let width = node.calculateAccumulatedFrame().size.width
-        
-        let rayDistance = CGPoint(x: node.position.x , y: node.position.y)
-        
-        return raycast(checkFor: IsItemComponent.self, rayDistance: rayDistance)
-    }
-    
-    public func isWallSliding(direction: PlayerDirection) -> Bool  {
+    public func isWallSliding(direction: Direction) -> Bool  {
         return touchedOnWall(direction: direction) && !isOnGround()
     }
     

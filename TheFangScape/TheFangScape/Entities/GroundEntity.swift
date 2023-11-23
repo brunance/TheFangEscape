@@ -18,7 +18,7 @@ public class GroundEntity: GKEntity {
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.calculateAccumulatedFrame().size)
+        let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
         self.addComponent(physicsComp)
