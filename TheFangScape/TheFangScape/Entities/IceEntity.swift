@@ -22,12 +22,10 @@ public class IceEntity: GKEntity {
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.calculateAccumulatedFrame().size)
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
-        physicsComp.body.categoryBitMask = .ice
+        physicsComp.body.categoryBitMask = ~(.contactWithAllCategories())
         physicsComp.body.contactTestBitMask = .player
         self.addComponent(physicsComp)
-        
-        self.addComponent(IsGroundComponent())
-        self.addComponent(IsWallComponent())
+
         self.addComponent(IsIceComponent())
     }
     
