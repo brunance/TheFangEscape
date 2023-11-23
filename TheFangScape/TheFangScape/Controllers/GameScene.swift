@@ -16,6 +16,7 @@ public class GameScene: SKScene {
     
     private weak var playerEntity: PlayerEntity?
     
+    
     public override init(size: CGSize) {
         super.init(size: size)
         self.anchorPoint = .init(x: 0.5, y: 0.5)
@@ -80,7 +81,7 @@ public class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     public func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        checkForContactPlayerAndItemBegind(contactMask)
+        checkForContactPlayerAndItemBegind(contact)
         checkForContactPlayerAndIceBegin(contactMask)
     }
     
@@ -90,11 +91,15 @@ extension GameScene: SKPhysicsContactDelegate {
         checkForContactPlayerAndIceEndend(contactMask)
     }
     
-    public func checkForContactPlayerAndItemBegind(_ contactMask : UInt32){
-        if contactMask == .player | .item{
-            playerEntity?.torchComponent?.restore()
-            entityManager?.remove(entity: <#T##GKEntity#>)
+    public func checkForContactPlayerAndItemBegind(_ contact : SKPhysicsContact){
+        playerEntity?.torchComponent?.restore()
+        if contact.bodyA.categoryBitMask == .item{
+            entityManager?.remove(entity: (contact.bodyA.node?.entity)!)
         }
+        if contact.bodyB.categoryBitMask == .item{
+            entityManager?.remove(entity: (contact.bodyB.node?.entity)!)
+        }
+        
     }
     
     public func checkForContactPlayerAndIceBegin(_ contactMask: UInt32) {
