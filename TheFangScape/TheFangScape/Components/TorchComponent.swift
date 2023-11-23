@@ -15,6 +15,8 @@ public class TorchComponent: GKComponent {
     private var timeElapsed: TimeInterval = 0
     private var duration: TimeInterval = 15
     
+    var speedFactor: CGFloat = 1
+    
     private var intensity: CGFloat {
         didSet {
             lightComp?.setIntensity(intensity)
@@ -54,7 +56,7 @@ public class TorchComponent: GKComponent {
     }
     
     private func decay() {
-        let progress = CGFloat(timeElapsed / duration)
+        let progress = CGFloat(timeElapsed / duration) * speedFactor
         intensity = 1 - (1 * progress)
     }
     
@@ -63,4 +65,11 @@ public class TorchComponent: GKComponent {
         intensity = 1
     }
     
+    public func accelerateProgress() {
+        speedFactor = 1.5
+    }
+    
+    public func normalizeProgress() {
+        speedFactor = 1
+    }
 }
