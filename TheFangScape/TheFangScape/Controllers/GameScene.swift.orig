@@ -16,7 +16,6 @@ public class GameScene: SKScene {
     
     private weak var playerEntity: PlayerEntity?
     
-    
     public override init(size: CGSize) {
         super.init(size: size)
         self.anchorPoint = .init(x: 0.5, y: 0.5)
@@ -38,21 +37,19 @@ public class GameScene: SKScene {
 //        }
         
         do {
+<<<<<<< HEAD
             let ice = IceEntity(position: .init(x: 80, y: 0), size: .init(width: 30, height: 30))
             entityManager?.add(entity: ice)
+=======
             let enemy = TrapEntity(position: .init(x: -200, y: 0), entityManager: entityManager!, shootDirection: .right)
             entityManager?.add(entity: enemy)
-        }
-        do{
-            let fogoFatuo = ItemEntity(position: .init(x: 40, y: 0))
-            entityManager?.add(entity: fogoFatuo)
+>>>>>>> develop
         }
     }
 
     private func setupScene() {
         self.backgroundColor = .black
-
-
+        
         guard let entityManager,
         let levelData = TileSetManager.shared.loadScenarioData(named: "level1") else { return }
         
@@ -60,7 +57,6 @@ public class GameScene: SKScene {
         entityManager.add(entity: scenario)
 
         playerEntity = entityManager.first(withComponent: IsPlayerComponent.self) as? PlayerEntity
-
     }
     
     public override func update(_ currentTime: TimeInterval) {
@@ -83,7 +79,7 @@ public class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     public func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        checkForContactPlayerAndItemBegind(contact)
+        
         checkForContactPlayerAndIceBegin(contactMask)
     }
     
@@ -91,18 +87,6 @@ extension GameScene: SKPhysicsContactDelegate {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         checkForContactPlayerAndIceEndend(contactMask)
-    }
-    
-
-    public func checkForContactPlayerAndItemBegind(_ contact : SKPhysicsContact){
-        playerEntity?.torchComponent?.restore()
-        if contact.bodyA.categoryBitMask == .item{
-            entityManager?.remove(entity: (contact.bodyA.node?.entity)!)
-        }
-        if contact.bodyB.categoryBitMask == .item{
-            entityManager?.remove(entity: (contact.bodyB.node?.entity)!)
-        }
-        
     }
     
     public func checkForContactPlayerAndIceBegin(_ contactMask: UInt32) {
