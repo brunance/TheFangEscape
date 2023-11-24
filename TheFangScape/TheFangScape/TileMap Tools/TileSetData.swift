@@ -20,13 +20,15 @@ public struct TileSetData: Codable {
     }
     
     func getTileDefinition(at: Int) -> SKTileDefinition? {
-        guard at >= 0 && at < tiles.count else { return nil }
-        guard let tile = self[at] else { return nil }
-        let texture = SKTexture(imageNamed: tile.getImageNamed())
-        let tileDef = SKTileDefinition(texture: texture)
-        tileDef.userData = tile.userData
-        
-        return tileDef
+        for tile in self.tiles {
+            if tile.id == at {
+                let texture = SKTexture(imageNamed: tile.getImageNamed())
+                let tileDef = SKTileDefinition(texture: texture)
+                tileDef.userData = tile.userData
+                return tileDef
+            }
+        }
+        return nil
     }
     
     func getSKTileSet(fromIds ids: [Int]) -> SKTileSet {
