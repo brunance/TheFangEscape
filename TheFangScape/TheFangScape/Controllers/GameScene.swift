@@ -41,6 +41,11 @@ public class GameScene: SKScene {
             let fogoFatuo = ItemEntity(position: .init(x: 40, y: 0))
             entityManager?.add(entity: fogoFatuo)
         }
+        
+        do{
+            let spike = SpikeEntity(position: .init(x: -80, y: 0))
+            entityManager?.add(entity: spike)
+        }
     }
 
     private func setupScene() {
@@ -87,6 +92,7 @@ extension GameScene: SKPhysicsContactDelegate {
         checkForContactPlayerAndIceBegin(entityA: entityA, entityB: entityB)
         
         checkForContactPlayerAndTrapBegin(entityA: entityA, entityB: entityB)
+        checkForContactPlayerAndSpikeBegin(entityA: entityA, entityB: entityB)
         checkForContactPlayerAndItemBegin(entityA: entityB, entityB: entityA)
         
         checkForContactPlayerAndDoor(entityA: entityA, entityB: entityB)
@@ -140,6 +146,15 @@ extension GameScene: SKPhysicsContactDelegate {
 
         if isPlayerAndTrapContact || isPlayerAndBulletContact {
             playerEntity?.deathComponent?.startDeath(by: isPlayerAndTrapContact ? .trap : .dark)
+        }
+    }
+    
+    public func checkForContactPlayerAndSpikeBegin(entityA: GKEntity, entityB: GKEntity) {
+        let isPlayerAndSpikeContact = (entityA.component(ofType: IsPlayerComponent.self) != nil &&
+                                      entityB.component(ofType: isSpikeComponent.self) != nil)
+
+        if isPlayerAndSpikeContact {
+            playerEntity?.deathComponent?.startDeath(by: isPlayerAndSpikeContact ? .trap : .dark)
         }
     }
 }
