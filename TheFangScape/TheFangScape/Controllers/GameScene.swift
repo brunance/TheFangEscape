@@ -76,24 +76,33 @@ public class GameScene: SKScene {
 
 extension GameScene: SKPhysicsContactDelegate {
     public func didBegin(_ contact: SKPhysicsContact) {
-        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        checkForContactPlayerAndIceBegin(contactMask)
         
         guard let entityA = contact.bodyA.node?.entity,
               let entityB = contact.bodyB.node?.entity else { return }
         
-        checkForContactPlayerAndItemBegind(entityA: entityA, entityB: entityB)
-        checkForContactPlayerAndItemBegind(entityA: entityB, entityB: entityA)
+        checkForContactPlayerAndItemBegin(entityA: entityA, entityB: entityB)
+        checkForContactPlayerAndItemBegin(entityA: entityB, entityB: entityA)
+        
+        checkForContactPlayerAndIceBegin(entityA: entityB, entityB: entityA)
+        checkForContactPlayerAndIceBegin(entityA: entityA, entityB: entityB)
+        
+        checkForContactPlayerAndTrapBegin(entityA: entityA, entityB: entityB)
+        checkForContactPlayerAndItemBegin(entityA: entityB, entityB: entityA)
+        
+        checkForContactPlayerAndDoor(entityA: entityA, entityB: entityB)
+        checkForContactPlayerAndDoor(entityA: entityB, entityB: entityA)
     }
     
     public func didEnd(_ contact: SKPhysicsContact) {
-        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        guard let entityA = contact.bodyA.node?.entity,
+              let entityB = contact.bodyB.node?.entity else { return }
         
-        checkForContactPlayerAndIceEndend(contactMask)
+        checkForContactPlayerAndIceEndend(entityA: entityB, entityB: entityA)
+        checkForContactPlayerAndIceEndend(entityA: entityA, entityB: entityB)
     }
     
     
-    public func checkForContactPlayerAndItemBegind(entityA: GKEntity, entityB: GKEntity) {
+    public func checkForContactPlayerAndItemBegin(entityA: GKEntity, entityB: GKEntity) {
         if (entityA.component(ofType: IsPlayerComponent.self) != nil &&
             entityB.component(ofType: IsItemComponent.self) != nil) {
             entityA.component(ofType: TorchComponent.self)?.restore()
@@ -101,21 +110,33 @@ extension GameScene: SKPhysicsContactDelegate {
         }
     }
     
-    public func checkForContactPlayerAndIceBegin(_ contactMask: UInt32) {
-        if contactMask == .player | .ice {
+    public func checkForContactPlayerAndIceBegin(entityA: GKEntity, entityB: GKEntity) {
+        if (entityA.component(ofType: IsPlayerComponent.self) != nil &&
+            entityB.component(ofType: IsIceComponent.self) != nil) {
             playerEntity?.torchComponent?.accelerateProgress()
         }
     }
     
-    public func checkForContactPlayerAndIceEndend(_ contactMask: UInt32) {
-        if contactMask == .player | .ice {
+    public func checkForContactPlayerAndDoor(entityA: GKEntity, entityB: GKEntity) {
+        if (entityA.component(ofType: IsPlayerComponent.self) != nil &&
+            entityB.component(ofType: IsDoorComponent.self) != nil) {
+            playerEntity?.winComponent?.startWin()
+        }
+    }
+    
+    public func checkForContactPlayerAndIceEndend(entityA: GKEntity, entityB: GKEntity)  {
+        if (entityA.component(ofType: IsPlayerComponent.self) != nil &&
+            entityB.component(ofType: IsIceComponent.self) != nil) {
             playerEntity?.torchComponent?.normalizeProgress()
         }
     }
     
-    public func checkForContactPlayerAndTrapBegin(_ contactMask: UInt32) {
-        let isPlayerAndTrapContact = contactMask == (.player | .trap)
-        let isPlayerAndBulletContact = contactMask == (.player | .bullet)
+    public func checkForContactPlayerAndTrapBegin(entityA: GKEntity, entityB: GKEntity) {
+        let isPlayerAndTrapContact = (entityA.component(ofType: IsPlayerComponent.self) != nil &&
+                                      entityB.component(ofType: IsTrapComponent.self) != nil)
+        
+        let isPlayerAndBulletContact = (entityA.component(ofType: IsPlayerComponent.self) != nil &&
+                                        entityB.component(ofType: IsBulletComponent.self) != nil)
 
         if isPlayerAndTrapContact || isPlayerAndBulletContact {
             playerEntity?.deathComponent?.startDeath(by: isPlayerAndTrapContact ? .trap : .dark)

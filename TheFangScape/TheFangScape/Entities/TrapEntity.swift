@@ -28,6 +28,7 @@ public class TrapEntity: GKEntity {
         self.addComponent(physicsComp)
         
         self.addComponent(ShootComponent(entityManager: entityManager, bulletDirection: shootDirection))
+        self.addComponent(IsTrapComponent())
     }
     
     required init?(coder: NSCoder) {

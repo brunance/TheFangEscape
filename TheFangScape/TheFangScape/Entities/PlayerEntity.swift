@@ -23,6 +23,10 @@ public class PlayerEntity: GKEntity {
         return self.component(ofType: DeathComponent.self)
     }
     
+    public var winComponent: WinComponent? {
+        return self.component(ofType: WinComponent.self)
+    }
+    
     public init(position: CGPoint = .zero) {
         super.init()
         
@@ -48,7 +52,7 @@ public class PlayerEntity: GKEntity {
         physicsComp.body.allowsRotation = false
         physicsComp.body.restitution = 0.0
         physicsComp.body.categoryBitMask = .player
-        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.enemy,.item])
+        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.enemy, .item])
         
         self.addComponent(physicsComp)
         
@@ -60,6 +64,8 @@ public class PlayerEntity: GKEntity {
         
         self.addComponent(DestructableComponent())
         self.addComponent(DeathComponent())
+        
+        self.addComponent(WinComponent())
     }
     
     required init?(coder: NSCoder) {
