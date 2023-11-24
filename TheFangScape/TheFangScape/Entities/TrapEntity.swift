@@ -20,12 +20,15 @@ public class TrapEntity: GKEntity {
         
         let physicsComp = PhysicsComponent.capsule(size: node.size, cornerRadius: 2)
         physicsComp.body.allowsRotation = false
+        physicsComp.body.affectedByGravity = false
         physicsComp.body.categoryBitMask = .trap
+        physicsComp.body.contactTestBitMask = .player
         physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.bullet])
         
         self.addComponent(physicsComp)
         
         self.addComponent(ShootComponent(entityManager: entityManager, bulletDirection: shootDirection))
+        self.addComponent(IsTrapComponent())
     }
     
     required init?(coder: NSCoder) {

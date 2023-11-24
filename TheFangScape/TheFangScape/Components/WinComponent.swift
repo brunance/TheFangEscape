@@ -1,18 +1,14 @@
 //
-//  DeathComponent.swift
+//  WinComponent.swift
 //  TheFangScape
 //
-//  Created by Luciano Uchoa on 21/11/23.
+//  Created by Luciano Uchoa on 24/11/23.
 //
 
 import Foundation
 import GameplayKit
 
-public enum DeathType {
-    case dark, trap
-}
-
-public class DeathComponent: GKComponent {
+public class WinComponent: GKComponent {
     
     weak var stateComp: AnimationStateMachineComponent?
     weak var node: SKNode?
@@ -22,18 +18,13 @@ public class DeathComponent: GKComponent {
         stateComp = entity?.component(ofType: AnimationStateMachineComponent.self)
     }
     
-    public func startDeath(by deathType: DeathType) {
+    public func startWin() {
         guard let stateMachine = stateComp?.stateMachine else {return}
         
         entity?.removeComponent(ofType: MovementComponent.self)
         entity?.removeComponent(ofType: JumpComponent.self)
         
-        switch deathType {
-        case .dark:
-            stateMachine.enter(DeathByDark.self)
-        case .trap:
-            stateMachine.enter(DeathByTrap.self)
-        }
+        stateMachine.enter(Win.self)
         
         let sequence = SKAction.sequence([.wait(forDuration: 1.5)])
        

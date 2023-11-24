@@ -38,6 +38,7 @@ public class BulletEntity: GKEntity {
         
         self.addComponent(RemoveWhenTouchWall())
         self.addComponent(DestructableComponent())
+        self.addComponent(IsBulletComponent())
     }
     
     required init?(coder: NSCoder) {
