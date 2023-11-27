@@ -11,7 +11,7 @@ import SpriteKit
 struct ContentView: View {
     
     var gameScene: GameScene {
-        return GameScene(size: .init(width: 1000, height: 1000))
+        return GameScene(size: .init(width: 1080, height: 1920))
     }
     
     var body: some View {
