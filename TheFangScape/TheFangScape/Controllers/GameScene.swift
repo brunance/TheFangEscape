@@ -60,6 +60,11 @@ public class GameScene: SKScene {
 
         playerEntity = entityManager.first(withComponent: IsPlayerComponent.self) as? PlayerEntity
 
+        let camera = SKCameraNode()
+        self.addChild(camera)
+        self.camera = camera
+        self.camera?.setScale(1.8)
+        
     }
     
     public override func update(_ currentTime: TimeInterval) {
