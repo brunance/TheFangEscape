@@ -14,7 +14,7 @@ extension SKAction {
     }
     
     public static func playerJump() -> SKAction {
-        return .repeatForever(.animate(with: .init(withFormat: "playerjump%@", range: 1...3), timePerFrame: 0.5))
+        return .repeatForever(.animate(with: .init(withFormat: "playerJump%@", range: 1...2), timePerFrame: 0.5))
     }
     
     public static func playerWallSlide() -> SKAction {
