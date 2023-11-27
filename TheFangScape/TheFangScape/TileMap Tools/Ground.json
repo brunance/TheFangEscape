@@ -8,7 +8,7 @@
  "margin":0,
  "name":"Ground",
  "spacing":0,
- "tilecount":23,
+ "tilecount":28,
  "tiledversion":"1.10.1",
  "tileheight":90,
  "tiles":[
@@ -275,8 +275,68 @@
                  "type":"string",
                  "value":"player"
                 }]
+        }, 
+        {
+         "id":73,
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/light_1.png",
+         "imageheight":90,
+         "imagewidth":91,
+         "properties":[
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"item"
+                }]
+        }, 
+        {
+         "id":74,
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/trap_1.png",
+         "imageheight":90,
+         "imagewidth":91,
+         "properties":[
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"trap"
+                }]
+        }, 
+        {
+         "id":75,
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/door_1.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "properties":[
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"door"
+                }]
+        }, 
+        {
+         "id":77,
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/weekplatform_1.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "properties":[
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"block"
+                }]
+        }, 
+        {
+         "id":76,
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/weakPlatform0.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "properties":[
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"block"
+                }]
         }],
- "tilewidth":90,
+ "tilewidth":91,
  "type":"tileset",
  "version":"1.10"
 }

@@ -10,7 +10,7 @@ import SpriteKit
 
 extension SKAction {
     public static func playerRun() -> SKAction {
-        return .repeatForever(.animate(with: .init(withFormat: "run%@", range: 1...8), timePerFrame: 0.1))
+        return .repeatForever(.animate(with: .init(withFormat: "playerRun%@", range: 1...8), timePerFrame: 0.1))
     }
     
     public static func playerJump() -> SKAction {
@@ -18,6 +18,6 @@ extension SKAction {
     }
     
     public static func playerWallSlide() -> SKAction {
-        return .repeatForever(.animate(with: .init(withFormat: "WallSlide", range: 1...1), timePerFrame: 1))
+        return .repeatForever(.animate(with: .init(withFormat: "playerWallSlide%@", range: 1...1), timePerFrame: 1))
     }
 }

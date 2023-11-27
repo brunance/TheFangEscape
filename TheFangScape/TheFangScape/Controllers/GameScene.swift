@@ -63,7 +63,7 @@ public class GameScene: SKScene {
         let camera = SKCameraNode()
         self.addChild(camera)
         self.camera = camera
-        self.camera?.setScale(1.8)
+        self.camera?.setScale(1.2)
         
     }
     
