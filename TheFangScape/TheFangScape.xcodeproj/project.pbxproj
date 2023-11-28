@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		06B0B3DA2B10F47100899163 /* SpikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B0B3D92B10F47100899163 /* SpikeEntity.swift */; };
 		06B0B3DC2B10F4A600899163 /* isSpikeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B0B3DB2B10F4A600899163 /* isSpikeComponent.swift */; };
+		0CCAC7832B1612170014C8A0 /* level2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAC7812B1612160014C8A0 /* level2.json */; };
+		0CCAC7842B1612170014C8A0 /* level3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAC7822B1612170014C8A0 /* level3.json */; };
 		5177CFB82B0CD8F000896444 /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177CFB72B0CD8F000896444 /* ItemEntity.swift */; };
 		5177CFBA2B0CF7CA00896444 /* IsItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177CFB92B0CF7CA00896444 /* IsItemComponent.swift */; };
 		660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */; };
@@ -73,6 +75,8 @@
 /* Begin PBXFileReference section */
 		06B0B3D92B10F47100899163 /* SpikeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpikeEntity.swift; sourceTree = "<group>"; };
 		06B0B3DB2B10F4A600899163 /* isSpikeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isSpikeComponent.swift; sourceTree = "<group>"; };
+		0CCAC7812B1612160014C8A0 /* level2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level2.json; sourceTree = "<group>"; };
+		0CCAC7822B1612170014C8A0 /* level3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level3.json; sourceTree = "<group>"; };
 		5177CFB72B0CD8F000896444 /* ItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntity.swift; sourceTree = "<group>"; };
 		5177CFB92B0CF7CA00896444 /* IsItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsItemComponent.swift; sourceTree = "<group>"; };
 		660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureArray+TextureBuilder.swift"; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 			children = (
 				764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */,
 				767C75112B0CF7B000D5E61B /* level1.json */,
+				0CCAC7812B1612160014C8A0 /* level2.json */,
+				0CCAC7822B1612170014C8A0 /* level3.json */,
 				764BF4492B0CEEC700EDB700 /* Ground.json */,
 				76F696392B0BCF7E000B4ED4 /* LevelData.swift */,
 				76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */,
@@ -353,8 +359,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				767C75122B0CF7B000D5E61B /* level1.json in Resources */,
+				0CCAC7832B1612170014C8A0 /* level2.json in Resources */,
 				76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */,
 				764BF44A2B0CEEC700EDB700 /* Ground.json in Resources */,
+				0CCAC7842B1612170014C8A0 /* level3.json in Resources */,
 				76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

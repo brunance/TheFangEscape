@@ -297,7 +297,7 @@
                 {
                  "name":"type",
                  "type":"string",
-                 "value":"trap"
+                 "value":"trapShoot"
                 }]
         }, 
         {
@@ -321,7 +321,7 @@
                 {
                  "name":"type",
                  "type":"string",
-                 "value":"block"
+                 "value":"ChangeBlock"
                 }]
         }, 
         {
@@ -333,7 +333,7 @@
                 {
                  "name":"type",
                  "type":"string",
-                 "value":"block"
+                 "value":"ChangeBlock"
                 }]
         }],
  "tilewidth":91,
