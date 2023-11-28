@@ -21,7 +21,7 @@ class Win: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        let arraySprite = Array<SKTexture>.init(withFormat: "nome_do_asset", range: 1...3)
+        let arraySprite = Array<SKTexture>.init(withFormat: "playerWin%@", range: 1...3)
         if let node = entity?.component(ofType: GKSKNodeComponent.self)?.node{
             node.run(.repeatForever(.animate(with: arraySprite, timePerFrame: 0.15)))
         }
