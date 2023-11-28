@@ -51,7 +51,8 @@ class WallSlideComponent: GKComponent {
     private func adjustVelocityForWallSlide() {
         guard let physicsComp = physicsComp else { return }
         
-        physicsComp.body.velocity.dy += -8
+        physicsComp.body.velocity.dy += -30
+        
         physicsComp.body.velocity.dy.fixedMin(-100)
         physicsComp.body.velocity.dx = 0
     }
