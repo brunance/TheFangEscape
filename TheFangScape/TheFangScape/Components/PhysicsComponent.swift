@@ -61,7 +61,7 @@ public class PhysicsComponent: GKComponent {
         guard let node else { return false }
         let height = node.calculateAccumulatedFrame().size.height
         let rayDistance = CGPoint(x: node.position.x,
-                                  y: node.position.y - (height/2) - 3)
+                                  y: node.position.y - (height/2) - 10)
         
         return raycast(checkFor: IsGroundComponent.self,
                        rayDistance: rayDistance)

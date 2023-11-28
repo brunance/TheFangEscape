@@ -69,9 +69,9 @@ class MovementComponent: GKComponent {
         if (physicsComp.isOnGround() && physicsComp.body.velocity.dx != 0) {
             stateMachineComp?.stateMachine.enter(Run.self)
         } else {
-            if physicsComp.body.velocity.dy < -2 {
+            if physicsComp.body.velocity.dy < -10 {
                 stateMachineComp?.stateMachine.enter(Jump.self)
-            } else if physicsComp.body.velocity.dy > 2 {
+            } else if physicsComp.body.velocity.dy > 10 {
                 stateMachineComp?.stateMachine.enter(Jump.self)
             }
         }

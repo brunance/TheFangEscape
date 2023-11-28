@@ -32,25 +32,10 @@ public class GameScene: SKScene {
         entityManager = SKEntityManager(scene: self)
         physicsWorld.contactDelegate = self
         setupScene()
-        
-        do {
-            let ice = IceEntity(position: .init(x: 80, y: 0), size: .init(width: 30, height: 30))
-            entityManager?.add(entity: ice)
-        }
-        do{
-            let fogoFatuo = ItemEntity(position: .init(x: 40, y: 0))
-            entityManager?.add(entity: fogoFatuo)
-        }
-        
-        do{
-            let spike = SpikeEntity(position: .init(x: -80, y: 0))
-            entityManager?.add(entity: spike)
-        }
     }
 
     private func setupScene() {
         self.backgroundColor = .black
-
 
         guard let entityManager,
         let levelData = TileSetManager.shared.loadScenarioData(named: "level1") else { return }
@@ -156,7 +141,7 @@ extension GameScene: SKPhysicsContactDelegate {
     
     public func checkForContactPlayerAndSpikeBegin(entityA: GKEntity, entityB: GKEntity) {
         let isPlayerAndSpikeContact = (entityA.component(ofType: IsPlayerComponent.self) != nil &&
-                                      entityB.component(ofType: isSpikeComponent.self) != nil)
+                                      entityB.component(ofType: IsSpikeComponent.self) != nil)
 
         if isPlayerAndSpikeContact {
             playerEntity?.deathComponent?.startDeath(by: isPlayerAndSpikeContact ? .trap : .dark)

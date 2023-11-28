@@ -7,12 +7,19 @@
 
 import Foundation
 
-extension Comparable {
-    mutating func clamp(_ minimum: Self, _ maximum: Self) {
-        self = Swift.min(Swift.max(self, minimum), maximum)
-    }
-    
-    mutating func fixedMin(_ minimum: Self) {
-        self = max(self, minimum)
+//extension Comparable {
+//    mutating func clamp(_ minimum: Self, _ maximum: Self) {
+//        self = Swift.min(Swift.max(self, minimum), maximum)
+//    }
+//    
+//    mutating func fixedMin(_ minimum: Self) {
+//        self = max(self, minimum)
+//        print("Slef \(self) -- min \(minimum)")
+//    }
+//}
+
+extension CGFloat {
+    mutating func fixedMin(_ minimum: CGFloat) {
+        self = CGFloat.maximum(self, minimum)
     }
 }

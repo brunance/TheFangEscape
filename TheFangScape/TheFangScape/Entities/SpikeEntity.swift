@@ -27,7 +27,7 @@ public class SpikeEntity: GKEntity {
         self.addComponent(physicsComp)
         
         
-        self.addComponent(isSpikeComponent())
+        self.addComponent(IsSpikeComponent())
     }
     
     required init?(coder: NSCoder) {
