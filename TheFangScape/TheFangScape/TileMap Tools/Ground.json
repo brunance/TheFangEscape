@@ -314,26 +314,26 @@
         }, 
         {
          "id":77,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/weekplatform_1.png",
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/ChangeBlock1.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
                 {
                  "name":"type",
                  "type":"string",
-                 "value":"ChangeBlock"
+                 "value":"changeBlock"
                 }]
         }, 
         {
          "id":76,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/weakPlatform0.png",
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/ChangeBlock0.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
                 {
                  "name":"type",
                  "type":"string",
-                 "value":"ChangeBlock"
+                 "value":"changeBlock"
                 }]
         }],
  "tilewidth":91,

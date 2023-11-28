@@ -21,7 +21,7 @@ class DeathByDark: GKState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        let arraySprite = Array<SKTexture>.init(withFormat: "nome_do_asset", range: 1...3)
+        let arraySprite = Array<SKTexture>.init(withFormat: "playerDeathByDark%@", range: 1...14)
         if let node = entity?.component(ofType: GKSKNodeComponent.self)?.node{
             node.run(.repeatForever(.animate(with: arraySprite, timePerFrame: 0.15)))
         }
