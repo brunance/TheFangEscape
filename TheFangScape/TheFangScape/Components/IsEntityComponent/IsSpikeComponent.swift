@@ -8,4 +8,4 @@
 import Foundation
 import GameplayKit
 
-public class isSpikeComponent: GKComponent { }
+public class IsSpikeComponent: GKComponent { }
