@@ -67,12 +67,12 @@ class MovementComponent: GKComponent {
             !physicsComp.isWallSliding(direction: self.direction) else { return }
         
         if (physicsComp.isOnGround() && physicsComp.body.velocity.dx != 0) {
-            stateMachineComp?.stateMachine.enter(Run.self)
+            stateMachineComp?.stateMachine.enter(RunningState.self)
         } else {
             if physicsComp.body.velocity.dy < -10 {
-                stateMachineComp?.stateMachine.enter(Jump.self)
+                stateMachineComp?.stateMachine.enter(JumpingState.self)
             } else if physicsComp.body.velocity.dy > 10 {
-                stateMachineComp?.stateMachine.enter(Jump.self)
+                stateMachineComp?.stateMachine.enter(JumpingState.self)
             }
         }
     }

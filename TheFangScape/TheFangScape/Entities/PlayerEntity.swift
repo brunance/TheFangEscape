@@ -37,12 +37,12 @@ public class PlayerEntity: GKEntity {
         self.addComponent(IsPlayerComponent())
         
         let animationStateMachine : GKStateMachine = .init(states: [
-            Run(self, action: SKAction.playerRun()),
-            Jump(self, action: SKAction.playerJump()),
-            WallSlide(self, action: SKAction.playerWallSlide()),
-            DeathByDark(self),
-            DeathByTrap(self),
-            Win(self)
+            RunningState(self, action: SKAction.playerRun()),
+            JumpingState(self, action: SKAction.playerJump()),
+            WallSlidingState(self, action: SKAction.playerWallSlide()),
+            DeathByDark(self, action: SKAction.playerDeathByDark()),
+            DeathByTrap(self, action: SKAction.playerDeathByTrap()),
+            WinningState(self, action: SKAction.playerWin())
         ])
         
         self.addComponent(AnimationStateMachineComponent(stateMachine: animationStateMachine))

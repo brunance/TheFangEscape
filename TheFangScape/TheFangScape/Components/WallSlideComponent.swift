@@ -40,7 +40,7 @@ class WallSlideComponent: GKComponent {
     private func startWallSlide() {
         guard let stateMachine = stateMachineComp else {return}
         
-        stateMachine.stateMachine.enter(WallSlide.self)
+        stateMachine.stateMachine.enter(WallSlidingState.self)
         isSliding = true
     }
     

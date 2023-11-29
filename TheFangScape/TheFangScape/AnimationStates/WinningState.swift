@@ -1,5 +1,5 @@
 //
-//  Run.swift
+//  Win.swift
 //  TheFangScape
 //
 //  Created by Luciano Uchoa on 16/11/23.
@@ -8,7 +8,7 @@
 import Foundation
 import GameplayKit
 
-class Run: GKState {
+class WinningState: GKState {
     
     weak var entity: GKEntity?
     var action: SKAction
@@ -19,12 +19,11 @@ class Run: GKState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        if(stateClass is Run.Type) { return false }
-        return true
+        return false
     }
     
     override func didEnter(from previousState: GKState?) {
-        if let node = entity?.component(ofType: GKSKNodeComponent.self)?.node {
+        if let node = entity?.component(ofType: GKSKNodeComponent.self)?.node{
             node.run(action)
         }
     }
