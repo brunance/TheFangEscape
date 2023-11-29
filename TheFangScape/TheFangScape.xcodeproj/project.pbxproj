@@ -28,7 +28,7 @@
 		66B79A9F2B10DE7100E60B11 /* DoorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79A9E2B10DE7100E60B11 /* DoorEntity.swift */; };
 		66B79AA12B10DED600E60B11 /* IsDoorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79AA02B10DED600E60B11 /* IsDoorComponent.swift */; };
 		66B79AA32B10DF3E00E60B11 /* WinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79AA22B10DF3E00E60B11 /* WinComponent.swift */; };
-		66B79ABA2B16383E00E60B11 /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 66B79AB92B16383E00E60B11 /* Ground.json */; };
+		66B79AC22B1782B100E60B11 /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 66B79AC12B1782B100E60B11 /* Ground.json */; };
 		66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6792B04E0BB00F7940E /* MovementComponent.swift */; };
 		66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6812B06635600F7940E /* WallSlideComponent.swift */; };
 		66CAD6842B06D54600F7940E /* AnimationStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */; };
@@ -94,7 +94,7 @@
 		66B79A9E2B10DE7100E60B11 /* DoorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorEntity.swift; sourceTree = "<group>"; };
 		66B79AA02B10DED600E60B11 /* IsDoorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsDoorComponent.swift; sourceTree = "<group>"; };
 		66B79AA22B10DF3E00E60B11 /* WinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinComponent.swift; sourceTree = "<group>"; };
-		66B79AB92B16383E00E60B11 /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Ground.json; path = "../../../../../Dropbox (Developer Academy)/DOCS Games/Tileset/Ground.json"; sourceTree = "<group>"; };
+		66B79AC12B1782B100E60B11 /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ground.json; sourceTree = "<group>"; };
 		66CAD6792B04E0BB00F7940E /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		66CAD6812B06635600F7940E /* WallSlideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallSlideComponent.swift; sourceTree = "<group>"; };
 		66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStateComponent.swift; sourceTree = "<group>"; };
@@ -182,11 +182,11 @@
 		76F696372B0BCF51000B4ED4 /* TileMap Tools */ = {
 			isa = PBXGroup;
 			children = (
+				66B79AC12B1782B100E60B11 /* Ground.json */,
 				764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */,
 				767C75112B0CF7B000D5E61B /* level1.json */,
 				0CCAC7812B1612160014C8A0 /* level2.json */,
 				0CCAC7822B1612170014C8A0 /* level3.json */,
-				66B79AB92B16383E00E60B11 /* Ground.json */,
 				76F696392B0BCF7E000B4ED4 /* LevelData.swift */,
 				76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */,
 				76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */,
@@ -369,7 +369,7 @@
 				767C75122B0CF7B000D5E61B /* level1.json in Resources */,
 				0CCAC7832B1612170014C8A0 /* level2.json in Resources */,
 				76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */,
-				66B79ABA2B16383E00E60B11 /* Ground.json in Resources */,
+				66B79AC22B1782B100E60B11 /* Ground.json in Resources */,
 				0CCAC7842B1612170014C8A0 /* level3.json in Resources */,
 				76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */,
 			);
