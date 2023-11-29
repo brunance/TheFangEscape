@@ -28,7 +28,10 @@
 		66B79A9F2B10DE7100E60B11 /* DoorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79A9E2B10DE7100E60B11 /* DoorEntity.swift */; };
 		66B79AA12B10DED600E60B11 /* IsDoorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79AA02B10DED600E60B11 /* IsDoorComponent.swift */; };
 		66B79AA32B10DF3E00E60B11 /* WinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79AA22B10DF3E00E60B11 /* WinComponent.swift */; };
-		66B79AC22B1782B100E60B11 /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 66B79AC12B1782B100E60B11 /* Ground.json */; };
+		66B79ABA2B16383E00E60B11 /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 66B79AB92B16383E00E60B11 /* Ground.json */; };
+		66B79ABC2B176C7D00E60B11 /* SawEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79ABB2B176C7D00E60B11 /* SawEntity.swift */; };
+		66B79ABE2B176D8C00E60B11 /* IsSawComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79ABD2B176D8C00E60B11 /* IsSawComponent.swift */; };
+		66B79AC02B176FE100E60B11 /* RotatingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79ABF2B176FE100E60B11 /* RotatingComponent.swift */; };
 		66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6792B04E0BB00F7940E /* MovementComponent.swift */; };
 		66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6812B06635600F7940E /* WallSlideComponent.swift */; };
 		66CAD6842B06D54600F7940E /* AnimationStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */; };
@@ -104,7 +107,10 @@
 		66B79A9E2B10DE7100E60B11 /* DoorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorEntity.swift; sourceTree = "<group>"; };
 		66B79AA02B10DED600E60B11 /* IsDoorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsDoorComponent.swift; sourceTree = "<group>"; };
 		66B79AA22B10DF3E00E60B11 /* WinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinComponent.swift; sourceTree = "<group>"; };
-		66B79AC12B1782B100E60B11 /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ground.json; sourceTree = "<group>"; };
+		66B79AB92B16383E00E60B11 /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Ground.json; path = "../../../../../Dropbox (Developer Academy)/DOCS Games/Tileset/Ground.json"; sourceTree = "<group>"; };
+		66B79ABB2B176C7D00E60B11 /* SawEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SawEntity.swift; sourceTree = "<group>"; };
+		66B79ABD2B176D8C00E60B11 /* IsSawComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsSawComponent.swift; sourceTree = "<group>"; };
+		66B79ABF2B176FE100E60B11 /* RotatingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingComponent.swift; sourceTree = "<group>"; };
 		66CAD6792B04E0BB00F7940E /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		66CAD6812B06635600F7940E /* WallSlideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallSlideComponent.swift; sourceTree = "<group>"; };
 		66CAD6832B06D54600F7940E /* AnimationStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStateComponent.swift; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 				66B79A9C2B10CB6C00E60B11 /* IsBulletComponent.swift */,
 				66B79AA02B10DED600E60B11 /* IsDoorComponent.swift */,
 				06B0B3DB2B10F4A600899163 /* IsSpikeComponent.swift */,
+				66B79ABD2B176D8C00E60B11 /* IsSawComponent.swift */,
 			);
 			path = IsEntityComponent;
 			sourceTree = "<group>";
@@ -339,6 +346,7 @@
 				668B07112B0E4A3C00D4B0A5 /* IceEntity.swift */,
 				66B79A9E2B10DE7100E60B11 /* DoorEntity.swift */,
 				06B0B3D92B10F47100899163 /* SpikeEntity.swift */,
+				66B79ABB2B176C7D00E60B11 /* SawEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 				763E45492B0D223900C4F3B0 /* RemoveWhenTouchWall.swift */,
 				761097072B0F7868003BA736 /* DestructableComponent.swift */,
 				66B79AA22B10DF3E00E60B11 /* WinComponent.swift */,
+				66B79ABF2B176FE100E60B11 /* RotatingComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -492,11 +501,14 @@
 				5177CFB82B0CD8F000896444 /* ItemEntity.swift in Sources */,
 				768961C22B1A27B5005A96B8 /* FloorSelectionView.swift in Sources */,
 				66CAD6942B06D73D00F7940E /* WinningState.swift in Sources */,
+				66B79AC02B176FE100E60B11 /* RotatingComponent.swift in Sources */,
 				76FCDC872B08F5DF00E55B2A /* GKSKNodeComponent+Light.swift in Sources */,
+				66B79ABE2B176D8C00E60B11 /* IsSawComponent.swift in Sources */,
 				66B79A9F2B10DE7100E60B11 /* DoorEntity.swift in Sources */,
 				76F6963E2B0BCF7E000B4ED4 /* TileSetData.swift in Sources */,
 				668B07142B0E4A7300D4B0A5 /* IsIceComponent.swift in Sources */,
 				6653EEEA2B0D00AF00D841FD /* DeathComponent.swift in Sources */,
+				66B79ABC2B176C7D00E60B11 /* SawEntity.swift in Sources */,
 				7610970A2B0F7B22003BA736 /* Comparable+Clamp.swift in Sources */,
 				6653EEE22B0CD13300D841FD /* TrapEntity.swift in Sources */,
 				76FCDC892B08F7DD00E55B2A /* LightComponent.swift in Sources */,

@@ -13,9 +13,12 @@ enum TileType: String {
     case player = "player"
     case wall = "wall"
     case trapShoot = "trapShoot"
+    case trapSpike = "trapSpike"
+    case trapSaw = "trapSaw"
     case light = "item"
     case door = "door"
     case changeBlock = "changeBlock"
+    case platform = "platform"
 }
 
 extension SKTileMapNode {
@@ -87,7 +90,6 @@ extension SKTileMapNode {
         case TileType.trapShoot.rawValue:
             let data = (tileDefinition.userData?.value(forKey: "direction") as? String)
             let direction: Direction = data == "1" ? .right : .left
-
             let trap = TrapEntity(position: tilePosition, entityManager: entityManager, shootDirection: direction)
             entityManager.add(entity: trap)
         case TileType.light.rawValue:
@@ -99,6 +101,15 @@ extension SKTileMapNode {
         case TileType.changeBlock.rawValue:
             let block = ChangeStateBlockEntity(position: tilePosition, size: tileSize)
             entityManager.add(entity: block)
+        case TileType.trapSpike.rawValue:
+            let spike = SpikeEntity(position: tilePosition, size: tileSize)
+            entityManager.add(entity: spike)
+        case TileType.trapSaw.rawValue:
+            let saw = SawEntity(position: tilePosition, size: tileSize)
+            entityManager.add(entity: saw)
+        case TileType.platform.rawValue :
+            let platform = PlatformEntity(position: tilePosition, size: tileSize)
+            entityManager.add(entity: platform)
         default:
             break
         }
