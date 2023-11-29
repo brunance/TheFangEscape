@@ -99,7 +99,9 @@ extension SKTileMapNode {
             let door = DoorEntity(position: tilePosition, size: tileSize)
             entityManager.add(entity: door)
         case TileType.changeBlock.rawValue:
-            let block = ChangeStateBlockEntity(position: tilePosition, size: tileSize)
+            let data = (tileDefinition.userData?.value(forKey: "status") as? String)
+            let status: Status = data == "active" ? .active : .desactive
+            let block = ChangeStateBlockEntity(position: tilePosition, size: tileSize, status: status)
             entityManager.add(entity: block)
         case TileType.trapSpike.rawValue:
             let spike = SpikeEntity(position: tilePosition, size: tileSize)

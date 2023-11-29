@@ -12,12 +12,12 @@ public class ChangeStateComponent: GKComponent {
     
     private var firstState: () -> ()
     private var secondState: () -> ()
-    private var isFirstState: Bool
+    var isFirstState: Bool
     
-    init(firstState: @escaping () -> Void, secondState: @escaping () -> Void) {
+    init(firstState: @escaping () -> Void, secondState: @escaping () -> Void, isFirstState: Status) {
         self.firstState = firstState
         self.secondState = secondState
-        self.isFirstState = true
+        self.isFirstState = isFirstState.rawValue == 1.0 ? true : false
         super.init()
     }
     
