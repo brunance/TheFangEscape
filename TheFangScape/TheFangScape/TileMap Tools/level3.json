@@ -97,7 +97,7 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 73, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 82, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -105,8 +105,8 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 76, 0, 0, 0, 0, 0, 74, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 75, 75, 75, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 86, 0, 0, 0, 0, 0, 84, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 81, 81, 81, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -121,9 +121,9 @@
          "opacity":1,
          "properties":[
                 {
-                 "name":"isNotRendered",
-                 "type":"bool",
-                 "value":true
+                 "name":"isRendered",
+                 "type":"string",
+                 "value":"false"
                 }],
          "type":"tilelayer",
          "visible":true,
@@ -135,15 +135,15 @@
  "nextobjectid":1,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.10.1",
+ "tiledversion":"1.10.2",
  "tileheight":90,
  "tilesets":[
         {
          "firstgid":1,
-         "source":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/Ground.tsx"
+         "source":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/Ground.tsx"
         }, 
         {
-         "firstgid":79,
+         "firstgid":87,
          "source":":\/automap-tiles.tsx"
         }],
  "tilewidth":90,

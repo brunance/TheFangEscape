@@ -98,14 +98,14 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 86, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 74, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 84, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 73, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 82, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -119,6 +119,12 @@
          "id":4,
          "name":"mapPosition",
          "opacity":1,
+         "properties":[
+                {
+                 "name":"isRendered",
+                 "type":"string",
+                 "value":"false"
+                }],
          "type":"tilelayer",
          "visible":true,
          "width":15,
@@ -128,22 +134,16 @@
  "nextlayerid":5,
  "nextobjectid":1,
  "orientation":"orthogonal",
- "properties":[
-        {
-         "name":"isNotRendered",
-         "type":"bool",
-         "value":true
-        }],
  "renderorder":"right-down",
- "tiledversion":"1.10.1",
+ "tiledversion":"1.10.2",
  "tileheight":90,
  "tilesets":[
         {
          "firstgid":1,
-         "source":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/Ground.tsx"
+         "source":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/Ground.tsx"
         }, 
         {
-         "firstgid":79,
+         "firstgid":87,
          "source":":\/automap-tiles.tsx"
         }],
  "tilewidth":90,

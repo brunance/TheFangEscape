@@ -26,7 +26,7 @@ class WallSlideComponent: GKComponent {
         guard let physicsComp = physicsComp, let movementComp = movementComp else { return }
         
         if isSliding {
-            if physicsComp.isOnGround() {
+            if physicsComp.isOnGround() || !physicsComp.touchedOnWall(direction: movementComp.direction){
                 stopWallSlide()
             } else {
                 adjustVelocityForWallSlide()
@@ -51,9 +51,9 @@ class WallSlideComponent: GKComponent {
     private func adjustVelocityForWallSlide() {
         guard let physicsComp = physicsComp else { return }
         
-        physicsComp.body.velocity.dy += -30
+        physicsComp.body.velocity.dy += -30 
         
-        physicsComp.body.velocity.dy.fixedMin(-100)
+        physicsComp.body.velocity.dy.fixedMin(-150)
         physicsComp.body.velocity.dx = 0
     }
 

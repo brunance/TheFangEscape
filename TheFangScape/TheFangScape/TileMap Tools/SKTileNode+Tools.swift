@@ -97,7 +97,7 @@ extension SKTileMapNode {
             let door = DoorEntity(position: tilePosition, size: tileSize)
             entityManager.add(entity: door)
         case TileType.changeBlock.rawValue:
-            let block = ChangeStateBlockEntity(position: tilePosition)
+            let block = ChangeStateBlockEntity(position: tilePosition, size: tileSize)
             entityManager.add(entity: block)
         default:
             break

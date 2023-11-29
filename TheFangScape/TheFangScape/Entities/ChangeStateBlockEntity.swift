@@ -10,8 +10,8 @@ import GameplayKit
 
 public class ChangeStateBlockEntity: BlockEntity {
     
-    public override init(position: CGPoint = .zero) {
-        super.init(position: position)
+    public override init(position: CGPoint = .zero, size: CGSize) {
+        super.init(position: position, size: size)
         
         guard let physicsComp = self.component(ofType: PhysicsComponent.self),
               let node = self.component(ofType: GKSKNodeComponent.self)?.node

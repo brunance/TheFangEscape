@@ -11,10 +11,10 @@ import SpriteKit
 
 public class BlockEntity: GKEntity {
     
-    public init(position: CGPoint = .zero) {
+    public init(position: CGPoint = .zero, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .brown, size: .init(width: 45, height: 45))
+        let node = SKSpriteNode(color: .brown, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         

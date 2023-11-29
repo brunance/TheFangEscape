@@ -32,7 +32,7 @@ public struct LayerData: Codable {
         self.width = try container.decode(Int.self, forKey: .width)
         self.properties = try container.decodeIfPresent([LayerProperty].self, forKey: .properties)
         self.isNotRendered = properties?.contains(where: { propety in
-            return propety.name == "isNotRendered"
+            return propety.name == "isRendered"
         }) ?? false
     }
 }

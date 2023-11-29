@@ -21,6 +21,8 @@ public class WinComponent: GKComponent {
     public func startWin() {
         guard let stateMachine = stateComp?.stateMachine else {return}
         
+        entity?.component(ofType: PhysicsComponent.self)?.body.velocity.dx = 0
+        entity?.removeComponent(ofType: PhysicsComponent.self)
         entity?.removeComponent(ofType: MovementComponent.self)
         entity?.removeComponent(ofType: JumpComponent.self)
         
