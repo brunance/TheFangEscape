@@ -19,7 +19,8 @@ struct ContentView: View {
         SpriteView(scene: gameScene,
                    debugOptions: [
                     .showsPhysics,
-                   ]).ignoresSafeArea()
+                    .showsNodeCount,
+                   ])//.ignoresSafeArea()
         #else
         SpriteView(scene: gameScene).ignoresSafeArea()
         #endif

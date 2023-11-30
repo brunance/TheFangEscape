@@ -46,6 +46,7 @@
 		764BF4462B0CE7F100EDB700 /* SKTileNode+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */; };
 		764BF4482B0CEB1E00EDB700 /* ScenarioEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */; };
 		764BF44C2B0CF17C00EDB700 /* IsPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */; };
+		765AF6662B18BEDD007BD55A /* GameScene+Setup Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765AF6652B18BEDD007BD55A /* GameScene+Setup Tools.swift */; };
 		767C75122B0CF7B000D5E61B /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = 767C75112B0CF7B000D5E61B /* level1.json */; };
 		76F6963C2B0BCF7E000B4ED4 /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F696392B0BCF7E000B4ED4 /* LevelData.swift */; };
 		76F6963D2B0BCF7E000B4ED4 /* TileSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */; };
@@ -112,6 +113,7 @@
 		764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKTileNode+Tools.swift"; sourceTree = "<group>"; };
 		764BF4472B0CEB1E00EDB700 /* ScenarioEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioEntity.swift; sourceTree = "<group>"; };
 		764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPlayerComponent.swift; sourceTree = "<group>"; };
+		765AF6652B18BEDD007BD55A /* GameScene+Setup Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Setup Tools.swift"; sourceTree = "<group>"; };
 		767C75112B0CF7B000D5E61B /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
 		76F696392B0BCF7E000B4ED4 /* LevelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
 		76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSetManager.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				76FCDC272B027C5E00E55B2A /* GameScene.swift */,
+				765AF6652B18BEDD007BD55A /* GameScene+Setup Tools.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				66B79A9D2B10CB6C00E60B11 /* IsBulletComponent.swift in Sources */,
 				761097082B0F7868003BA736 /* DestructableComponent.swift in Sources */,
 				76F6963C2B0BCF7E000B4ED4 /* LevelData.swift in Sources */,
+				765AF6662B18BEDD007BD55A /* GameScene+Setup Tools.swift in Sources */,
 				76FCDC192B027C2500E55B2A /* TheFangScapeApp.swift in Sources */,
 				76FCDC832B08ED3400E55B2A /* LightMask.swift in Sources */,
 				764BF44C2B0CF17C00EDB700 /* IsPlayerComponent.swift in Sources */,

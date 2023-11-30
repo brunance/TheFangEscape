@@ -27,6 +27,10 @@ public class PlayerEntity: GKEntity {
         return self.component(ofType: WinComponent.self)
     }
     
+    public weak var node: SKNode? {
+        return self.component(ofType: GKSKNodeComponent.self)?.node
+    }
+    
     public init(position: CGPoint = .zero) {
         super.init()
         

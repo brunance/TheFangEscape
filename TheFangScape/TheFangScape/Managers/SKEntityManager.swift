@@ -12,9 +12,9 @@ import GameplayKit
 public class SKEntityManager {
     
     public var entities = Set<GKEntity>()
-    private weak var scene: SKScene?
+    private weak var scene: GameScene?
     
-    public init(scene: SKScene) {
+    public init(scene: GameScene) {
         self.scene = scene
     }
     
@@ -27,7 +27,7 @@ public class SKEntityManager {
         if let parentNode = parent?.component(ofType: GKSKNodeComponent.self)?.node {
             parentNode.addChild(node)
         } else {
-            scene.addChild(node)
+            scene.mask.addChild(node)
         }
     }
     
@@ -49,6 +49,12 @@ public class SKEntityManager {
     public func first(withComponent component: GKComponent.Type) -> GKEntity? {
         return entities.first { entity in
             return entity.component(ofType: component) != nil
+        }
+    }
+    
+    public func removeAll() {
+        for entity in entities {
+            self.remove(entity: entity)
         }
     }
     

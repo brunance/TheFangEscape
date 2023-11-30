@@ -15,13 +15,18 @@ public class GameScene: SKScene {
     
     private var lastUpdatedTime: TimeInterval = 0
     
-    private weak var playerEntity: PlayerEntity?
+    internal weak var playerEntity: PlayerEntity?
+    
+    internal var mask = SKCropNode()
     
     
     public override init(size: CGSize) {
         super.init(size: size)
         self.anchorPoint = .init(x: 0.5, y: 0.5)
         self.scaleMode = .aspectFill
+        self.mask.maskNode = SKSpriteNode(imageNamed: "mask")
+        self.mask.maskNode?.setScale(3)
+        self.addChild(mask)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,29 +34,9 @@ public class GameScene: SKScene {
     }
     
     public override func sceneDidLoad() {
-        entityManager = SKEntityManager(scene: self)
-        physicsWorld.contactDelegate = self
-        setupScene()
+        startUpScene(withName: "level1")
     }
 
-    private func setupScene() {
-        self.backgroundColor = .black
-
-        guard let entityManager,
-        let levelData = TileSetManager.shared.loadScenarioData(named: "level1") else { return }
-        
-        let scenario = ScenarioEntity(levelData: levelData, entityManager: entityManager)
-        entityManager.add(entity: scenario)
-
-        playerEntity = entityManager.first(withComponent: IsPlayerComponent.self) as? PlayerEntity
-
-        let camera = SKCameraNode()
-        self.addChild(camera)
-        self.camera = camera
-        self.camera?.setScale(1.2)
-        
-    }
-    
     public override func update(_ currentTime: TimeInterval) {
         if (lastUpdatedTime == 0) {
             lastUpdatedTime = currentTime
