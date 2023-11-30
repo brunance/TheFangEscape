@@ -27,6 +27,10 @@ class DoorEntity: GKEntity {
         self.addComponent(physicsComp)
 
         self.addComponent(IsDoorComponent())
+        
+        let lightComp = LightComponent(color: .init(
+            red: 0.3, green: 0.3, blue: 0.4, alpha: 0.2))
+        self.addComponent(lightComp)
     }
     
     required init?(coder: NSCoder) {

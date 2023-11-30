@@ -19,13 +19,12 @@ public class GameScene: SKScene {
     
     internal var mask = SKCropNode()
     
-    
     public override init(size: CGSize) {
         super.init(size: size)
         self.anchorPoint = .init(x: 0.5, y: 0.5)
         self.scaleMode = .aspectFill
         self.mask.maskNode = SKSpriteNode(imageNamed: "mask")
-        self.mask.maskNode?.setScale(3)
+        self.mask.maskNode?.setScale(5)
         self.addChild(mask)
     }
     
@@ -34,7 +33,7 @@ public class GameScene: SKScene {
     }
     
     public override func sceneDidLoad() {
-        startUpScene(withName: "level1")
+        startUpScene(withName: LevelManager.shared.currentLevelName)
     }
 
     public override func update(_ currentTime: TimeInterval) {

@@ -28,11 +28,13 @@ public class WinComponent: GKComponent {
         
         stateMachine.enter(Win.self)
         
-        let sequence = SKAction.sequence([.wait(forDuration: 1.5)])
+        entity?.component(ofType: TorchComponent.self)?.restore()
+        
+        let sequence = SKAction.sequence([.wait(forDuration: 1)])
        
         node?.run(sequence) { [weak self] in
-            guard let entity = self?.entity else { return }
-            entity.component(ofType: DestructableComponent.self)?.destroy()
+            guard let scene = self?.node?.scene as? GameScene else { return }
+            scene.finishLevel()
         }
     }
 }

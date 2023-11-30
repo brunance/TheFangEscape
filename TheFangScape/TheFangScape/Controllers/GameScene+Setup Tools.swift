@@ -18,7 +18,7 @@ extension GameScene {
     }
     
     internal func setupScene(levelNamed: String) {
-        self.mask.maskNode?.setScale(3)
+        self.mask.maskNode?.setScale(5)
         self.backgroundColor = .black
 
         guard let entityManager,
@@ -29,17 +29,21 @@ extension GameScene {
 
         self.playerEntity = entityManager.first(withComponent: IsPlayerComponent.self) as? PlayerEntity
 
+        setupCamera()
+    }
+    
+    private func setupCamera() {
         let camera = SKCameraNode()
         self.addChild(camera)
         self.camera = camera
         self.camera?.setScale(1.2)
-        
     }
     
-    internal func finishLevel(completion: @escaping ()->Void) {
+    internal func finishLevel() {
         startEndLevelAnimation {
             self.entityManager?.removeAll()
-            completion()
+            LevelManager.shared.nextLevel()
+            self.startUpScene(withName: LevelManager.shared.currentLevelName)
         }
     }
     

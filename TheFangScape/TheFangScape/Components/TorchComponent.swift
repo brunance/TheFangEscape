@@ -37,7 +37,7 @@ public class TorchComponent: GKComponent {
         entity?.addComponent(lightComp)
         self.lightComp = lightComp
         
-        lightComp.lightNode.falloff = 2
+        lightComp.lightNode.falloff = 1
         lightComp.lightNode.categoryBitMask = LightMask.torch
         
     }
