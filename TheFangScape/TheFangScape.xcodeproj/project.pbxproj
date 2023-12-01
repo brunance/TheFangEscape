@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		06B0B3DA2B10F47100899163 /* SpikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B0B3D92B10F47100899163 /* SpikeEntity.swift */; };
 		06B0B3DC2B10F4A600899163 /* IsSpikeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B0B3DB2B10F4A600899163 /* IsSpikeComponent.swift */; };
-		0CCAC7832B1612170014C8A0 /* level2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAC7812B1612160014C8A0 /* level2.json */; };
-		0CCAC7842B1612170014C8A0 /* level3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAC7822B1612170014C8A0 /* level3.json */; };
+		0CCAC7832B1612170014C8A0 /* floor1-level2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAC7812B1612160014C8A0 /* floor1-level2.json */; };
+		0CCAC7842B1612170014C8A0 /* floor1-level3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAC7822B1612170014C8A0 /* floor1-level3.json */; };
 		5177CFB82B0CD8F000896444 /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177CFB72B0CD8F000896444 /* ItemEntity.swift */; };
 		5177CFBA2B0CF7CA00896444 /* IsItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177CFB92B0CF7CA00896444 /* IsItemComponent.swift */; };
 		660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */; };
@@ -48,7 +48,15 @@
 		764BF44C2B0CF17C00EDB700 /* IsPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */; };
 		765AF6662B18BEDD007BD55A /* GameScene+Setup Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765AF6652B18BEDD007BD55A /* GameScene+Setup Tools.swift */; };
 		765AF6682B18DD5E007BD55A /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765AF6672B18DD5E007BD55A /* LevelManager.swift */; };
-		767C75122B0CF7B000D5E61B /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = 767C75112B0CF7B000D5E61B /* level1.json */; };
+		767C75122B0CF7B000D5E61B /* floor1-level1.json in Resources */ = {isa = PBXBuildFile; fileRef = 767C75112B0CF7B000D5E61B /* floor1-level1.json */; };
+		768961BC2B1A1F28005A96B8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768961BB2B1A1F28005A96B8 /* HomeView.swift */; };
+		768961BF2B1A21D9005A96B8 /* NovaSquareSlim-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 768961BE2B1A21D9005A96B8 /* NovaSquareSlim-Book.ttf */; };
+		768961C22B1A27B5005A96B8 /* FloorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768961C12B1A27B5005A96B8 /* FloorSelectionView.swift */; };
+		768961C62B1A2879005A96B8 /* FloorSelectionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768961C52B1A2879005A96B8 /* FloorSelectionScene.swift */; };
+		768961C82B1A2893005A96B8 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768961C72B1A2893005A96B8 /* ButtonNode.swift */; };
+		768961CD2B1A3247005A96B8 /* RoomSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768961CC2B1A3247005A96B8 /* RoomSelectionView.swift */; };
+		768961D02B1A33FC005A96B8 /* RoomSelectionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768961CF2B1A33FC005A96B8 /* RoomSelectionScene.swift */; };
+		768961D22B1A5690005A96B8 /* RoomButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768961D12B1A5690005A96B8 /* RoomButtonNode.swift */; };
 		76F6963C2B0BCF7E000B4ED4 /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F696392B0BCF7E000B4ED4 /* LevelData.swift */; };
 		76F6963D2B0BCF7E000B4ED4 /* TileSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */; };
 		76F6963E2B0BCF7E000B4ED4 /* TileSetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */; };
@@ -77,8 +85,8 @@
 /* Begin PBXFileReference section */
 		06B0B3D92B10F47100899163 /* SpikeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpikeEntity.swift; sourceTree = "<group>"; };
 		06B0B3DB2B10F4A600899163 /* IsSpikeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsSpikeComponent.swift; sourceTree = "<group>"; };
-		0CCAC7812B1612160014C8A0 /* level2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level2.json; sourceTree = "<group>"; };
-		0CCAC7822B1612170014C8A0 /* level3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level3.json; sourceTree = "<group>"; };
+		0CCAC7812B1612160014C8A0 /* floor1-level2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level2.json"; sourceTree = "<group>"; };
+		0CCAC7822B1612170014C8A0 /* floor1-level3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level3.json"; sourceTree = "<group>"; };
 		5177CFB72B0CD8F000896444 /* ItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntity.swift; sourceTree = "<group>"; };
 		5177CFB92B0CF7CA00896444 /* IsItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsItemComponent.swift; sourceTree = "<group>"; };
 		660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureArray+TextureBuilder.swift"; sourceTree = "<group>"; };
@@ -116,7 +124,16 @@
 		764BF44B2B0CF17C00EDB700 /* IsPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPlayerComponent.swift; sourceTree = "<group>"; };
 		765AF6652B18BEDD007BD55A /* GameScene+Setup Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Setup Tools.swift"; sourceTree = "<group>"; };
 		765AF6672B18DD5E007BD55A /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
-		767C75112B0CF7B000D5E61B /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
+		767C75112B0CF7B000D5E61B /* floor1-level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level1.json"; sourceTree = "<group>"; };
+		768961BB2B1A1F28005A96B8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		768961BE2B1A21D9005A96B8 /* NovaSquareSlim-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NovaSquareSlim-Book.ttf"; sourceTree = "<group>"; };
+		768961C02B1A2212005A96B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		768961C12B1A27B5005A96B8 /* FloorSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorSelectionView.swift; sourceTree = "<group>"; };
+		768961C52B1A2879005A96B8 /* FloorSelectionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorSelectionScene.swift; sourceTree = "<group>"; };
+		768961C72B1A2893005A96B8 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		768961CC2B1A3247005A96B8 /* RoomSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomSelectionView.swift; sourceTree = "<group>"; };
+		768961CF2B1A33FC005A96B8 /* RoomSelectionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomSelectionScene.swift; sourceTree = "<group>"; };
+		768961D12B1A5690005A96B8 /* RoomButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomButtonNode.swift; sourceTree = "<group>"; };
 		76F696392B0BCF7E000B4ED4 /* LevelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
 		76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSetManager.swift; sourceTree = "<group>"; };
 		76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSetData.swift; sourceTree = "<group>"; };
@@ -183,14 +200,68 @@
 			path = AnimationStates;
 			sourceTree = "<group>";
 		};
+		768961BA2B1A1F17005A96B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76FCDC1A2B027C2500E55B2A /* ContentView.swift */,
+				768961BB2B1A1F28005A96B8 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		768961BD2B1A21BF005A96B8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				768961BE2B1A21D9005A96B8 /* NovaSquareSlim-Book.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		768961C32B1A2857005A96B8 /* Floor Selection */ = {
+			isa = PBXGroup;
+			children = (
+				768961C12B1A27B5005A96B8 /* FloorSelectionView.swift */,
+				768961C52B1A2879005A96B8 /* FloorSelectionScene.swift */,
+				768961C72B1A2893005A96B8 /* ButtonNode.swift */,
+			);
+			path = "Floor Selection";
+			sourceTree = "<group>";
+		};
+		768961C42B1A2863005A96B8 /* Game Scene */ = {
+			isa = PBXGroup;
+			children = (
+				76FCDC272B027C5E00E55B2A /* GameScene.swift */,
+				765AF6652B18BEDD007BD55A /* GameScene+Setup Tools.swift */,
+			);
+			path = "Game Scene";
+			sourceTree = "<group>";
+		};
+		768961C92B1A31D6005A96B8 /* Floor 1 */ = {
+			isa = PBXGroup;
+			children = (
+				767C75112B0CF7B000D5E61B /* floor1-level1.json */,
+				0CCAC7812B1612160014C8A0 /* floor1-level2.json */,
+				0CCAC7822B1612170014C8A0 /* floor1-level3.json */,
+			);
+			path = "Floor 1";
+			sourceTree = "<group>";
+		};
+		768961CE2B1A33DF005A96B8 /* Room Selection */ = {
+			isa = PBXGroup;
+			children = (
+				768961CC2B1A3247005A96B8 /* RoomSelectionView.swift */,
+				768961CF2B1A33FC005A96B8 /* RoomSelectionScene.swift */,
+				768961D12B1A5690005A96B8 /* RoomButtonNode.swift */,
+			);
+			path = "Room Selection";
+			sourceTree = "<group>";
+		};
 		76F696372B0BCF51000B4ED4 /* TileMap Tools */ = {
 			isa = PBXGroup;
 			children = (
+				768961C92B1A31D6005A96B8 /* Floor 1 */,
 				66B79AC12B1782B100E60B11 /* Ground.json */,
 				764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */,
-				767C75112B0CF7B000D5E61B /* level1.json */,
-				0CCAC7812B1612160014C8A0 /* level2.json */,
-				0CCAC7822B1612170014C8A0 /* level3.json */,
 				76F696392B0BCF7E000B4ED4 /* LevelData.swift */,
 				76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */,
 				76F6963A2B0BCF7E000B4ED4 /* TileSetManager.swift */,
@@ -217,6 +288,9 @@
 		76FCDC172B027C2500E55B2A /* TheFangScape */ = {
 			isa = PBXGroup;
 			children = (
+				768961C02B1A2212005A96B8 /* Info.plist */,
+				768961BD2B1A21BF005A96B8 /* Fonts */,
+				768961BA2B1A1F17005A96B8 /* View */,
 				76F696372B0BCF51000B4ED4 /* TileMap Tools */,
 				76FCDC7F2B080E6000E55B2A /* Extensions */,
 				66CAD6852B06D57C00F7940E /* AnimationStates */,
@@ -225,7 +299,6 @@
 				76FCDC2B2B027F1400E55B2A /* Entities */,
 				76FCDC262B027C4F00E55B2A /* Controllers */,
 				76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */,
-				76FCDC1A2B027C2500E55B2A /* ContentView.swift */,
 				76FCDC1C2B027C2500E55B2A /* Assets.xcassets */,
 				76FCDC1E2B027C2500E55B2A /* Preview Content */,
 			);
@@ -243,8 +316,9 @@
 		76FCDC262B027C4F00E55B2A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				76FCDC272B027C5E00E55B2A /* GameScene.swift */,
-				765AF6652B18BEDD007BD55A /* GameScene+Setup Tools.swift */,
+				768961CE2B1A33DF005A96B8 /* Room Selection */,
+				768961C42B1A2863005A96B8 /* Game Scene */,
+				768961C32B1A2857005A96B8 /* Floor Selection */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -372,11 +446,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				767C75122B0CF7B000D5E61B /* level1.json in Resources */,
-				0CCAC7832B1612170014C8A0 /* level2.json in Resources */,
+				768961BF2B1A21D9005A96B8 /* NovaSquareSlim-Book.ttf in Resources */,
+				767C75122B0CF7B000D5E61B /* floor1-level1.json in Resources */,
+				0CCAC7832B1612170014C8A0 /* floor1-level2.json in Resources */,
 				76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */,
 				66B79AC22B1782B100E60B11 /* Ground.json in Resources */,
-				0CCAC7842B1612170014C8A0 /* level3.json in Resources */,
+				0CCAC7842B1612170014C8A0 /* floor1-level3.json in Resources */,
 				76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,11 +464,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				763E454A2B0D223900C4F3B0 /* RemoveWhenTouchWall.swift in Sources */,
+				768961D02B1A33FC005A96B8 /* RoomSelectionScene.swift in Sources */,
 				6653EEE42B0CD13F00D841FD /* BulletEntity.swift in Sources */,
 				76FCDC7E2B080E5800E55B2A /* NotificationsNames.swift in Sources */,
 				66B79A9B2B10CB2D00E60B11 /* IsTrapComponent.swift in Sources */,
 				76FCDC782B080C0600E55B2A /* ChangeStateBlockEntity.swift in Sources */,
 				76FCDC762B04742E00E55B2A /* JumpComponent.swift in Sources */,
+				768961C62B1A2879005A96B8 /* FloorSelectionScene.swift in Sources */,
 				5177CFBA2B0CF7CA00896444 /* IsItemComponent.swift in Sources */,
 				764BF4482B0CEB1E00EDB700 /* ScenarioEntity.swift in Sources */,
 				660633E92B0AF6A6005D184B /* EnemyEntity.swift in Sources */,
@@ -403,6 +480,7 @@
 				76FCDC6E2B03CF1600E55B2A /* IsWallComponent.swift in Sources */,
 				66CAD6822B06635600F7940E /* WallSlideComponent.swift in Sources */,
 				76FCDC2D2B027F2100E55B2A /* PlayerEntity.swift in Sources */,
+				768961CD2B1A3247005A96B8 /* RoomSelectionView.swift in Sources */,
 				76FCDC6C2B03CB3F00E55B2A /* GroundEntity.swift in Sources */,
 				76FCDC7A2B080C2000E55B2A /* BlockEntity.swift in Sources */,
 				66CAD67A2B04E0BB00F7940E /* MovementComponent.swift in Sources */,
@@ -412,6 +490,7 @@
 				76FCDC1B2B027C2500E55B2A /* ContentView.swift in Sources */,
 				660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */,
 				5177CFB82B0CD8F000896444 /* ItemEntity.swift in Sources */,
+				768961C22B1A27B5005A96B8 /* FloorSelectionView.swift in Sources */,
 				66CAD6942B06D73D00F7940E /* Win.swift in Sources */,
 				76FCDC872B08F5DF00E55B2A /* GKSKNodeComponent+Light.swift in Sources */,
 				66B79A9F2B10DE7100E60B11 /* DoorEntity.swift in Sources */,
@@ -421,6 +500,7 @@
 				7610970A2B0F7B22003BA736 /* Comparable+Clamp.swift in Sources */,
 				6653EEE22B0CD13300D841FD /* TrapEntity.swift in Sources */,
 				76FCDC892B08F7DD00E55B2A /* LightComponent.swift in Sources */,
+				768961BC2B1A1F28005A96B8 /* HomeView.swift in Sources */,
 				6653EEE62B0CD23A00D841FD /* ShootComponent.swift in Sources */,
 				76FCDC6A2B03C8A100E55B2A /* IsGroundComponent.swift in Sources */,
 				66B79AA32B10DF3E00E60B11 /* WinComponent.swift in Sources */,
@@ -435,6 +515,7 @@
 				660633EB2B0AFA21005D184B /* UInt32+CollisionCategories.swift in Sources */,
 				66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */,
 				06B0B3DA2B10F47100899163 /* SpikeEntity.swift in Sources */,
+				768961D22B1A5690005A96B8 /* RoomButtonNode.swift in Sources */,
 				66CAD6902B06D71600F7940E /* DeathByDark.swift in Sources */,
 				764BF4462B0CE7F100EDB700 /* SKTileNode+Tools.swift in Sources */,
 				66B79A9D2B10CB6C00E60B11 /* IsBulletComponent.swift in Sources */,
@@ -447,6 +528,7 @@
 				764BF44C2B0CF17C00EDB700 /* IsPlayerComponent.swift in Sources */,
 				76FCDC7C2B080C6D00E55B2A /* ChangeStateComponent.swift in Sources */,
 				66B79AA12B10DED600E60B11 /* IsDoorComponent.swift in Sources */,
+				768961C82B1A2893005A96B8 /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,9 +662,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheFangScape/Preview Content\"";
-				DEVELOPMENT_TEAM = G25XDPJGWQ;
+				DEVELOPMENT_TEAM = BD3VK3HR67;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheFangScape/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -610,9 +693,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheFangScape/Preview Content\"";
-				DEVELOPMENT_TEAM = G25XDPJGWQ;
+				DEVELOPMENT_TEAM = BD3VK3HR67;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheFangScape/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

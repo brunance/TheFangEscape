@@ -11,7 +11,7 @@ import SwiftUI
 struct TheFangScapeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RoomSelectionView()
         }
     }
 }
