@@ -21,8 +21,8 @@
 		6653EEE62B0CD23A00D841FD /* ShootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653EEE52B0CD23A00D841FD /* ShootComponent.swift */; };
 		6653EEE82B0CD34300D841FD /* SKAction+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653EEE72B0CD34300D841FD /* SKAction+Animations.swift */; };
 		6653EEEA2B0D00AF00D841FD /* DeathComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653EEE92B0D00AF00D841FD /* DeathComponent.swift */; };
-		667701452B1A31FF00145893 /* level4.json in Resources */ = {isa = PBXBuildFile; fileRef = 667701442B1A31FF00145893 /* level4.json */; };
-		667701472B1A328700145893 /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 667701462B1A328700145893 /* Ground.json */; };
+		66603DC62B1A63D000227D00 /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 66603DC52B1A63D000227D00 /* Ground.json */; };
+		66603DC82B1A647400227D00 /* floor1-level4.json in Resources */ = {isa = PBXBuildFile; fileRef = 66603DC72B1A647400227D00 /* floor1-level4.json */; };
 		668B07122B0E4A3C00D4B0A5 /* IceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B07112B0E4A3C00D4B0A5 /* IceEntity.swift */; };
 		668B07142B0E4A7300D4B0A5 /* IsIceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B07132B0E4A7300D4B0A5 /* IsIceComponent.swift */; };
 		66B79A9B2B10CB2D00E60B11 /* IsTrapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B79A9A2B10CB2D00E60B11 /* IsTrapComponent.swift */; };
@@ -101,8 +101,8 @@
 		6653EEE52B0CD23A00D841FD /* ShootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootComponent.swift; sourceTree = "<group>"; };
 		6653EEE72B0CD34300D841FD /* SKAction+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKAction+Animations.swift"; sourceTree = "<group>"; };
 		6653EEE92B0D00AF00D841FD /* DeathComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathComponent.swift; sourceTree = "<group>"; };
-		667701442B1A31FF00145893 /* level4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level4.json; sourceTree = "<group>"; };
-		667701462B1A328700145893 /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ground.json; sourceTree = "<group>"; };
+		66603DC52B1A63D000227D00 /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ground.json; sourceTree = "<group>"; };
+		66603DC72B1A647400227D00 /* floor1-level4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level4.json"; sourceTree = "<group>"; };
 		668B07112B0E4A3C00D4B0A5 /* IceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceEntity.swift; sourceTree = "<group>"; };
 		668B07132B0E4A7300D4B0A5 /* IsIceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsIceComponent.swift; sourceTree = "<group>"; };
 		66B79A9A2B10CB2D00E60B11 /* IsTrapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsTrapComponent.swift; sourceTree = "<group>"; };
@@ -251,6 +251,7 @@
 				767C75112B0CF7B000D5E61B /* floor1-level1.json */,
 				0CCAC7812B1612160014C8A0 /* floor1-level2.json */,
 				0CCAC7822B1612170014C8A0 /* floor1-level3.json */,
+				66603DC72B1A647400227D00 /* floor1-level4.json */,
 			);
 			path = "Floor 1";
 			sourceTree = "<group>";
@@ -269,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				768961C92B1A31D6005A96B8 /* Floor 1 */,
-				66B79AC12B1782B100E60B11 /* Ground.json */,
+				66603DC52B1A63D000227D00 /* Ground.json */,
 				764BF4452B0CE7F100EDB700 /* SKTileNode+Tools.swift */,
 				76F696392B0BCF7E000B4ED4 /* LevelData.swift */,
 				76F6963B2B0BCF7E000B4ED4 /* TileSetData.swift */,
@@ -460,9 +461,10 @@
 				768961BF2B1A21D9005A96B8 /* NovaSquareSlim-Book.ttf in Resources */,
 				767C75122B0CF7B000D5E61B /* floor1-level1.json in Resources */,
 				0CCAC7832B1612170014C8A0 /* floor1-level2.json in Resources */,
+				66603DC62B1A63D000227D00 /* Ground.json in Resources */,
 				76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */,
-				66B79AC22B1782B100E60B11 /* Ground.json in Resources */,
 				0CCAC7842B1612170014C8A0 /* floor1-level3.json in Resources */,
+				66603DC82B1A647400227D00 /* floor1-level4.json in Resources */,
 				76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
