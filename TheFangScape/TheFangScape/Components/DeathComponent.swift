@@ -25,6 +25,7 @@ public class DeathComponent: GKComponent {
     public func startDeath(by deathType: DeathType) {
         guard let stateMachine = stateComp?.stateMachine else {return}
         
+        entity?.component(ofType: PhysicsComponent.self)?.body.velocity.dx = 0
         entity?.removeComponent(ofType: MovementComponent.self)
         entity?.removeComponent(ofType: JumpComponent.self)
         
@@ -35,7 +36,7 @@ public class DeathComponent: GKComponent {
             stateMachine.enter(DeathByTrap.self)
         }
         
-        let sequence = SKAction.sequence([.wait(forDuration: 1.5)])
+        let sequence = SKAction.sequence([.wait(forDuration: 0.14)])
        
         node?.run(sequence) { [weak self] in
             guard let entity = self?.entity else { return }

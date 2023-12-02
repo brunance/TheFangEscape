@@ -41,7 +41,7 @@ public class PlayerEntity: GKEntity {
             JumpingState(self, action: SKAction.playerJump()),
             WallSlidingState(self, action: SKAction.playerWallSlide()),
             DeathByDark(self, action: SKAction.playerDeathByDark()),
-            DeathByTrap(self, action: SKAction.playerDeathByTrap()),
+            DeathByTrap(self, action: SKAction.playerDeathByDark()),
             WinningState(self, action: SKAction.playerWin())
         ])
         

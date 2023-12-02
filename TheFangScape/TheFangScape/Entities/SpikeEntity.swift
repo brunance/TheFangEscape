@@ -15,7 +15,8 @@ public class SpikeEntity: GKEntity {
     public init(position:CGPoint = .zero, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .red, size: size)
+        let nodeTexture = SKTexture(imageNamed: "spike")
+        let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         

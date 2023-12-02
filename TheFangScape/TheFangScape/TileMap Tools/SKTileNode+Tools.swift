@@ -90,7 +90,7 @@ extension SKTileMapNode {
         case TileType.trapShoot.rawValue:
             let data = (tileDefinition.userData?.value(forKey: "direction") as? String)
             let direction: Direction = data == "1" ? .right : .left
-            let trap = TrapEntity(position: tilePosition, entityManager: entityManager, shootDirection: direction)
+            let trap = TrapEntity(position: tilePosition, entityManager: entityManager, shootDirection: direction, size: tileSize)
             entityManager.add(entity: trap)
         case TileType.light.rawValue:
             let light = ItemEntity(position: tilePosition, size: tileSize)
