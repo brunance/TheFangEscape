@@ -11,9 +11,11 @@ import GameplayKit
 public class TorchComponent: GKComponent {
     
     weak var node: SKNode?
-
+    
+    weak var deathComp: DeathComponent?
+    private var timeToDeath: TimeInterval = 5
     private var timeElapsed: TimeInterval = 0
-    private var duration: TimeInterval = 15
+    private var duration: TimeInterval = 5
     
     var speedFactor: CGFloat = 1
     
@@ -32,6 +34,7 @@ public class TorchComponent: GKComponent {
     
     public override func didAddToEntity() {
         node = entity?.component(ofType: GKSKNodeComponent.self)?.node
+        deathComp = entity?.component(ofType: DeathComponent.self)
         
         let lightComp = LightComponent(color: .init(red: 1, green: 0.8, blue: 0.7, alpha: 1))
         entity?.addComponent(lightComp)
@@ -52,6 +55,11 @@ public class TorchComponent: GKComponent {
         
         if timeElapsed < duration {
             decay()
+        } else if let deathComp = deathComp, !deathComp.deathHasStarted {
+            timeToDeath -= seconds
+            if timeToDeath <= 0 {
+                deathComp.startDeath(by: .dark)
+            }
         }
     }
     

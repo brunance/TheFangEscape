@@ -65,10 +65,10 @@ public class PlayerEntity: GKEntity {
         self.addComponent(JumpComponent(forceY: 350, forceX: 150))
         self.addComponent(WallSlideComponent())
         
+        self.addComponent(DeathComponent())
+        self.addComponent(DestructableComponent())
         self.addComponent(TorchComponent())
         
-        self.addComponent(DestructableComponent())
-        self.addComponent(DeathComponent())
         
         self.addComponent(WinComponent())
     }
