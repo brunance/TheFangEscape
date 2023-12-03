@@ -29,10 +29,12 @@ class WallSlideComponent: GKComponent {
             if physicsComp.isOnGround() || !physicsComp.touchedOnWall(direction: movementComp.direction){
                 stopWallSlide()
             } else {
-                adjustVelocityForWallSlide()
+                if physicsComp.body.velocity.dy < 0 {
+                    adjustVelocityForWallSlide()
+                }
             }
 
-        } else if physicsComp.isWallSliding(direction: movementComp.direction) {
+        } else if physicsComp.isWallSliding(direction: movementComp.direction){
             startWallSlide()
         }
     }
