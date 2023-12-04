@@ -84,4 +84,5 @@ public struct TileSetProperty: Codable {
     var type: String
     var value: String
     var direction: String?
+    var status: String?
 }

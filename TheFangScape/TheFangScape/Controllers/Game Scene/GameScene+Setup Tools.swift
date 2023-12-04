@@ -47,6 +47,13 @@ extension GameScene {
         }
     }
     
+    internal func restartLevel() {
+        startEndLevelAnimation {
+            self.entityManager?.removeAll()
+            self.startUpScene(withName: LevelManager.shared.currentLevelName)
+        }
+    }
+    
     private func startEndLevelAnimation(completion: @escaping ()->Void) {
         mask.maskNode?.position = playerEntity?.node?.position ?? .zero
         mask.maskNode?.run(.sequence([

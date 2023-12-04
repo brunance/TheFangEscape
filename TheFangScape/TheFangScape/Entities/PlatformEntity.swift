@@ -10,10 +10,10 @@ import GameplayKit
 
 public class PlatformEntity: GKEntity {
     
-    public init(position: CGPoint = .zero) {
+    public init(position: CGPoint = .zero, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .blue, size: .init(width: 60, height: 24))
+        let node = SKSpriteNode(color: .blue, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         

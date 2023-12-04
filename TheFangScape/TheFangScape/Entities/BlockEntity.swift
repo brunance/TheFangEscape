@@ -23,7 +23,8 @@ public class BlockEntity: GKEntity {
         physicsComp.body.isDynamic = false
         self.addComponent(physicsComp)
         
-        self.addComponent(IsGroundComponent())
+//        self.addComponent(IsGroundComponent())
+        self.addComponent(IsWallComponent())
     }
     
     required init?(coder: NSCoder) {

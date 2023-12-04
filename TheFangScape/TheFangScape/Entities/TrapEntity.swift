@@ -11,11 +11,13 @@ import SpriteKit
 
 public class TrapEntity: GKEntity {
 
-    public init(position: CGPoint = .zero, entityManager : SKEntityManager, shootDirection: Direction) {
+    public init(position: CGPoint = .zero, entityManager : SKEntityManager, shootDirection: Direction, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .blue, size: .init(width: 48, height: 48))
+        let nodeTexture = SKTexture(imageNamed: "shootTrap")
+        let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
+        node.xScale = shootDirection == .right ? 1 : -1
         self.addComponent(GKSKNodeComponent(node: node))
         
         let physicsComp = PhysicsComponent.capsule(size: node.size, cornerRadius: 2)

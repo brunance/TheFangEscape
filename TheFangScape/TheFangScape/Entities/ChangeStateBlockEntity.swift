@@ -8,22 +8,30 @@
 import Foundation
 import GameplayKit
 
+public enum Status: CGFloat {
+    case active = 1.0
+    case desactive = -1.0
+}
+
 public class ChangeStateBlockEntity: BlockEntity {
     
-    public override init(position: CGPoint = .zero, size: CGSize) {
+    var status: Status
+    
+    public init(position: CGPoint = .zero, size: CGSize, status: Status) {
+        self.status = status
         super.init(position: position, size: size)
         
         guard let physicsComp = self.component(ofType: PhysicsComponent.self),
               let node = self.component(ofType: GKSKNodeComponent.self)?.node
         else { return }
         
-        let changeStateComp = ChangeStateComponent {
+        let changeStateComp = ChangeStateComponent(firstState: {
             node.alpha = 1
             physicsComp.isActive()
-        } secondState: {
+        }, secondState: {
             node.alpha = 0.4
             physicsComp.isActive(false)
-        }
+        }, isFirstState: status)
 
         self.addComponent(changeStateComp)
         

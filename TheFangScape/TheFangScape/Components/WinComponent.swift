@@ -26,7 +26,7 @@ public class WinComponent: GKComponent {
         entity?.removeComponent(ofType: MovementComponent.self)
         entity?.removeComponent(ofType: JumpComponent.self)
         
-        stateMachine.enter(Win.self)
+        stateMachine.enter(WinningState.self)
         
         entity?.component(ofType: TorchComponent.self)?.restore()
         

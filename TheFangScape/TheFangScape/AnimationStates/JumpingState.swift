@@ -1,5 +1,5 @@
 //
-//  Win.swift
+//  Jump.swift
 //  TheFangScape
 //
 //  Created by Luciano Uchoa on 16/11/23.
@@ -8,22 +8,24 @@
 import Foundation
 import GameplayKit
 
-class Win: GKState {
+class JumpingState: GKState {
     
     weak var entity: GKEntity?
+    var action: SKAction
     
-    init(_ entity: GKEntity) {
+    init(_ entity: GKEntity, action: SKAction) {
         self.entity = entity
+        self.action = action
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return false
+        if(stateClass is JumpingState.Type){return false}
+        return true
     }
     
     override func didEnter(from previousState: GKState?) {
-        let arraySprite = Array<SKTexture>.init(withFormat: "playerWin%@", range: 1...3)
         if let node = entity?.component(ofType: GKSKNodeComponent.self)?.node{
-            node.run(.repeatForever(.animate(with: arraySprite, timePerFrame: 0.15)))
+            node.run(action)
         }
     }
 }

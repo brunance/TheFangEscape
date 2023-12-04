@@ -13,12 +13,15 @@ class DoorEntity: GKEntity {
     public init(position: CGPoint, size: CGSize) {
         super.init()
         
-        let nodeColor = UIColor(red: 173/255.0, green: 216/255.0, blue: 230/255.0, alpha: 1.0)
-        let node = SKSpriteNode(color: nodeColor, size: size)
+        let nodeTexture = SKTexture(imageNamed: "door")
+        let node = SKSpriteNode(texture: nodeTexture, size: CGSize(width: 180, height: 270))
         node.position = position
+        node.position.y += nodeTexture.size().height / 3
+        node.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.calculateAccumulatedFrame().size)
+        let physicsSize = CGSize(width: size.width / 1.2, height: size.height * 2)
+        let physicsComp = PhysicsComponent.rectangleBody(ofSize: physicsSize)
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
 

@@ -1,5 +1,5 @@
 //
-//  WallSlide.swift
+//  Run.swift
 //  TheFangScape
 //
 //  Created by Luciano Uchoa on 16/11/23.
@@ -8,7 +8,7 @@
 import Foundation
 import GameplayKit
 
-class WallSlide: GKState {
+class RunningState: GKState {
     
     weak var entity: GKEntity?
     var action: SKAction
@@ -19,7 +19,7 @@ class WallSlide: GKState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        if(stateClass is WallSlide.Type){return false}
+        if(stateClass is RunningState.Type) { return false }
         return true
     }
     
@@ -29,4 +29,3 @@ class WallSlide: GKState {
         }
     }
 }
-

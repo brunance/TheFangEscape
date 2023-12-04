@@ -48,7 +48,7 @@ public class JumpComponent: GKComponent {
     
     private func performJump() {
         guard let stateMachine = stateMachineComp else { return }
-        stateMachine.stateMachine.enter(Jump.self)
+        stateMachine.stateMachine.enter(JumpingState.self)
         
         physicsComp?.body.applyImpulse(CGVector(dx: 0, dy: forceY))
     }
@@ -59,7 +59,7 @@ public class JumpComponent: GKComponent {
         entity?.component(ofType: WallSlideComponent.self)?.stopWallSlide()
         
         guard let stateMachine = stateMachineComp else { return }
-        stateMachine.stateMachine.enter(Jump.self)
+        stateMachine.stateMachine.enter(JumpingState.self)
         physicsComp.body.applyImpulse(.init(
             dx: movementComp.direction.rawValue * forceX,
             dy: forceY))

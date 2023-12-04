@@ -16,6 +16,7 @@ public class DeathComponent: GKComponent {
     
     weak var stateComp: AnimationStateMachineComponent?
     weak var node: SKNode?
+    public var deathHasStarted = false
     
     public override func didAddToEntity() {
         node = entity?.component(ofType: GKSKNodeComponent.self)?.node
@@ -25,8 +26,10 @@ public class DeathComponent: GKComponent {
     public func startDeath(by deathType: DeathType) {
         guard let stateMachine = stateComp?.stateMachine else {return}
         
-        entity?.removeComponent(ofType: MovementComponent.self)
-        entity?.removeComponent(ofType: JumpComponent.self)
+        deathHasStarted = true
+        entity?.component(ofType: PhysicsComponent.self)?.body.velocity.dx = 0
+        entity?.component(ofType: MovementComponent.self)?.isDead = true
+        entity?.component(ofType: TorchComponent.self)?.restore()
         
         switch deathType {
         case .dark:
@@ -35,11 +38,12 @@ public class DeathComponent: GKComponent {
             stateMachine.enter(DeathByTrap.self)
         }
         
-        let sequence = SKAction.sequence([.wait(forDuration: 1.5)])
+        let sequence = SKAction.sequence([.wait(forDuration: 1.14)])
        
         node?.run(sequence) { [weak self] in
-            guard let entity = self?.entity else { return }
+            guard let entity = self?.entity, let scene = self?.node?.scene as? GameScene else { return }
             entity.component(ofType: DestructableComponent.self)?.destroy()
+            scene.restartLevel()
         }
     }
 }

@@ -17,8 +17,10 @@ public class BulletEntity: GKEntity {
         self.bulletDirection = bulletDirection
         super.init()
         
-        let node = SKSpriteNode(color: .yellow, size: .init(width: 10, height: 10))
+        let nodeTexture = SKTexture(imageNamed: "bullet")
+        let node = SKSpriteNode(texture: nodeTexture, size: .init(width: 10, height: 10))
         node.position = position
+        node.xScale = bulletDirection == .right ? 1 : -1
         self.addComponent(GKSKNodeComponent(node: node))
         
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: .init(width: 10, height: 10))

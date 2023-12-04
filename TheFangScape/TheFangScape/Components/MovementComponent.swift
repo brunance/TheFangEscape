@@ -23,6 +23,7 @@ class MovementComponent: GKComponent {
     var velocityX: CGFloat
     var direction: Direction
     
+    public var isDead = false
     private var hasChangedDirection = false
     private var isRunning = false
     
@@ -45,7 +46,7 @@ class MovementComponent: GKComponent {
     override func update(deltaTime seconds: TimeInterval) {
         guard let physicsComp = physicsComp else { return }
         
-        moveNode()
+        isDead ? nil : moveNode()
         
         if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSliding(direction: self.direction) {
             changeDirection()
@@ -67,12 +68,12 @@ class MovementComponent: GKComponent {
             !physicsComp.isWallSliding(direction: self.direction) else { return }
         
         if (physicsComp.isOnGround() && physicsComp.body.velocity.dx != 0) {
-            stateMachineComp?.stateMachine.enter(Run.self)
+            stateMachineComp?.stateMachine.enter(RunningState.self)
         } else {
             if physicsComp.body.velocity.dy < -10 {
-                stateMachineComp?.stateMachine.enter(Jump.self)
+                stateMachineComp?.stateMachine.enter(JumpingState.self)
             } else if physicsComp.body.velocity.dy > 10 {
-                stateMachineComp?.stateMachine.enter(Jump.self)
+                stateMachineComp?.stateMachine.enter(JumpingState.self)
             }
         }
     }

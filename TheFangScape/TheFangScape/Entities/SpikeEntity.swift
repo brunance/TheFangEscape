@@ -12,17 +12,18 @@ import SpriteKit
 
 public class SpikeEntity: GKEntity {
     
-    public init(position:CGPoint = .zero) {
+    public init(position:CGPoint = .zero, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .red, size: .init(width: 20, height: 20))
+        let nodeTexture = SKTexture(imageNamed: "spike")
+        let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
-        physicsComp.body.categoryBitMask = .item
+        physicsComp.body.categoryBitMask = .trap
         physicsComp.body.contactTestBitMask = .contactWithAllCategories(less:[.enemy,.ground,.trap,.bullet,.ice,.wall,.endPoint] )
         self.addComponent(physicsComp)
         
