@@ -45,8 +45,7 @@ class MovementComponent: GKComponent {
     
     override func update(deltaTime seconds: TimeInterval) {
         guard let physicsComp = physicsComp else { return }
-        
-        physicsComp.body.velocity.dy = 0
+
         isDead ? nil : moveNode()
         
         if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSliding(direction: self.direction) {

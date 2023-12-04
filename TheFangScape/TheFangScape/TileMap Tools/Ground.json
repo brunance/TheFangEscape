@@ -358,7 +358,7 @@
         }, 
         {
          "id":157,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/movePlatform0.png",
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Entities\/movePlatform0.png",
          "imageheight":89,
          "imagewidth":90,
          "properties":[
@@ -370,7 +370,7 @@
         }, 
         {
          "id":158,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/movePlatform1.png",
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Entities\/movePlatform1.png",
          "imageheight":89,
          "imagewidth":90,
          "properties":[
@@ -382,7 +382,7 @@
         }, 
         {
          "id":159,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/movePlatform2.png",
+         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Entities\/movePlatform2.png",
          "imageheight":89,
          "imagewidth":90,
          "properties":[
