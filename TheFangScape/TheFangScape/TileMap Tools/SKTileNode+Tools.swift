@@ -19,6 +19,7 @@ enum TileType: String {
     case door = "door"
     case changeBlock = "changeBlock"
     case platform = "platform"
+    case enemy = "enemy"
 }
 
 extension SKTileMapNode {
@@ -112,6 +113,9 @@ extension SKTileMapNode {
         case TileType.platform.rawValue :
             let platform = PlatformEntity(position: tilePosition, size: tileSize)
             entityManager.add(entity: platform)
+        case TileType.enemy.rawValue:
+            let enemy = EnemyEntity(position: tilePosition, size: tileSize)
+            entityManager.add(entity: enemy)
         default:
             break
         }

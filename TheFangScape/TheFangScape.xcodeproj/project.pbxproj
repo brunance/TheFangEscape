@@ -11,6 +11,14 @@
 		06B0B3DC2B10F4A600899163 /* IsSpikeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B0B3DB2B10F4A600899163 /* IsSpikeComponent.swift */; };
 		0CCAC7832B1612170014C8A0 /* floor1-level2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAC7812B1612160014C8A0 /* floor1-level2.json */; };
 		0CCAC7842B1612170014C8A0 /* floor1-level3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CCAC7822B1612170014C8A0 /* floor1-level3.json */; };
+		0CEDB28A2B1E424C00C2FEC3 /* floor1-level7.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CEDB2822B1E424C00C2FEC3 /* floor1-level7.json */; };
+		0CEDB28B2B1E424C00C2FEC3 /* floor1-level10.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CEDB2832B1E424C00C2FEC3 /* floor1-level10.json */; };
+		0CEDB28C2B1E424C00C2FEC3 /* floor1-level9.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CEDB2842B1E424C00C2FEC3 /* floor1-level9.json */; };
+		0CEDB28D2B1E424C00C2FEC3 /* floor1-level5.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CEDB2852B1E424C00C2FEC3 /* floor1-level5.json */; };
+		0CEDB28E2B1E424C00C2FEC3 /* floor1-level8.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CEDB2862B1E424C00C2FEC3 /* floor1-level8.json */; };
+		0CEDB28F2B1E424C00C2FEC3 /* floor1-level11.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CEDB2872B1E424C00C2FEC3 /* floor1-level11.json */; };
+		0CEDB2902B1E424C00C2FEC3 /* floor1-level12.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CEDB2882B1E424C00C2FEC3 /* floor1-level12.json */; };
+		0CEDB2912B1E424C00C2FEC3 /* floor1-level6.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CEDB2892B1E424C00C2FEC3 /* floor1-level6.json */; };
 		5177CFB82B0CD8F000896444 /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177CFB72B0CD8F000896444 /* ItemEntity.swift */; };
 		5177CFBA2B0CF7CA00896444 /* IsItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177CFB92B0CF7CA00896444 /* IsItemComponent.swift */; };
 		660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */; };
@@ -91,6 +99,14 @@
 		06B0B3DB2B10F4A600899163 /* IsSpikeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsSpikeComponent.swift; sourceTree = "<group>"; };
 		0CCAC7812B1612160014C8A0 /* floor1-level2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level2.json"; sourceTree = "<group>"; };
 		0CCAC7822B1612170014C8A0 /* floor1-level3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level3.json"; sourceTree = "<group>"; };
+		0CEDB2822B1E424C00C2FEC3 /* floor1-level7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level7.json"; sourceTree = "<group>"; };
+		0CEDB2832B1E424C00C2FEC3 /* floor1-level10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level10.json"; sourceTree = "<group>"; };
+		0CEDB2842B1E424C00C2FEC3 /* floor1-level9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level9.json"; sourceTree = "<group>"; };
+		0CEDB2852B1E424C00C2FEC3 /* floor1-level5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level5.json"; sourceTree = "<group>"; };
+		0CEDB2862B1E424C00C2FEC3 /* floor1-level8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level8.json"; sourceTree = "<group>"; };
+		0CEDB2872B1E424C00C2FEC3 /* floor1-level11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level11.json"; sourceTree = "<group>"; };
+		0CEDB2882B1E424C00C2FEC3 /* floor1-level12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level12.json"; sourceTree = "<group>"; };
+		0CEDB2892B1E424C00C2FEC3 /* floor1-level6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level6.json"; sourceTree = "<group>"; };
 		5177CFB72B0CD8F000896444 /* ItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntity.swift; sourceTree = "<group>"; };
 		5177CFB92B0CF7CA00896444 /* IsItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsItemComponent.swift; sourceTree = "<group>"; };
 		660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureArray+TextureBuilder.swift"; sourceTree = "<group>"; };
@@ -252,6 +268,14 @@
 				0CCAC7812B1612160014C8A0 /* floor1-level2.json */,
 				0CCAC7822B1612170014C8A0 /* floor1-level3.json */,
 				66603DC72B1A647400227D00 /* floor1-level4.json */,
+				0CEDB2852B1E424C00C2FEC3 /* floor1-level5.json */,
+				0CEDB2892B1E424C00C2FEC3 /* floor1-level6.json */,
+				0CEDB2822B1E424C00C2FEC3 /* floor1-level7.json */,
+				0CEDB2862B1E424C00C2FEC3 /* floor1-level8.json */,
+				0CEDB2842B1E424C00C2FEC3 /* floor1-level9.json */,
+				0CEDB2832B1E424C00C2FEC3 /* floor1-level10.json */,
+				0CEDB2872B1E424C00C2FEC3 /* floor1-level11.json */,
+				0CEDB2882B1E424C00C2FEC3 /* floor1-level12.json */,
 			);
 			path = "Floor 1";
 			sourceTree = "<group>";
@@ -458,13 +482,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CEDB28A2B1E424C00C2FEC3 /* floor1-level7.json in Resources */,
 				768961BF2B1A21D9005A96B8 /* NovaSquareSlim-Book.ttf in Resources */,
+				0CEDB28E2B1E424C00C2FEC3 /* floor1-level8.json in Resources */,
 				767C75122B0CF7B000D5E61B /* floor1-level1.json in Resources */,
 				0CCAC7832B1612170014C8A0 /* floor1-level2.json in Resources */,
 				66603DC62B1A63D000227D00 /* Ground.json in Resources */,
 				76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */,
+				0CEDB28F2B1E424C00C2FEC3 /* floor1-level11.json in Resources */,
+				0CEDB2912B1E424C00C2FEC3 /* floor1-level6.json in Resources */,
+				0CEDB28B2B1E424C00C2FEC3 /* floor1-level10.json in Resources */,
+				0CEDB28D2B1E424C00C2FEC3 /* floor1-level5.json in Resources */,
 				0CCAC7842B1612170014C8A0 /* floor1-level3.json in Resources */,
 				66603DC82B1A647400227D00 /* floor1-level4.json in Resources */,
+				0CEDB2902B1E424C00C2FEC3 /* floor1-level12.json in Resources */,
+				0CEDB28C2B1E424C00C2FEC3 /* floor1-level9.json in Resources */,
 				76FCDC1D2B027C2500E55B2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,7 +710,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheFangScape/Preview Content\"";
-				DEVELOPMENT_TEAM = 2VBT66DD5V;
+				DEVELOPMENT_TEAM = G25XDPJGWQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheFangScape/Info.plist;
@@ -709,7 +741,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheFangScape/Preview Content\"";
-				DEVELOPMENT_TEAM = 2VBT66DD5V;
+				DEVELOPMENT_TEAM = G25XDPJGWQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheFangScape/Info.plist;

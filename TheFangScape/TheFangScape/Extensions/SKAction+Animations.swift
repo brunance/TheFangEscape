@@ -32,4 +32,8 @@ extension SKAction {
     public static func playerWin() -> SKAction {
         return .repeatForever(.animate(with: .init(withFormat: "playerWin%@", range: 1...10), timePerFrame: 0.16))
     }
+    
+    public static func enemyRun() -> SKAction {
+        return .repeatForever(.animate(with: .init(withFormat: "enemyBat%@", range: 0...4), timePerFrame: 0.1))
+    }
 }
