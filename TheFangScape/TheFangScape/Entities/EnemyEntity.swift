@@ -11,23 +11,27 @@ import SpriteKit
 
 public class EnemyEntity: GKEntity {
     
-    public init(position: CGPoint = .zero) {
+    public init(position: CGPoint = .zero, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .red, size: .init(width: 48, height: 48))
+        let nodeTexture = SKTexture(imageNamed: "enemyBat0")
+        let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: .init(width: 48, height: 48))
-        physicsComp.body.allowsRotation = false
-        physicsComp.body.linearDamping = 0.5
-        physicsComp.body.restitution = 0.0
         physicsComp.body.categoryBitMask = .enemy
         physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.player])
         
+        let animationStateMachine : GKStateMachine = .init(states: [
+            RunningState(self, action: SKAction.enemyRun())
+        ])
+        
+        self.addComponent(AnimationStateMachineComponent(stateMachine: animationStateMachine))
+        
         self.addComponent(physicsComp)
         
-        self.addComponent(MovementComponent(velocityX: 32 * 8, direction: .left))
+        self.addComponent(MovementComponent(velocityX: 100 * 4, direction: .right))
     }
     
     required init?(coder: NSCoder) {

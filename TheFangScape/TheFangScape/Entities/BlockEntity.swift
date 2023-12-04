@@ -14,7 +14,8 @@ public class BlockEntity: GKEntity {
     public init(position: CGPoint = .zero, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .brown, size: size)
+        let nodeTexture = SKTexture(imageNamed: "changeEnabled0")
+        let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         

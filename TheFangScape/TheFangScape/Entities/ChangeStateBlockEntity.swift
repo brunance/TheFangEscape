@@ -22,14 +22,16 @@ public class ChangeStateBlockEntity: BlockEntity {
         super.init(position: position, size: size)
         
         guard let physicsComp = self.component(ofType: PhysicsComponent.self),
-              let node = self.component(ofType: GKSKNodeComponent.self)?.node
+              let node = self.component(ofType: GKSKNodeComponent.self)?.node as? SKSpriteNode
         else { return }
         
         let changeStateComp = ChangeStateComponent(firstState: {
             node.alpha = 1
+            node.texture = SKTexture(imageNamed: "changeEnabled0")
             physicsComp.isActive()
         }, secondState: {
             node.alpha = 0.4
+            node.texture = SKTexture(imageNamed: "changeDisabled0")
             physicsComp.isActive(false)
         }, isFirstState: status)
 

@@ -14,7 +14,8 @@ public class ItemEntity : GKEntity {
     public init(position: CGPoint = .zero, size: CGSize) {
         super.init()
         
-        let node = SKSpriteNode(color: .yellow, size: size)
+        let nodeTexture = SKTexture(imageNamed: "torch")
+        let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
