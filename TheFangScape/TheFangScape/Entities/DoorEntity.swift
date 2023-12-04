@@ -17,9 +17,11 @@ class DoorEntity: GKEntity {
         let node = SKSpriteNode(texture: nodeTexture, size: CGSize(width: 180, height: 270))
         node.position = position
         node.position.y += nodeTexture.size().height / 3
+        node.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.calculateAccumulatedFrame().size)
+        let physicsSize = CGSize(width: size.width / 1.2, height: size.height * 2)
+        let physicsComp = PhysicsComponent.rectangleBody(ofSize: physicsSize)
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
 

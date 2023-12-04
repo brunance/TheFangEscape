@@ -15,7 +15,7 @@ public class TorchComponent: GKComponent {
     weak var deathComp: DeathComponent?
     private var timeToDeath: TimeInterval = 5
     private var timeElapsed: TimeInterval = 0
-    private var duration: TimeInterval = 5
+    private var duration: TimeInterval = 15
     
     var speedFactor: CGFloat = 1
     
@@ -57,6 +57,7 @@ public class TorchComponent: GKComponent {
             decay()
         } else if let deathComp = deathComp, !deathComp.deathHasStarted {
             timeToDeath -= seconds
+
             if timeToDeath <= 0 {
                 deathComp.startDeath(by: .dark)
             }

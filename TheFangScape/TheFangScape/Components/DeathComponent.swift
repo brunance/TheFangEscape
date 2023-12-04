@@ -29,6 +29,7 @@ public class DeathComponent: GKComponent {
         deathHasStarted = true
         entity?.component(ofType: PhysicsComponent.self)?.body.velocity.dx = 0
         entity?.component(ofType: MovementComponent.self)?.isDead = true
+        entity?.component(ofType: TorchComponent.self)?.restore()
         
         switch deathType {
         case .dark:
@@ -37,11 +38,12 @@ public class DeathComponent: GKComponent {
             stateMachine.enter(DeathByTrap.self)
         }
         
-        let sequence = SKAction.sequence([.wait(forDuration: 0.14)])
+        let sequence = SKAction.sequence([.wait(forDuration: 1.14)])
        
         node?.run(sequence) { [weak self] in
-            guard let entity = self?.entity else { return }
+            guard let entity = self?.entity, let scene = self?.node?.scene as? GameScene else { return }
             entity.component(ofType: DestructableComponent.self)?.destroy()
+            scene.restartLevel()
         }
     }
 }
