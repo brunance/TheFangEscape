@@ -14,7 +14,7 @@ class ShootComponent: GKComponent {
     weak var node: SKNode?
     
     private var shootTimerCounter: TimeInterval = 0.0
-    private let shootInterval: TimeInterval = 0.5
+    private let shootInterval: TimeInterval = 2.0
     
     var bulletDirection: Direction
     
@@ -36,7 +36,7 @@ class ShootComponent: GKComponent {
         
         guard let node = node else { return }
         
-        let bullet = BulletEntity(position: node.position, bulletDirection: bulletDirection)
+        let bullet = BulletEntity(position: CGPoint(x: node.position.x + (10 * bulletDirection.rawValue), y: node.position.y), bulletDirection: bulletDirection)
         entityManager?.add(entity: bullet)
     }
     

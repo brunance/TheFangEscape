@@ -23,7 +23,7 @@ public class ItemEntity : GKEntity {
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
         physicsComp.body.categoryBitMask = .item
-        physicsComp.body.contactTestBitMask = .contactWithAllCategories(less:[.enemy,.ground,.trap,.bullet,.ice,.wall,.endPoint] )
+        physicsComp.body.contactTestBitMask = .player
         self.addComponent(physicsComp)
        
         let lightComp = LightComponent(color: .init(red: 1, green: 1, blue: 1, alpha: 1))

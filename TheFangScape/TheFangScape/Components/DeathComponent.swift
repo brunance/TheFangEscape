@@ -28,7 +28,6 @@ public class DeathComponent: GKComponent {
         
         deathHasStarted = true
         entity?.component(ofType: PhysicsComponent.self)?.body.velocity.dx = 0
-        entity?.component(ofType: MovementComponent.self)?.isDead = true
         entity?.component(ofType: TorchComponent.self)?.restore()
         
         switch deathType {

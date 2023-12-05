@@ -16,7 +16,7 @@ public class LevelManager {
     }
     
     public var currentLevelName: String {
-        return "\(currentFloorName)-level\(currentLevelIndex)"
+        return "\(currentFloorName)-level0"
     }
     
     public var currentFloorName: String {

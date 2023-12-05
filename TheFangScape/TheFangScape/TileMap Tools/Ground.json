@@ -8,13 +8,13 @@
  "margin":0,
  "name":"Ground",
  "spacing":0,
- "tilecount":30,
+ "tilecount":34,
  "tiledversion":"1.10.1",
  "tileheight":270,
  "tiles":[
         {
          "id":78,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/trapShootRight.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/trapShootRight.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -31,7 +31,7 @@
         }, 
         {
          "id":79,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/trapShootLeft.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/trapShootLeft.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -48,7 +48,7 @@
         }, 
         {
          "id":80,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/spike.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/spike.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -60,7 +60,7 @@
         }, 
         {
          "id":81,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/player.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/player.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -72,7 +72,7 @@
         }, 
         {
          "id":82,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/movePlatform.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/movePlatform.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -84,7 +84,7 @@
         }, 
         {
          "id":83,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/light.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/light.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -96,7 +96,7 @@
         }, 
         {
          "id":84,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/enemy.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/enemy.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -108,7 +108,7 @@
         }, 
         {
          "id":85,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/door.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/door.png",
          "imageheight":270,
          "imagewidth":180,
          "properties":[
@@ -120,7 +120,7 @@
         }, 
         {
          "id":86,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/saw.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/saw.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -132,7 +132,7 @@
         }, 
         {
          "id":87,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/blockActive.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/blockActive.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -149,7 +149,7 @@
         }, 
         {
          "id":88,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/blockDesactive.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/blockDesactive.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -166,7 +166,7 @@
         }, 
         {
          "id":141,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile1.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile1.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -178,7 +178,7 @@
         }, 
         {
          "id":142,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile2.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile2.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -190,7 +190,7 @@
         }, 
         {
          "id":143,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile3.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile3.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -202,7 +202,7 @@
         }, 
         {
          "id":144,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile4.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile4.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -214,7 +214,7 @@
         }, 
         {
          "id":145,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile5.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile5.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -226,7 +226,7 @@
         }, 
         {
          "id":146,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile6.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile6.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -238,7 +238,7 @@
         }, 
         {
          "id":147,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile7.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile7.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -250,7 +250,7 @@
         }, 
         {
          "id":148,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile8.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile8.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -262,7 +262,7 @@
         }, 
         {
          "id":149,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile9.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile9.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -274,7 +274,7 @@
         }, 
         {
          "id":150,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile10.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile10.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -286,7 +286,7 @@
         }, 
         {
          "id":151,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile11.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile11.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -298,7 +298,7 @@
         }, 
         {
          "id":152,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile12.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile12.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -310,7 +310,7 @@
         }, 
         {
          "id":153,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile13.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile13.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -322,7 +322,7 @@
         }, 
         {
          "id":154,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile14.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile14.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -334,7 +334,7 @@
         }, 
         {
          "id":155,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile15.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile15.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -346,7 +346,7 @@
         }, 
         {
          "id":156,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile16.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/tile16.png",
          "imageheight":90,
          "imagewidth":90,
          "properties":[
@@ -358,9 +358,7 @@
         }, 
         {
          "id":157,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Entities\/movePlatform0.png",
-         "imageheight":89,
-         "imagewidth":90,
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/movePlatform0.png",
          "properties":[
                 {
                  "name":"type",
@@ -370,7 +368,7 @@
         }, 
         {
          "id":158,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Entities\/movePlatform1.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Entities\/movePlatform1.png",
          "imageheight":89,
          "imagewidth":90,
          "properties":[
@@ -382,14 +380,80 @@
         }, 
         {
          "id":159,
-         "image":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Entities\/movePlatform2.png",
-         "imageheight":89,
-         "imagewidth":90,
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/movePlatform2.png",
          "properties":[
                 {
                  "name":"type",
                  "type":"string",
                  "value":"ground"
+                }]
+        }, 
+        {
+         "id":160,
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/spikeGround.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "properties":[
+                {
+                 "name":"location",
+                 "type":"string",
+                 "value":"ground"
+                }, 
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"trapSpike"
+                }]
+        }, 
+        {
+         "id":161,
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/spikeLeft.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "properties":[
+                {
+                 "name":"location",
+                 "type":"string",
+                 "value":"left"
+                }, 
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"trapSpike"
+                }]
+        }, 
+        {
+         "id":162,
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/spikeRight.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "properties":[
+                {
+                 "name":"location",
+                 "type":"string",
+                 "value":"right"
+                }, 
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"trapSpike"
+                }]
+        }, 
+        {
+         "id":163,
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/spikeRoof.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "properties":[
+                {
+                 "name":"location",
+                 "type":"string",
+                 "value":"roof"
+                }, 
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"trapSpike"
                 }]
         }],
  "tilewidth":180,

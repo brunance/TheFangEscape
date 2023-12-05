@@ -66,8 +66,11 @@ extension GameScene: SKPhysicsContactDelegate {
         checkForContactPlayerAndIceBegin(entityA: entityA, entityB: entityB)
         
         checkForContactPlayerAndTrapBegin(entityA: entityA, entityB: entityB)
+        checkForContactPlayerAndTrapBegin(entityA: entityB, entityB: entityA)
+        
         checkForContactPlayerAndSpikeBegin(entityA: entityA, entityB: entityB)
-        checkForContactPlayerAndItemBegin(entityA: entityB, entityB: entityA)
+        checkForContactPlayerAndSpikeBegin(entityA: entityB, entityB: entityA)
+        
         
         checkForContactPlayerAndDoor(entityA: entityA, entityB: entityB)
         checkForContactPlayerAndDoor(entityA: entityB, entityB: entityA)

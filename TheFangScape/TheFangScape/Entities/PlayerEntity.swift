@@ -57,17 +57,18 @@ public class PlayerEntity: GKEntity {
         physicsComp.body.restitution = 0.0
         physicsComp.body.categoryBitMask = .player
         physicsComp.body.friction = 0
-        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.enemy, .item])
+        physicsComp.body.contactTestBitMask = .contactWithAllCategories()
+        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.enemy, .item, .bullet, .trap])
         
         self.addComponent(physicsComp)
         
-        self.addComponent(MovementComponent(velocityX: 100 * 4, direction: .right))
+        self.addComponent(MovementComponent(velocityX: 100 * 4, direction: .right, entityType: .gravityAffected))
         self.addComponent(JumpComponent(forceY: 310, forceX: 200))
         self.addComponent(WallSlideComponent())
         
         self.addComponent(DeathComponent())
         self.addComponent(DestructableComponent())
-        self.addComponent(TorchComponent())
+//        self.addComponent(TorchComponent())
         
         
         self.addComponent(WinComponent())

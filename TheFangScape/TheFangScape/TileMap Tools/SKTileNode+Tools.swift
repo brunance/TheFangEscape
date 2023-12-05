@@ -57,7 +57,7 @@ extension SKTileMapNode {
                     let group = SKTileGroup(tileDefinition: tileDef)
                     mapNode.tileSet.tileGroups.append(group)
                     mapNode.setTileGroup(group, forColumn: col, row: row)
-                    mapNode.lightingBitMask = LightMask.contactWithAllCategories()
+//                    mapNode.lightingBitMask = LightMask.contactWithAllCategories()
                 }
                 
                 // Factory Entities
@@ -105,8 +105,24 @@ extension SKTileMapNode {
             let block = ChangeStateBlockEntity(position: tilePosition, size: tileSize, status: status)
             entityManager.add(entity: block)
         case TileType.trapSpike.rawValue:
-            let spike = SpikeEntity(position: tilePosition, size: tileSize)
-            entityManager.add(entity: spike)
+            let data = (tileDefinition.userData?.value(forKey: "location") as? String)
+            
+            switch data {
+            case "ground":
+                let spike = SpikeEntity(position: tilePosition, size: tileSize, xValue: 1, yValue: 1, zRotation: 0)
+                entityManager.add(entity: spike)
+            case "roof":
+                let spike = SpikeEntity(position: tilePosition, size: tileSize, xValue: 1, yValue: -1, zRotation: 0)
+                entityManager.add(entity: spike)
+            case "left":
+                let spike = SpikeEntity(position: tilePosition, size: tileSize, xValue: -1, yValue: 1, zRotation: (90 * .pi) / 180 )
+                entityManager.add(entity: spike)
+            case "right":
+                let spike = SpikeEntity(position: tilePosition, size: tileSize, xValue: 1, yValue: 1, zRotation: (-90 * .pi) / 180)
+                entityManager.add(entity: spike)
+            default:
+                break
+            }
         case TileType.trapSaw.rawValue:
             let saw = SawEntity(position: tilePosition, size: tileSize)
             entityManager.add(entity: saw)

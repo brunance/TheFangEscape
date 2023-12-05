@@ -18,25 +18,25 @@ public class BulletEntity: GKEntity {
         super.init()
         
         let nodeTexture = SKTexture(imageNamed: "bullet")
-        let node = SKSpriteNode(texture: nodeTexture, size: .init(width: 10, height: 10))
+        let node = SKSpriteNode(texture: nodeTexture, size: .init(width: 50, height: 50))
         node.position = position
         node.xScale = bulletDirection == .right ? 1 : -1
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: .init(width: 10, height: 10))
+        let physicsComp = PhysicsComponent.rectangleBody(ofSize: .init(width: 50, height: 50))
         physicsComp.body.allowsRotation = false
         physicsComp.body.affectedByGravity = false
         physicsComp.body.categoryBitMask = .bullet
-        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.trap, .bullet])
+        physicsComp.body.contactTestBitMask = .player
         
         self.addComponent(physicsComp)
         
-        self.addComponent(MovementComponent(velocityX: 320, direction: bulletDirection))
+        self.addComponent(MovementComponent(velocityX: 320, direction: bulletDirection, entityType: .nonGravityAffected))
         
-        let light = LightComponent(color: .white)
-        self.addComponent(light)
-        light.lightNode.falloff = 5
-        light.setIntensity(0.5)
+//        let light = LightComponent(color: .white)
+//        self.addComponent(light)
+//        light.lightNode.falloff = 5
+//        light.setIntensity(0.5)
         
         self.addComponent(RemoveWhenTouchWall())
         self.addComponent(DestructableComponent())

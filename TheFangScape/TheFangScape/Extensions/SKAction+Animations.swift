@@ -34,6 +34,19 @@ extension SKAction {
     }
     
     public static func enemyRun() -> SKAction {
-        return .repeatForever(.animate(with: .init(withFormat: "enemyBat%@", range: 0...4), timePerFrame: 0.1))
+        let textures = Array(withFormat: "enemyBat%@", range: 0...4)
+        
+        let forwardAnimation = SKAction.animate(with: textures, timePerFrame: 0.03)
+        
+        let reverseTextures = Array(textures.reversed())
+        let reverseAnimation = SKAction.animate(with: reverseTextures, timePerFrame: 0.03)
+        
+        let sequence = SKAction.sequence([forwardAnimation, reverseAnimation])
+        
+        let repeatForever = SKAction.repeatForever(sequence)
+        
+        return repeatForever
     }
+
+
 }
