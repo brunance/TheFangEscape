@@ -22,7 +22,7 @@ extension SKAction {
     }
     
     public static func playerDeathByDark() -> SKAction {
-        return .repeatForever(.animate(with: .init(withFormat: "playerDeathByDark%@", range: 1...14), timePerFrame: 0.1))
+        return .repeatForever(.animate(with: .init(withFormat: "playerDeathByDark%@", range: 1...4), timePerFrame: 0.1))
     }
     
     public static func playerDeathByTrap() -> SKAction {
