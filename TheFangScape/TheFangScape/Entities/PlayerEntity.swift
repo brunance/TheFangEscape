@@ -49,6 +49,7 @@ public class PlayerEntity: GKEntity {
         
         let node = SKSpriteNode(imageNamed: "run1")
         node.position = position
+        node.zPosition = 10
         self.addComponent(GKSKNodeComponent(node: node))
         
         let size: CGSize = .init(width: node.size.width/2, height: node.size.height - 4)
@@ -69,7 +70,6 @@ public class PlayerEntity: GKEntity {
         self.addComponent(DeathComponent())
         self.addComponent(DestructableComponent())
         self.addComponent(TorchComponent())
-        
         
         self.addComponent(WinComponent())
     }

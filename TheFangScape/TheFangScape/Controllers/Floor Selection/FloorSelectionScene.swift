@@ -29,22 +29,22 @@ public class FloorSelectionScene: SKScene {
     
     private func setupScene() {
         
-        // MARK: Instance
-        let floor1 = ButtonNode(image: .init(color: .red, size: .init(width: 189, height: 159)), releasedAction:  {
-            print("Go To Floor 1")
-            self.floorView?.selectedFloor(index: 1)
-        })
-        self.addChild(floor1)
-        
-        let floor2 = ButtonNode(image: .init(color: .yellow, size: .init(width: 364, height: 150)), releasedAction:  {
-            print("Go To Floor 2")
-            self.floorView?.selectedFloor(index: 2)
-        })
-        self.addChild(floor2)
-        
-        // MARK: Adjust Positions
-        floor1.position = .init(x: -100, y: -250)
-        floor2.position = .init(x: 0, y: -50)
+        let buttonInfo: [(color: UIColor, size: CGSize, floorIndex: Int, position: CGPoint)] = [
+            (.red, CGSize(width: 189, height: 159), 1, .init(x: -100, y: -250)),
+            (.yellow, CGSize(width: 364, height: 150), 2, .init(x: 0, y: -50))
+        ]
+
+        for info in buttonInfo {
+            let floorButton = FloorButtonNode(image: SKSpriteNode(color: info.color, size: info.size), releasedAction: {
+                print("Go To Floor \(info.floorIndex)")
+                self.floorView?.selectedFloor(index: info.floorIndex)
+            })
+            
+            floorButton.isLocked = LevelManager.shared.currentFloorIndex != info.floorIndex
+            self.addChild(floorButton)
+            
+            floorButton.position = info.position
+        }
     }
     
 }

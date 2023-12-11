@@ -16,3 +16,12 @@ public class RoomButtonNode: ButtonNode {
         }
     }
 }
+
+public class FloorButtonNode: ButtonNode {
+    var isLocked: Bool = false {
+        didSet {
+            alpha = isLocked ? 0.3 : 1
+            isUserInteractionEnabled = !isLocked
+        }
+    }
+}
