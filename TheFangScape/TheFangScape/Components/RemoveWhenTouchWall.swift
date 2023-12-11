@@ -35,7 +35,7 @@ public class RemoveWhenTouchWall: GKComponent {
         physicsComp.body.affectedByGravity = true
 
         physicsComp.body.applyImpulse(.init(
-            dx: -moveComp.direction.rawValue * 0.2,
+            dx: -moveComp.direction.value * 0.2,
             dy: 0))
 
 

@@ -12,6 +12,10 @@ import SpriteKit
 public enum Direction: CGFloat {
     case left = -1.0
     case right = 1.0
+    
+    var value: CGFloat {
+        rawValue
+    }
 }
 
 enum EntityType {
@@ -103,7 +107,7 @@ class MovementComponent: GKComponent {
     }
     
     public func getDirection() -> CGFloat {
-        return direction.rawValue
+        return direction.value
     }
     
     public func changeDirection() {

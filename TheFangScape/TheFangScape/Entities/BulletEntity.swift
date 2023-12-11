@@ -26,6 +26,7 @@ public class BulletEntity: GKEntity {
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: .init(width: 50, height: 50))
         physicsComp.body.allowsRotation = false
         physicsComp.body.affectedByGravity = false
+        physicsComp.body.mass = 100
         physicsComp.body.categoryBitMask = .bullet
         physicsComp.body.contactTestBitMask = .player
         
@@ -33,10 +34,10 @@ public class BulletEntity: GKEntity {
         
         self.addComponent(MovementComponent(velocityX: 320, direction: bulletDirection, entityType: .nonGravityAffected))
         
-//        let light = LightComponent(color: .white)
-//        self.addComponent(light)
-//        light.lightNode.falloff = 5
-//        light.setIntensity(0.5)
+        let lightComp = LightComponent(color: .white)
+        lightComp.setIntensity(1)
+        lightComp.lightNode.falloff = 2
+        self.addComponent(lightComp)
         
         self.addComponent(RemoveWhenTouchWall())
         self.addComponent(DestructableComponent())

@@ -68,7 +68,7 @@ public class PlayerEntity: GKEntity {
         
         self.addComponent(DeathComponent())
         self.addComponent(DestructableComponent())
-//        self.addComponent(TorchComponent())
+        self.addComponent(TorchComponent())
         
         
         self.addComponent(WinComponent())

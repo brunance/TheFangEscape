@@ -19,7 +19,7 @@ class JumpingState: GKState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        if(stateClass is JumpingState.Type){return false}
+        if(stateClass is JumpingState.Type || stateClass is DeathByDark.Type || stateClass is DeathByTrap.Type ){ return false }
         return true
     }
     

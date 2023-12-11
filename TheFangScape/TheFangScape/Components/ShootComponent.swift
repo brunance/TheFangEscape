@@ -36,7 +36,7 @@ class ShootComponent: GKComponent {
         
         guard let node = node else { return }
         
-        let bullet = BulletEntity(position: CGPoint(x: node.position.x + (10 * bulletDirection.rawValue), y: node.position.y), bulletDirection: bulletDirection)
+        let bullet = BulletEntity(position: CGPoint(x: node.position.x + (10 * bulletDirection.value), y: node.position.y), bulletDirection: bulletDirection)
         entityManager?.add(entity: bullet)
     }
     
