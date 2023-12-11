@@ -37,6 +37,12 @@
          "id":1,
          "name":"prototype",
          "opacity":0.17,
+         "properties":[
+                {
+                 "name":"isRendered",
+                 "type":"string",
+                 "value":"false"
+                }],
          "type":"tilelayer",
          "visible":true,
          "width":15,
@@ -78,6 +84,12 @@
          "id":12,
          "name":"ground",
          "opacity":1,
+         "properties":[
+                {
+                 "name":"isRendered",
+                 "type":"string",
+                 "value":"false"
+                }],
          "type":"tilelayer",
          "visible":true,
          "width":15,
@@ -140,10 +152,10 @@
  "tilesets":[
         {
          "firstgid":1,
-         "source":"..\/..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/Ground.tsx"
+         "source":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/Ground.tsx"
         }, 
         {
-         "firstgid":161,
+         "firstgid":165,
          "source":":\/automap-tiles.tsx"
         }],
  "tilewidth":90,

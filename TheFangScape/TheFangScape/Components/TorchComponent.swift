@@ -13,7 +13,11 @@ public class TorchComponent: GKComponent {
     weak var node: SKNode?
     
     weak var deathComp: DeathComponent?
+    
+    //Time to die after the light runs out
     private var timeToDeath: TimeInterval = 5
+    
+    //Timer for the light to run out
     private var timeElapsed: TimeInterval = 0
     private var duration: TimeInterval = 15
     
@@ -41,8 +45,8 @@ public class TorchComponent: GKComponent {
         self.lightComp = lightComp
         
         lightComp.lightNode.falloff = 1
+        lightComp.lightNode.zPosition = 2
         lightComp.lightNode.categoryBitMask = LightMask.torch
-        
     }
     
     required init?(coder: NSCoder) {

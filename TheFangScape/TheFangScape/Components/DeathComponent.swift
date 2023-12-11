@@ -24,11 +24,13 @@ public class DeathComponent: GKComponent {
     }
     
     public func startDeath(by deathType: DeathType) {
-        guard let stateMachine = stateComp?.stateMachine else {return}
+        guard let stateMachine = stateComp?.stateMachine, let entity = entity else {return}
         
         deathHasStarted = true
-        entity?.component(ofType: PhysicsComponent.self)?.body.velocity.dx = 0
-        entity?.component(ofType: TorchComponent.self)?.restore()
+        
+        entity.component(ofType: PhysicsComponent.self)?.stopMovement()
+        entity.component(ofType: TorchComponent.self)?.restore()
+        entity.component(ofType: MovementComponent.self)?.toggleDeath()
         
         switch deathType {
         case .dark:

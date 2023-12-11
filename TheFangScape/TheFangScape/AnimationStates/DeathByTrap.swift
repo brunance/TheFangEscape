@@ -19,7 +19,8 @@ class DeathByTrap: GKState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return false
+        if(stateClass is DeathByTrap.Type){return false}
+        return true
     }
     
     override func didEnter(from previousState: GKState?) {

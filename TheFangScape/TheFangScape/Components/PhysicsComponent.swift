@@ -57,6 +57,12 @@ public class PhysicsComponent: GKComponent {
         self.node = node
     }
     
+    public func stopMovement() {
+        guard let node else { return }
+        
+        node.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+    }
+    
     public func isOnGround() -> Bool {
         guard let node else { return false }
         let height = node.calculateAccumulatedFrame().size.height

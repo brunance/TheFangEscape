@@ -34,7 +34,7 @@ class MovementComponent: GKComponent {
     var entityType: EntityType
     
     private var hasChangedDirection = false
-    private var isRunning = false
+    private var isDead = false
     
     init(velocityX: CGFloat, direction: Direction, entityType: EntityType) {
         self.velocityX = velocityX
@@ -55,12 +55,14 @@ class MovementComponent: GKComponent {
     
     override func update(deltaTime seconds: TimeInterval) {
         
-        moveNode()
-        
-        if entityType == .gravityAffected {
-            handleGravityAffectedEntity()
-        } else if entityType == .nonGravityAffected {
-            handleNonGravityAffectedEntity()
+        if !isDead {
+            moveNode()
+            
+            if entityType == .gravityAffected {
+                handleGravityAffectedEntity()
+            } else if entityType == .nonGravityAffected {
+                handleNonGravityAffectedEntity()
+            }
         }
     }
     
@@ -112,5 +114,9 @@ class MovementComponent: GKComponent {
     
     public func changeDirection() {
         direction = (direction == .right) ? .left : .right
+    }
+    
+    public func toggleDeath() {
+        isDead.toggle()
     }
 }
