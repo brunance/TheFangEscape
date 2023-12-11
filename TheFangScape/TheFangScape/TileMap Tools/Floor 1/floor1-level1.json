@@ -37,12 +37,6 @@
          "id":1,
          "name":"prototype",
          "opacity":0.17,
-         "properties":[
-                {
-                 "name":"isRendered",
-                 "type":"string",
-                 "value":"false"
-                }],
          "type":"tilelayer",
          "visible":true,
          "width":15,
@@ -84,12 +78,6 @@
          "id":12,
          "name":"ground",
          "opacity":1,
-         "properties":[
-                {
-                 "name":"isRendered",
-                 "type":"string",
-                 "value":"false"
-                }],
          "type":"tilelayer",
          "visible":true,
          "width":15,
