@@ -15,14 +15,15 @@ public class EnemyEntity: GKEntity {
         super.init()
         
         let nodeTexture = SKTexture(imageNamed: "enemyBat0")
-        let node = SKSpriteNode(texture: nodeTexture, size: CGSize(width: 100, height: 100))
+        let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: .init(width: 48, height: 48))
+        let physicsComp = PhysicsComponent.circle(ofRadius: .init(size.width / 2))
         physicsComp.body.categoryBitMask = .enemy
         physicsComp.body.contactTestBitMask = .player
         physicsComp.body.affectedByGravity = false
+        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.player, .item, .bullet, .trap])
         
         let animationStateMachine : GKStateMachine = .init(states: [
             RunningState(self, action: SKAction.enemyRun())
@@ -34,6 +35,7 @@ public class EnemyEntity: GKEntity {
         self.addComponent(physicsComp)
         
         self.addComponent(MovementComponent(velocityX: 100 * 4, direction: .right, entityType: .nonGravityAffected))
+        self.addComponent(IsEnemyComponent())
     }
     
     required init?(coder: NSCoder) {

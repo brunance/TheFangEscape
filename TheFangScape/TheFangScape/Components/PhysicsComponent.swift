@@ -87,6 +87,16 @@ public class PhysicsComponent: GKComponent {
         return touchedOnWall(direction: direction) && !isOnGround()
     }
     
+    public func hasContactWithOtherBody(direction: Direction) -> Bool {
+        guard let node else { return false }
+        
+        let width = node.calculateAccumulatedFrame().size.width
+        
+        let rayDistance = CGPoint(x: node.position.x + (width / 2 + 1) * direction.rawValue, y: node.position.y)
+        
+        return genericRaycast(rayDistance: rayDistance)
+    }
+    
     private func raycast(checkFor type: GKComponent.Type, rayDistance: CGPoint) -> Bool {
         guard let node else { return false }
         
@@ -116,6 +126,25 @@ public class PhysicsComponent: GKComponent {
             .removeFromParent()
         ]))
 #endif
+        return check
+    }
+    
+    //Check contact without a specific Component
+    private func genericRaycast(rayDistance: CGPoint) -> Bool {
+        guard let node else { return false }
+        
+        var check = false
+        
+        if physicsWorld == nil, let physicsWorld = body.node?.scene?.physicsWorld {
+            self.physicsWorld = physicsWorld
+        }
+        
+        let _ = physicsWorld?.enumerateBodies(alongRayStart: node.position , end: rayDistance, using: { body, _, _, _ in
+            if body.node?.entity?.component(ofType: IsPlayerComponent.self) == nil {
+                check = true
+            }
+        })
+        
         return check
     }
     

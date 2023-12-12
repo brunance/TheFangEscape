@@ -25,6 +25,7 @@ public class TrapEntity: GKEntity {
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
         physicsComp.body.categoryBitMask = .trap
+        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.player, .item, .bullet])
         
         self.addComponent(physicsComp)
         

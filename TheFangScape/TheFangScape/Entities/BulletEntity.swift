@@ -29,6 +29,7 @@ public class BulletEntity: GKEntity {
         physicsComp.body.mass = 100
         physicsComp.body.categoryBitMask = .bullet
         physicsComp.body.contactTestBitMask = .player
+        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.player, .item, .trap])
         
         self.addComponent(physicsComp)
         

@@ -90,6 +90,9 @@ extension GameScene :SKPhysicsContactDelegate {
         
         checkForContactPlayerAndDoor(entityA: entityA, entityB: entityB)
         checkForContactPlayerAndDoor(entityA: entityB, entityB: entityA)
+        
+        checkForContactPlayerAndEnemy(entityA: entityA, entityB: entityB)
+        checkForContactPlayerAndEnemy(entityA: entityB, entityB: entityA)
     }
     
     public func didEnd(_ contact: SKPhysicsContact) {
@@ -152,4 +155,12 @@ extension GameScene :SKPhysicsContactDelegate {
         }
     }
     
+    public func checkForContactPlayerAndEnemy(entityA: GKEntity, entityB: GKEntity) {
+        let isPlayerAndEnemyContact = (entityA.component(ofType: IsPlayerComponent.self) != nil &&
+                                      entityB.component(ofType: IsEnemyComponent.self) != nil)
+
+        if isPlayerAndEnemyContact {
+            playerEntity?.deathComponent?.startDeath(by: .trap)
+        }
+    }
 }

@@ -103,7 +103,7 @@ class MovementComponent: GKComponent {
     private func handleNonGravityAffectedEntity() {
         guard let physicsComp = physicsComp else { return }
         
-        if physicsComp.touchedOnWall(direction: direction) {
+        if physicsComp.hasContactWithOtherBody(direction: direction){
             changeDirection()
         }
     }
