@@ -27,7 +27,7 @@ public class ChangeStateBlockEntity: BlockEntity {
         
         let changeStateComp = ChangeStateComponent(firstState: {
             node.alpha = 1
-            node.texture = SKTexture(imageNamed: "changeEnabled0")
+            node.texture = SKTexture(imageNamed: "ChangeEnabled0")
             physicsComp.isActive()
         }, secondState: {
             node.alpha = 0.4
@@ -36,6 +36,7 @@ public class ChangeStateBlockEntity: BlockEntity {
         }, isFirstState: status)
 
         self.addComponent(changeStateComp)
+        self.addComponent(IsWallComponent())
         
         NotificationCenter.default.addObserver(self, selector: #selector(observeJump), name: .jumped, object: nil)
     }

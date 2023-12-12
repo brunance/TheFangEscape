@@ -11,19 +11,20 @@ import SpriteKit
 
 public class ItemEntity : GKEntity {
     
-    public init(position: CGPoint = .zero, size: CGSize) {
+    public init(position: CGPoint = .zero, size: CGSize, direction: Direction) {
         super.init()
         
         let nodeTexture = SKTexture(imageNamed: "torch")
         let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
+        node.xScale = direction.value
         self.addComponent(GKSKNodeComponent(node: node))
         
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
         physicsComp.body.categoryBitMask = .item
-        physicsComp.body.contactTestBitMask = .contactWithAllCategories(less:[.enemy,.ground,.trap,.bullet,.ice,.wall,.endPoint] )
+        physicsComp.body.contactTestBitMask = .player
         self.addComponent(physicsComp)
        
         let lightComp = LightComponent(color: .init(red: 1, green: 1, blue: 1, alpha: 1))

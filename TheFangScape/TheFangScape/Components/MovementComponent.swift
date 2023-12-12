@@ -12,6 +12,15 @@ import SpriteKit
 public enum Direction: CGFloat {
     case left = -1.0
     case right = 1.0
+    
+    var value: CGFloat {
+        rawValue
+    }
+}
+
+enum EntityType {
+    case gravityAffected
+    case nonGravityAffected
 }
 
 class MovementComponent: GKComponent {
@@ -22,14 +31,15 @@ class MovementComponent: GKComponent {
     
     var velocityX: CGFloat
     var direction: Direction
+    var entityType: EntityType
     
-    public var isDead = false
     private var hasChangedDirection = false
-    private var isRunning = false
+    private var isDead = false
     
-    public init(velocityX: CGFloat, direction: Direction) {
+    init(velocityX: CGFloat, direction: Direction, entityType: EntityType) {
         self.velocityX = velocityX
         self.direction = direction
+        self.entityType = entityType
         super.init()
     }
     
@@ -44,35 +54,25 @@ class MovementComponent: GKComponent {
     }
     
     override func update(deltaTime seconds: TimeInterval) {
-        guard let physicsComp = physicsComp else { return }
-
-        isDead ? nil : moveNode()
         
-        if physicsComp.touchedOnWall(direction: self.direction) && !hasChangedDirection && !physicsComp.isWallSliding(direction: self.direction) {
-            changeDirection()
-            hasChangedDirection = true
-        } else if !physicsComp.touchedOnWall(direction: self.direction) {
-            hasChangedDirection = false
+        if !isDead {
+            moveNode()
+            
+            if entityType == .gravityAffected {
+                handleGravityAffectedEntity()
+            } else if entityType == .nonGravityAffected {
+                handleNonGravityAffectedEntity()
+            }
         }
-        
-        if !isRunning {
-            isRunning.toggle()
-        } else if !physicsComp.isOnGround() {
-            isRunning = false
-        }
-        
     }
     
     func verifyAnimation() {
-        guard let physicsComp = physicsComp ,
-            !physicsComp.isWallSliding(direction: self.direction) else { return }
+        guard let physicsComp = physicsComp, !physicsComp.isWallSliding(direction: direction) else { return }
         
-        if (physicsComp.isOnGround() && physicsComp.body.velocity.dx != 0) {
+        if physicsComp.isOnGround() && physicsComp.body.velocity.dx != 0 {
             stateMachineComp?.stateMachine.enter(RunningState.self)
         } else {
-            if physicsComp.body.velocity.dy < -10 {
-                stateMachineComp?.stateMachine.enter(JumpingState.self)
-            } else if physicsComp.body.velocity.dy > 10 {
+            if physicsComp.body.velocity.dy < -10 || physicsComp.body.velocity.dy > 10 {
                 stateMachineComp?.stateMachine.enter(JumpingState.self)
             }
         }
@@ -87,11 +87,36 @@ class MovementComponent: GKComponent {
         verifyAnimation()
     }
     
+    private func handleGravityAffectedEntity() {
+        guard let physicsComp = physicsComp else { return }
+        
+        if physicsComp.touchedOnWall(direction: direction) == true &&
+            !hasChangedDirection &&
+            !physicsComp.isWallSliding(direction: direction) {
+            changeDirection()
+            hasChangedDirection = true
+        } else if !physicsComp.touchedOnWall(direction: direction) {
+            hasChangedDirection = false
+        }
+    }
+    
+    private func handleNonGravityAffectedEntity() {
+        guard let physicsComp = physicsComp else { return }
+        
+        if physicsComp.hasContactWithOtherBody(direction: direction){
+            changeDirection()
+        }
+    }
+    
     public func getDirection() -> CGFloat {
-        return direction.rawValue
+        return direction.value
     }
     
     public func changeDirection() {
-        self.direction = self.direction == .right ? .left : .right
+        direction = (direction == .right) ? .left : .right
+    }
+    
+    public func toggleDeath() {
+        isDead.toggle()
     }
 }

@@ -19,19 +19,23 @@ public class EnemyEntity: GKEntity {
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let physicsComp = PhysicsComponent.rectangleBody(ofSize: .init(width: 48, height: 48))
+        let physicsComp = PhysicsComponent.circle(ofRadius: .init(size.width / 2))
         physicsComp.body.categoryBitMask = .enemy
-        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.player])
+        physicsComp.body.contactTestBitMask = .player
+        physicsComp.body.affectedByGravity = false
+        physicsComp.body.collisionBitMask = .contactWithAllCategories(less: [.player, .item, .bullet, .trap])
         
         let animationStateMachine : GKStateMachine = .init(states: [
             RunningState(self, action: SKAction.enemyRun())
         ])
         
+        animationStateMachine.enter(RunningState.self)
         self.addComponent(AnimationStateMachineComponent(stateMachine: animationStateMachine))
         
         self.addComponent(physicsComp)
         
-        self.addComponent(MovementComponent(velocityX: 100 * 4, direction: .right))
+        self.addComponent(MovementComponent(velocityX: 100 * 4, direction: .right, entityType: .nonGravityAffected))
+        self.addComponent(IsEnemyComponent())
     }
     
     required init?(coder: NSCoder) {

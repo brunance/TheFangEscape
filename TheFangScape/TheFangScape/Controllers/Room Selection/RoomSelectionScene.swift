@@ -40,7 +40,8 @@ public class RoomSelectionScene: SKScene {
             let button = RoomButtonNode(imageNamed: "roomButton", releasedAction:  {
                 self.roomView?.selectedRoom(index: i)
             })
-            button.isLocked = i != 1
+            
+            button.isLocked = i > LevelManager.shared.currentLevelIndex
             self.addChild(button)
             
             let size = button.image.size

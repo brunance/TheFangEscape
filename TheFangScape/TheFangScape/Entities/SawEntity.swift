@@ -21,10 +21,10 @@ class SawEntity: GKEntity {
         physicsComp.body.affectedByGravity = false
         physicsComp.body.isDynamic = false
         physicsComp.body.categoryBitMask = .trap
-        physicsComp.body.contactTestBitMask = .contactWithAllCategories(less:[.enemy, .ground,.trap,.bullet,.ice,.wall,.endPoint] )
+        physicsComp.body.contactTestBitMask = .player
         
         self.addComponent(physicsComp)
-        self.addComponent(MovementComponent(velocityX: 32, direction: .right))
+        self.addComponent(MovementComponent(velocityX: 32, direction: .right, entityType: .nonGravityAffected))
         self.addComponent(RotatingComponent(rotatingSpeed: 10.0))
         self.addComponent(IsSawComponent())
     }

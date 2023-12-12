@@ -102,7 +102,7 @@
             0, 0, 0, 86, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 84, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 166, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -140,10 +140,10 @@
  "tilesets":[
         {
          "firstgid":1,
-         "source":"..\/..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/Ground.tsx"
+         "source":"..\/..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles\/Ground.tsx"
         }, 
         {
-         "firstgid":161,
+         "firstgid":167,
          "source":":\/automap-tiles.tsx"
         }],
  "tilewidth":90,

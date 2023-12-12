@@ -20,7 +20,6 @@ public struct RoomSelectionView: View {
         if willMoveToGameScene {
             ContentView()
         } else {
-            
             GeometryReader { geo in
                 SpriteView(scene: roomScene(size: geo.size))
                     .ignoresSafeArea()

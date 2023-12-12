@@ -23,7 +23,7 @@ public class PlatformEntity: GKEntity {
         physicsComp.body.allowsRotation = false
         
         self.addComponent(physicsComp)
-        self.addComponent(MovementComponent(velocityX: 12 * 8, direction: .left))
+        self.addComponent(MovementComponent(velocityX: 12 * 8, direction: .left, entityType: .nonGravityAffected))
         self.addComponent(IsGroundComponent())
     }
     

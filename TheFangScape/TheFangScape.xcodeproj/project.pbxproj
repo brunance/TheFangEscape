@@ -51,6 +51,8 @@
 		66CAD6922B06D72700F7940E /* DeathByTrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6912B06D72700F7940E /* DeathByTrap.swift */; };
 		66CAD6942B06D73D00F7940E /* WinningState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6932B06D73D00F7940E /* WinningState.swift */; };
 		66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6952B07A4F600F7940E /* PlatformEntity.swift */; };
+		66D45FE22B1F6674008863A2 /* floor1-level0.json in Resources */ = {isa = PBXBuildFile; fileRef = 66D45FE12B1F6674008863A2 /* floor1-level0.json */; };
+		66D45FE42B28A36A008863A2 /* IsEnemyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D45FE32B28A36A008863A2 /* IsEnemyComponent.swift */; };
 		761097062B0E5AE8003BA736 /* CGPath+Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097052B0E5AE8003BA736 /* CGPath+Primitives.swift */; };
 		761097082B0F7868003BA736 /* DestructableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097072B0F7868003BA736 /* DestructableComponent.swift */; };
 		7610970A2B0F7B22003BA736 /* Comparable+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097092B0F7B22003BA736 /* Comparable+Clamp.swift */; };
@@ -139,6 +141,8 @@
 		66CAD6912B06D72700F7940E /* DeathByTrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathByTrap.swift; sourceTree = "<group>"; };
 		66CAD6932B06D73D00F7940E /* WinningState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningState.swift; sourceTree = "<group>"; };
 		66CAD6952B07A4F600F7940E /* PlatformEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformEntity.swift; sourceTree = "<group>"; };
+		66D45FE12B1F6674008863A2 /* floor1-level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level0.json"; sourceTree = "<group>"; };
+		66D45FE32B28A36A008863A2 /* IsEnemyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsEnemyComponent.swift; sourceTree = "<group>"; };
 		761097052B0E5AE8003BA736 /* CGPath+Primitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+Primitives.swift"; sourceTree = "<group>"; };
 		761097072B0F7868003BA736 /* DestructableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructableComponent.swift; sourceTree = "<group>"; };
 		761097092B0F7B22003BA736 /* Comparable+Clamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamp.swift"; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				66B79AA02B10DED600E60B11 /* IsDoorComponent.swift */,
 				06B0B3DB2B10F4A600899163 /* IsSpikeComponent.swift */,
 				66B79ABD2B176D8C00E60B11 /* IsSawComponent.swift */,
+				66D45FE32B28A36A008863A2 /* IsEnemyComponent.swift */,
 			);
 			path = IsEntityComponent;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 		768961C92B1A31D6005A96B8 /* Floor 1 */ = {
 			isa = PBXGroup;
 			children = (
+				66D45FE12B1F6674008863A2 /* floor1-level0.json */,
 				767C75112B0CF7B000D5E61B /* floor1-level1.json */,
 				0CCAC7812B1612160014C8A0 /* floor1-level2.json */,
 				0CCAC7822B1612170014C8A0 /* floor1-level3.json */,
@@ -491,6 +497,7 @@
 				76FCDC202B027C2500E55B2A /* Preview Assets.xcassets in Resources */,
 				0CEDB28F2B1E424C00C2FEC3 /* floor1-level11.json in Resources */,
 				0CEDB2912B1E424C00C2FEC3 /* floor1-level6.json in Resources */,
+				66D45FE22B1F6674008863A2 /* floor1-level0.json in Resources */,
 				0CEDB28B2B1E424C00C2FEC3 /* floor1-level10.json in Resources */,
 				0CEDB28D2B1E424C00C2FEC3 /* floor1-level5.json in Resources */,
 				0CCAC7842B1612170014C8A0 /* floor1-level3.json in Resources */,
@@ -562,6 +569,7 @@
 				66CAD6872B06D59E00F7940E /* RunningState.swift in Sources */,
 				660633EB2B0AFA21005D184B /* UInt32+CollisionCategories.swift in Sources */,
 				66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */,
+				66D45FE42B28A36A008863A2 /* IsEnemyComponent.swift in Sources */,
 				06B0B3DA2B10F47100899163 /* SpikeEntity.swift in Sources */,
 				768961D22B1A5690005A96B8 /* RoomButtonNode.swift in Sources */,
 				66CAD6902B06D71600F7940E /* DeathByDark.swift in Sources */,
