@@ -64,7 +64,7 @@ public class PlayerEntity: GKEntity {
         self.addComponent(physicsComp)
         
         self.addComponent(MovementComponent(velocityX: 100 * 4, direction: .right, entityType: .gravityAffected))
-        self.addComponent(JumpComponent(forceY: 310, forceX: 200))
+        self.addComponent(JumpComponent(forceY: 310, forceX: 250))
         self.addComponent(WallSlideComponent())
         
         self.addComponent(DeathComponent())
