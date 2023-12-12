@@ -8,7 +8,7 @@
  "margin":0,
  "name":"Ground",
  "spacing":0,
- "tilecount":34,
+ "tilecount":36,
  "tiledversion":"1.10.1",
  "tileheight":270,
  "tiles":[
@@ -358,7 +358,9 @@
         }, 
         {
          "id":157,
-         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/movePlatform0.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Entities\/movePlatform0.png",
+         "imageheight":89,
+         "imagewidth":90,
          "properties":[
                 {
                  "name":"type",
@@ -380,7 +382,9 @@
         }, 
         {
          "id":159,
-         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tiles 2.0\/movePlatform2.png",
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Entities\/movePlatform2.png",
+         "imageheight":89,
+         "imagewidth":90,
          "properties":[
                 {
                  "name":"type",
@@ -454,6 +458,40 @@
                  "name":"type",
                  "type":"string",
                  "value":"trapSpike"
+                }]
+        }, 
+        {
+         "id":164,
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/lightLeft.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "properties":[
+                {
+                 "name":"direction",
+                 "type":"string",
+                 "value":"-1"
+                }, 
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"item"
+                }]
+        }, 
+        {
+         "id":165,
+         "image":"..\/..\/..\/..\/..\/Dropbox (Developer Academy)\/DOCS Games\/Tileset\/Tileset\/lightRight.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "properties":[
+                {
+                 "name":"direction",
+                 "type":"string",
+                 "value":"1"
+                }, 
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"item"
                 }]
         }],
  "tilewidth":180,

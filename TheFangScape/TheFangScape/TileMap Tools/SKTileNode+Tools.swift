@@ -33,7 +33,7 @@ extension SKTileMapNode {
     
     static func createTileMapNode(fromLevelData levelData: LevelData, entityManager: SKEntityManager) -> SKNode? {
         let node = SKNode()
-                
+        
         for layer in levelData.layers {
             
             guard !layer.name.contains("prototype") else { continue }
@@ -73,14 +73,14 @@ extension SKTileMapNode {
         return node
     }
     
-    static func factoryTiles(entityManager: SKEntityManager, 
+    static func factoryTiles(entityManager: SKEntityManager,
                              tileDefinition: SKTileDefinition,
                              tilePosition: CGPoint,
                              tileSize: CGSize) {
         guard let tileData = tileDefinition.userData?.value(forKey: "type") as? String else {
             return
         }
-
+        
         switch tileData {
         case TileType.ground.rawValue:
             let groundEntity = GroundEntity(position: tilePosition, size: tileSize)
@@ -94,7 +94,9 @@ extension SKTileMapNode {
             let trap = TrapEntity(position: tilePosition, entityManager: entityManager, shootDirection: direction, size: tileSize)
             entityManager.add(entity: trap)
         case TileType.light.rawValue:
-            let light = ItemEntity(position: tilePosition, size: tileSize)
+            let data = (tileDefinition.userData?.value(forKey: "direction") as? String)
+            let direction: Direction = data == "1" ? .left : .right
+            let light = ItemEntity(position: tilePosition, size: tileSize, direction: direction)
             entityManager.add(entity: light)
         case TileType.door.rawValue:
             let door = DoorEntity(position: tilePosition, size: tileSize)

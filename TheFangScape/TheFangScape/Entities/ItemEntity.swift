@@ -11,12 +11,13 @@ import SpriteKit
 
 public class ItemEntity : GKEntity {
     
-    public init(position: CGPoint = .zero, size: CGSize) {
+    public init(position: CGPoint = .zero, size: CGSize, direction: Direction) {
         super.init()
         
         let nodeTexture = SKTexture(imageNamed: "torch")
         let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
+        node.xScale = direction.value
         self.addComponent(GKSKNodeComponent(node: node))
         
         let physicsComp = PhysicsComponent.rectangleBody(ofSize: node.size)
