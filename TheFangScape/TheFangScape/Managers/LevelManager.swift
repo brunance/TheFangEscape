@@ -50,10 +50,14 @@ public class LevelManager {
     }
     
     public func setLevel(index: Int) {
-        currentLevelIndex = index
+        if index > currentLevelIndex {
+            currentLevelIndex = index
+        }
     }
     
     public func setFloor(index: Int) {
-        currentFloorIndex = index
+        if index > currentFloorIndex {
+            currentFloorIndex = index
+        }
     }
 }

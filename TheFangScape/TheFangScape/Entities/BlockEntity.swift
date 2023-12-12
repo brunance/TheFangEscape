@@ -14,7 +14,7 @@ public class BlockEntity: GKEntity {
     public init(position: CGPoint = .zero, size: CGSize) {
         super.init()
         
-        let nodeTexture = SKTexture(imageNamed: "changeEnabled0")
+        let nodeTexture = SKTexture(imageNamed: "ChangeEnabled0")
         let node = SKSpriteNode(texture: nodeTexture, size: size)
         node.position = position
         self.addComponent(GKSKNodeComponent(node: node))
@@ -24,7 +24,7 @@ public class BlockEntity: GKEntity {
         physicsComp.body.isDynamic = false
         self.addComponent(physicsComp)
         
-//        self.addComponent(IsGroundComponent())
+        self.addComponent(IsGroundComponent())
         self.addComponent(IsWallComponent())
     }
     
