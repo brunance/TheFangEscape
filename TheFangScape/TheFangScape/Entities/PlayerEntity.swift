@@ -47,7 +47,7 @@ public class PlayerEntity: GKEntity {
         
         self.addComponent(AnimationStateMachineComponent(stateMachine: animationStateMachine))
         
-        let node = SKSpriteNode(imageNamed: "run1")
+        let node = SKSpriteNode(imageNamed: "playerRun1")
         node.position = position
         node.zPosition = 10
         self.addComponent(GKSKNodeComponent(node: node))
