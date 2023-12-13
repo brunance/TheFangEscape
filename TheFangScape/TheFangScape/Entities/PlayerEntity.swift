@@ -48,11 +48,12 @@ public class PlayerEntity: GKEntity {
         self.addComponent(AnimationStateMachineComponent(stateMachine: animationStateMachine))
         
         let node = SKSpriteNode(imageNamed: "playerRun1")
+        node.size = CGSize(width: 128, height: 128)
         node.position = position
         node.zPosition = 10
         self.addComponent(GKSKNodeComponent(node: node))
         
-        let size: CGSize = .init(width: node.size.width/2, height: node.size.height - 4)
+        let size: CGSize = .init(width: node.size.width / 2, height: node.size.height - 4)
         let physicsComp = PhysicsComponent.capsule(size: size, cornerRadius: 10)
         physicsComp.body.allowsRotation = false
         physicsComp.body.restitution = 0.0
