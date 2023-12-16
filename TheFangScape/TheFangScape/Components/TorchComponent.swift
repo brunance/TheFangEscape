@@ -19,7 +19,12 @@ public class TorchComponent: GKComponent {
     
     //Timer for the light to run out
     private var timeElapsed: TimeInterval = 0
-    private var duration: TimeInterval = 15
+    private var duration: TimeInterval = 5
+    
+    private var timeLeft: TimeInterval = -1
+    
+    private var eyesCreated = 0
+    private var eyesCreationTimer: Timer?
     
     var speedFactor: CGFloat = 1
     
@@ -40,7 +45,7 @@ public class TorchComponent: GKComponent {
         node = entity?.component(ofType: GKSKNodeComponent.self)?.node
         deathComp = entity?.component(ofType: DeathComponent.self)
         
-        let lightComp = LightComponent(color: .init(red: 1, green: 0.8, blue: 0.7, alpha: 1))
+        let lightComp = LightComponent(color: .init(red: 1, green: 0.5, blue: 0, alpha: 1))
         entity?.addComponent(lightComp)
         self.lightComp = lightComp
         
@@ -61,9 +66,14 @@ public class TorchComponent: GKComponent {
             decay()
         } else if let deathComp = deathComp, !deathComp.deathHasStarted {
             timeToDeath -= seconds
-
+            timeLeft += seconds
+            
+            if eyesCreationTimer == nil && eyesCreated < 5 {
+                startEyesCreationTimer()
+            }
+            
             if timeToDeath <= 0 {
-                deathComp.startDeath(by: .dark)
+                deathComp.startDeath(by: .trap)
             }
         }
     }
@@ -76,6 +86,8 @@ public class TorchComponent: GKComponent {
     public func restore() {
         timeElapsed = 0
         intensity = 1
+        
+        removeVampireEyes()
     }
     
     public func accelerateProgress() {
@@ -84,5 +96,54 @@ public class TorchComponent: GKComponent {
     
     public func normalizeProgress() {
         speedFactor = 1
+    }
+    
+    private func startEyesCreationTimer() {
+        let interval = 1.0
+        
+        eyesCreationTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(spawnEyes), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func spawnEyes() {
+        guard let scene = self.node?.scene as? GameScene,
+        let node = entity?.component(ofType: GKSKNodeComponent.self)?.node else { return }
+        
+        let vampireEye = SKSpriteNode(imageNamed: "vampireEyes")
+        
+        vampireEye.size = CGSize(width: 90, height: 22.5)
+        vampireEye.zPosition = 10
+        vampireEye.position = node.position
+        vampireEye.alpha = 0
+        
+        let light = SKLightNode()
+        light.lightColor = .red
+        light.falloff = 5
+        vampireEye.addChild(light)
+        
+        scene.addChild(vampireEye)
+        
+        let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
+        vampireEye.run(fadeInAction)
+        
+        eyesCreated += 1
+        
+        if eyesCreated >= 4 {
+            eyesCreationTimer?.invalidate()
+            eyesCreationTimer = nil
+        }
+    }
+    
+    public func removeVampireEyes() {
+        guard let scene = self.node?.scene as? GameScene else { return }
+
+        scene.enumerateChildNodes(withName: "vampireEye") { node, _ in
+            node.removeFromParent()
+        }
+
+        timeToDeath = 5
+        timeLeft = -1
+        eyesCreated = 0
+        eyesCreationTimer?.invalidate()
+        eyesCreationTimer = nil
     }
 }

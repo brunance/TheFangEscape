@@ -26,10 +26,14 @@ public class ItemEntity : GKEntity {
         physicsComp.body.categoryBitMask = .item
         physicsComp.body.contactTestBitMask = .player
         self.addComponent(physicsComp)
-       
-        let lightComp = LightComponent(color: .init(red: 1, green: 1, blue: 1, alpha: 1))
-        lightComp.setIntensity(0.3)
+        
+        let lightComp = LightComponent(color: .init(red: 1, green: 0.5, blue: 0, alpha: 1))
+        lightComp.setIntensity(1)
         lightComp.lightNode.falloff = 2
+        
+        let spark = SKEmitterNode(fileNamed: "Fire") ?? SKEmitterNode()
+        lightComp.lightNode.addChild(spark)
+        
         self.addComponent(lightComp)
         
         self.addComponent(DestructableComponent())

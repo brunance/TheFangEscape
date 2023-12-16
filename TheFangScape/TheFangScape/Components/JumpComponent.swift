@@ -62,7 +62,7 @@ public class JumpComponent: GKComponent {
         stateMachine.stateMachine.enter(JumpingState.self)
         physicsComp.body.applyImpulse(.init(
             dx: movementComp.direction.rawValue * forceX,
-            dy: forceY))
+            dy: forceY + 50))
         
         movementComp.changeDirection()
     }
