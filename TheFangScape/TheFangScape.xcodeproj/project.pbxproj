@@ -53,6 +53,7 @@
 		66CAD6962B07A4F600F7940E /* PlatformEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CAD6952B07A4F600F7940E /* PlatformEntity.swift */; };
 		66D45FE22B1F6674008863A2 /* floor1-level0.json in Resources */ = {isa = PBXBuildFile; fileRef = 66D45FE12B1F6674008863A2 /* floor1-level0.json */; };
 		66D45FE42B28A36A008863A2 /* IsEnemyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D45FE32B28A36A008863A2 /* IsEnemyComponent.swift */; };
+		66D45FE62B2B3535008863A2 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 66D45FE52B2B3535008863A2 /* Fire.sks */; };
 		761097062B0E5AE8003BA736 /* CGPath+Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097052B0E5AE8003BA736 /* CGPath+Primitives.swift */; };
 		761097082B0F7868003BA736 /* DestructableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097072B0F7868003BA736 /* DestructableComponent.swift */; };
 		7610970A2B0F7B22003BA736 /* Comparable+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097092B0F7B22003BA736 /* Comparable+Clamp.swift */; };
@@ -143,6 +144,7 @@
 		66CAD6952B07A4F600F7940E /* PlatformEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformEntity.swift; sourceTree = "<group>"; };
 		66D45FE12B1F6674008863A2 /* floor1-level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level0.json"; sourceTree = "<group>"; };
 		66D45FE32B28A36A008863A2 /* IsEnemyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsEnemyComponent.swift; sourceTree = "<group>"; };
+		66D45FE52B2B3535008863A2 /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
 		761097052B0E5AE8003BA736 /* CGPath+Primitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+Primitives.swift"; sourceTree = "<group>"; };
 		761097072B0F7868003BA736 /* DestructableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructableComponent.swift; sourceTree = "<group>"; };
 		761097092B0F7B22003BA736 /* Comparable+Clamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamp.swift"; sourceTree = "<group>"; };
@@ -228,6 +230,14 @@
 				66CAD6932B06D73D00F7940E /* WinningState.swift */,
 			);
 			path = AnimationStates;
+			sourceTree = "<group>";
+		};
+		66D45FE72B2B3792008863A2 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				66D45FE52B2B3535008863A2 /* Fire.sks */,
+			);
+			path = Effects;
 			sourceTree = "<group>";
 		};
 		768961BA2B1A1F17005A96B8 /* View */ = {
@@ -328,7 +338,7 @@
 		76FCDC172B027C2500E55B2A /* TheFangScape */ = {
 			isa = PBXGroup;
 			children = (
-				768961C02B1A2212005A96B8 /* Info.plist */,
+				66D45FE72B2B3792008863A2 /* Effects */,
 				768961BD2B1A21BF005A96B8 /* Fonts */,
 				768961BA2B1A1F17005A96B8 /* View */,
 				76F696372B0BCF51000B4ED4 /* TileMap Tools */,
@@ -340,6 +350,7 @@
 				76FCDC262B027C4F00E55B2A /* Controllers */,
 				76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */,
 				76FCDC1C2B027C2500E55B2A /* Assets.xcassets */,
+				768961C02B1A2212005A96B8 /* Info.plist */,
 				76FCDC1E2B027C2500E55B2A /* Preview Content */,
 			);
 			path = TheFangScape;
@@ -501,6 +512,7 @@
 				0CEDB28B2B1E424C00C2FEC3 /* floor1-level10.json in Resources */,
 				0CEDB28D2B1E424C00C2FEC3 /* floor1-level5.json in Resources */,
 				0CCAC7842B1612170014C8A0 /* floor1-level3.json in Resources */,
+				66D45FE62B2B3535008863A2 /* Fire.sks in Resources */,
 				66603DC82B1A647400227D00 /* floor1-level4.json in Resources */,
 				0CEDB2902B1E424C00C2FEC3 /* floor1-level12.json in Resources */,
 				0CEDB28C2B1E424C00C2FEC3 /* floor1-level9.json in Resources */,

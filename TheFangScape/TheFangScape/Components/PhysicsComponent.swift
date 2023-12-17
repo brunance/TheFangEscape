@@ -107,7 +107,6 @@ public class PhysicsComponent: GKComponent {
         }
         
         let _ = physicsWorld?.enumerateBodies(alongRayStart: node.position , end: rayDistance, using: { body, _, _, _ in
-            // Check if the body founded has Ground Component
             if body.node?.entity?.component(ofType: type) != nil {
                 check = true
             }

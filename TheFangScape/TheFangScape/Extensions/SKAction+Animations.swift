@@ -47,6 +47,28 @@ extension SKAction {
         
         return repeatForever
     }
-
-
+    
+    public static func eyesBlink() -> SKAction {
+        let textures = Array(withFormat: "vampireEyes%@", range: 1...2)
+        
+        let forwardAnimation = SKAction.animate(with: textures, timePerFrame: 0.1)
+        
+        let reverseTextures = Array(textures.reversed())
+        let reverseAnimation = SKAction.animate(with: reverseTextures, timePerFrame: 0.1)
+        
+        let wait = SKAction.wait(forDuration: 1.0)
+        
+        let sequence = SKAction.sequence([forwardAnimation, reverseAnimation, wait])
+        
+        let repeatForever = SKAction.repeatForever(sequence)
+        
+        return repeatForever
+    }
+    
+    public static func fadeOutEyes() -> SKAction {
+        let fadeOut = SKAction.fadeOut(withDuration: 0.4)
+        
+        return fadeOut
+    }
+    
 }
