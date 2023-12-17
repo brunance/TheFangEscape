@@ -87,7 +87,7 @@ public class TorchComponent: GKComponent {
         timeElapsed = 0
         intensity = 1
         
-        removeVampireEyes()
+        removeVampireEyes(isDead: false)
     }
     
     public func accelerateProgress() {
@@ -108,17 +108,19 @@ public class TorchComponent: GKComponent {
         guard let scene = self.node?.scene as? GameScene,
         let node = entity?.component(ofType: GKSKNodeComponent.self)?.node else { return }
         
-        let vampireEye = SKSpriteNode(imageNamed: "vampireEyes")
+        let vampireEye = SKSpriteNode(imageNamed: "vampireEyes1")
         
         vampireEye.size = CGSize(width: 90, height: 22.5)
-        vampireEye.zPosition = 10
-        vampireEye.position = node.position
+        vampireEye.zPosition = 1
+        vampireEye.position = CGPoint(x: node.position.x, y: node.position.y + CGFloat.random(in: 0...50))
+        vampireEye.name = "vampireEye"
         vampireEye.alpha = 0
         
         let light = SKLightNode()
         light.lightColor = .red
         light.falloff = 5
         vampireEye.addChild(light)
+        vampireEye.run(.repeatForever(.eyesBlink()))
         
         scene.addChild(vampireEye)
         
@@ -133,11 +135,18 @@ public class TorchComponent: GKComponent {
         }
     }
     
-    public func removeVampireEyes() {
-        guard let scene = self.node?.scene as? GameScene else { return }
-
+    public func removeVampireEyes(isDead: Bool) {
+        guard let scene = self.node?.scene as? GameScene, let entityNode = entity?.component(ofType: GKSKNodeComponent.self)?.node else { return }
+        
+        let vampireAttackAnimation = SKAction.sequence([
+            SKAction.move(to: CGPoint(x: entityNode.position.x, y: entityNode.position.y), duration: 0.8),
+            SKAction.fadeOut(withDuration: 0.4)
+        ])
+        
         scene.enumerateChildNodes(withName: "vampireEye") { node, _ in
-            node.removeFromParent()
+            node.run(isDead ? vampireAttackAnimation : .fadeOutEyes()) {
+                node.removeFromParent()
+            }
         }
 
         timeToDeath = 5
