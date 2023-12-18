@@ -40,7 +40,7 @@ public class FloorSelectionScene: SKScene {
                 self.floorView?.selectedFloor(index: info.floorIndex)
             })
             
-            floorButton.isLocked  = false
+            floorButton.isLocked = info.floorIndex > LevelManager.shared.getFloor()
             self.addChild(floorButton)
             
             floorButton.position = info.position
