@@ -7,6 +7,7 @@
 
 import Foundation
 import SpriteKit
+import SwiftUI
 import GameplayKit
 
 extension GameScene :SKPhysicsContactDelegate {
@@ -22,16 +23,34 @@ extension GameScene :SKPhysicsContactDelegate {
     internal func setupScene(levelNamed: String) {
         self.mask.maskNode?.setScale(5)
         self.backgroundColor = .black
-
+        self.zPosition = -1
+        
         guard let entityManager,
-        let levelData = TileSetManager.shared.loadScenarioData(named: levelNamed) else { return }
+              let levelData = TileSetManager.shared.loadScenarioData(named: levelNamed) else { return }
         
         let scenario = ScenarioEntity(levelData: levelData, entityManager: entityManager)
         entityManager.add(entity: scenario)
-
+        
         self.playerEntity = entityManager.first(withComponent: IsPlayerComponent.self) as? PlayerEntity
-
+        
         setupCamera()
+    }
+    
+    func showPopup(restartAction: @escaping () -> Void, continueAction: @escaping () -> Void) {
+        let popupView = PopupView(restartAction: restartAction, continueAction: continueAction)
+        let hostingController = UIHostingController(rootView: popupView)
+        
+        if let view = self.view {
+            hostingController.view.frame = view.bounds
+            hostingController.view.backgroundColor = .clear
+            hostingController.view.isOpaque = false
+            view.addSubview(hostingController.view)
+        }
+    }
+    
+    func hidePopup() {
+        // Remove the popup from the view hierarchy
+        self.view?.subviews.forEach { $0.removeFromSuperview() }
     }
     
     private func setupCamera() {
@@ -44,8 +63,17 @@ extension GameScene :SKPhysicsContactDelegate {
     internal func finishLevel() {
         startEndLevelAnimation {
             self.entityManager?.removeAll()
-            LevelManager.shared.nextLevel()
-            self.startUpScene(withName: LevelManager.shared.currentLevelName)
+            self.showPopup(
+                restartAction: {
+                    self.restartLevel()
+                    self.hidePopup()
+                },
+                continueAction: {
+                    self.hidePopup()
+                    LevelManager.shared.nextLevel()
+                    self.startUpScene(withName: LevelManager.shared.currentLevelName)
+                }
+            )
         }
     }
     
@@ -140,7 +168,7 @@ extension GameScene :SKPhysicsContactDelegate {
         
         let isPlayerAndBulletContact = (entityA.component(ofType: IsPlayerComponent.self) != nil &&
                                         entityB.component(ofType: IsBulletComponent.self) != nil)
-
+        
         if isPlayerAndTrapContact || isPlayerAndBulletContact {
             playerEntity?.deathComponent?.startDeath(by: .trap)
         }
@@ -148,8 +176,8 @@ extension GameScene :SKPhysicsContactDelegate {
     
     public func checkForContactPlayerAndSpikeBegin(entityA: GKEntity, entityB: GKEntity) {
         let isPlayerAndSpikeContact = (entityA.component(ofType: IsPlayerComponent.self) != nil &&
-                                      entityB.component(ofType: IsSpikeComponent.self) != nil)
-
+                                       entityB.component(ofType: IsSpikeComponent.self) != nil)
+        
         if isPlayerAndSpikeContact {
             playerEntity?.deathComponent?.startDeath(by: .trap)
         }
@@ -157,8 +185,8 @@ extension GameScene :SKPhysicsContactDelegate {
     
     public func checkForContactPlayerAndEnemy(entityA: GKEntity, entityB: GKEntity) {
         let isPlayerAndEnemyContact = (entityA.component(ofType: IsPlayerComponent.self) != nil &&
-                                      entityB.component(ofType: IsEnemyComponent.self) != nil)
-
+                                       entityB.component(ofType: IsEnemyComponent.self) != nil)
+        
         if isPlayerAndEnemyContact {
             playerEntity?.deathComponent?.startDeath(by: .trap)
         }

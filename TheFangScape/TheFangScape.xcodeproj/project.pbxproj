@@ -54,6 +54,7 @@
 		66D45FE22B1F6674008863A2 /* floor1-level0.json in Resources */ = {isa = PBXBuildFile; fileRef = 66D45FE12B1F6674008863A2 /* floor1-level0.json */; };
 		66D45FE42B28A36A008863A2 /* IsEnemyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D45FE32B28A36A008863A2 /* IsEnemyComponent.swift */; };
 		66D45FE62B2B3535008863A2 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 66D45FE52B2B3535008863A2 /* Fire.sks */; };
+		66D45FEA2B30F22E008863A2 /* ActionsButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D45FE92B30F22E008863A2 /* ActionsButtonNode.swift */; };
 		761097062B0E5AE8003BA736 /* CGPath+Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097052B0E5AE8003BA736 /* CGPath+Primitives.swift */; };
 		761097082B0F7868003BA736 /* DestructableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097072B0F7868003BA736 /* DestructableComponent.swift */; };
 		7610970A2B0F7B22003BA736 /* Comparable+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761097092B0F7B22003BA736 /* Comparable+Clamp.swift */; };
@@ -145,6 +146,7 @@
 		66D45FE12B1F6674008863A2 /* floor1-level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "floor1-level0.json"; sourceTree = "<group>"; };
 		66D45FE32B28A36A008863A2 /* IsEnemyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsEnemyComponent.swift; sourceTree = "<group>"; };
 		66D45FE52B2B3535008863A2 /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
+		66D45FE92B30F22E008863A2 /* ActionsButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsButtonNode.swift; sourceTree = "<group>"; };
 		761097052B0E5AE8003BA736 /* CGPath+Primitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+Primitives.swift"; sourceTree = "<group>"; };
 		761097072B0F7868003BA736 /* DestructableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructableComponent.swift; sourceTree = "<group>"; };
 		761097092B0F7B22003BA736 /* Comparable+Clamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamp.swift"; sourceTree = "<group>"; };
@@ -238,6 +240,14 @@
 				66D45FE52B2B3535008863A2 /* Fire.sks */,
 			);
 			path = Effects;
+			sourceTree = "<group>";
+		};
+		66D45FE82B30F208008863A2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				66D45FE92B30F22E008863A2 /* ActionsButtonNode.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		768961BA2B1A1F17005A96B8 /* View */ = {
@@ -367,6 +377,7 @@
 		76FCDC262B027C4F00E55B2A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				66D45FE82B30F208008863A2 /* Components */,
 				768961CE2B1A33DF005A96B8 /* Room Selection */,
 				768961C42B1A2863005A96B8 /* Game Scene */,
 				768961C32B1A2857005A96B8 /* Floor Selection */,
@@ -597,6 +608,7 @@
 				76FCDC7C2B080C6D00E55B2A /* ChangeStateComponent.swift in Sources */,
 				66B79AA12B10DED600E60B11 /* IsDoorComponent.swift in Sources */,
 				768961C82B1A2893005A96B8 /* ButtonNode.swift in Sources */,
+				66D45FEA2B30F22E008863A2 /* ActionsButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +742,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheFangScape/Preview Content\"";
-				DEVELOPMENT_TEAM = G25XDPJGWQ;
+				DEVELOPMENT_TEAM = 2VBT66DD5V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheFangScape/Info.plist;
@@ -761,7 +773,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheFangScape/Preview Content\"";
-				DEVELOPMENT_TEAM = G25XDPJGWQ;
+				DEVELOPMENT_TEAM = 2VBT66DD5V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheFangScape/Info.plist;
