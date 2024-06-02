@@ -36,7 +36,6 @@ public class FloorSelectionScene: SKScene {
 
         for info in buttonInfo {
             let floorButton = FloorButtonNode(image: SKSpriteNode(color: info.color, size: info.size), releasedAction: {
-                print("Go To Floor \(info.floorIndex)")
                 self.floorView?.selectedFloor(index: info.floorIndex)
             })
             

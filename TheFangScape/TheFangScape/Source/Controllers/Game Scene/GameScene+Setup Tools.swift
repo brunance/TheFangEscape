@@ -36,8 +36,10 @@ extension GameScene :SKPhysicsContactDelegate {
         setupCamera()
     }
     
-    func showPopup(restartAction: @escaping () -> Void, continueAction: @escaping () -> Void) {
-        let popupView = PopupView(homeAction: restartAction, restartAction: continueAction, closeAction: {self.hidePopup()})
+    func showPopup(homeAction: @escaping () -> Void, continueAction: @escaping () -> Void) {
+        let popupView = PopupView(homeAction: homeAction, 
+                                  continueAction: continueAction,
+                                  closeAction: {self.hidePopup()})
         let hostingController = UIHostingController(rootView: popupView)
         
         if let view = self.view {
@@ -49,7 +51,6 @@ extension GameScene :SKPhysicsContactDelegate {
     }
     
     func hidePopup() {
-        // Remove the popup from the view hierarchy
         self.view?.subviews.forEach { $0.removeFromSuperview() }
     }
     
@@ -64,8 +65,8 @@ extension GameScene :SKPhysicsContactDelegate {
         startEndLevelAnimation {
             self.entityManager?.removeAll()
             self.showPopup(
-                restartAction: {
-                    self.restartLevel()
+                homeAction: {
+                    self.returnToHome()
                     self.hidePopup()
                 },
                 continueAction: {
@@ -75,6 +76,12 @@ extension GameScene :SKPhysicsContactDelegate {
                 }
             )
         }
+    }
+    
+    private func returnToHome() {
+        guard let view = self.view else { return }
+        let roomSelectionScene = RoomSelectionScene(size: view.bounds.size, view: RoomSelectionView())
+        view.presentScene(roomSelectionScene, transition: .fade(withDuration: 1.0))
     }
     
     internal func restartLevel() {

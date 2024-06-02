@@ -11,7 +11,7 @@ import SwiftUI
 struct PopupView: View {
     
     var homeAction: () -> Void
-    var restartAction: () -> Void
+    var continueAction: () -> Void
     var closeAction: () -> Void
     
     var body: some View {
@@ -58,7 +58,7 @@ struct PopupView: View {
                                 PrimaryMenuButtons(icon: {
                                     Image("iconReturn")
                                 }, action: {
-                                    homeAction()
+                                    continueAction()
                                 }, .actions)
                                 .padding()
                             }

@@ -207,6 +207,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66A2C8DA2C0C23550099491F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				76FCDC262B027C4F00E55B2A /* Controllers */,
+				76FCDC2B2B027F1400E55B2A /* Entities */,
+				76FCDC2F2B0280B700E55B2A /* Managers */,
+				76FCDC7F2B080E6000E55B2A /* Extensions */,
+				768961BA2B1A1F17005A96B8 /* View */,
+				76FCDC2E2B02809F00E55B2A /* Components */,
+				76F696372B0BCF51000B4ED4 /* TileMap Tools */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		66A2C8DB2C0C23610099491F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				768961BD2B1A21BF005A96B8 /* Fonts */,
+				66D45FE72B2B3792008863A2 /* Effects */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		66A2C8DC2C0C236C0099491F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66CAD6852B06D57C00F7940E /* AnimationStates */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		66B79AA52B160C6100E60B11 /* IsEntityComponent */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,16 +385,9 @@
 		76FCDC172B027C2500E55B2A /* TheFangScape */ = {
 			isa = PBXGroup;
 			children = (
-				66D45FE72B2B3792008863A2 /* Effects */,
-				768961BD2B1A21BF005A96B8 /* Fonts */,
-				768961BA2B1A1F17005A96B8 /* View */,
-				76F696372B0BCF51000B4ED4 /* TileMap Tools */,
-				76FCDC7F2B080E6000E55B2A /* Extensions */,
-				66CAD6852B06D57C00F7940E /* AnimationStates */,
-				76FCDC2F2B0280B700E55B2A /* Managers */,
-				76FCDC2E2B02809F00E55B2A /* Components */,
-				76FCDC2B2B027F1400E55B2A /* Entities */,
-				76FCDC262B027C4F00E55B2A /* Controllers */,
+				66A2C8DC2C0C236C0099491F /* Resources */,
+				66A2C8DB2C0C23610099491F /* Assets */,
+				66A2C8DA2C0C23550099491F /* Source */,
 				76FCDC182B027C2500E55B2A /* TheFangScapeApp.swift */,
 				76FCDC1C2B027C2500E55B2A /* Assets.xcassets */,
 				768961C02B1A2212005A96B8 /* Info.plist */,

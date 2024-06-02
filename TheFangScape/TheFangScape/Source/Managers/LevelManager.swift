@@ -11,8 +11,8 @@ public class LevelManager {
     
     public static let shared = LevelManager()
     
-    private var currentLevelIndex: Int
-    private var currentFloorIndex: Int
+    private var savedLevelIndex: Int
+    private var savedFloorIndex: Int
     
     private let saveURL: URL
     
@@ -22,54 +22,54 @@ public class LevelManager {
         
         if let savedData = try? Data(contentsOf: saveURL),
            let savedLevels = try? JSONDecoder().decode(SavedLevels.self, from: savedData) {
-            currentLevelIndex = savedLevels.level
-            currentFloorIndex = savedLevels.floor
+            savedLevelIndex = savedLevels.level
+            savedFloorIndex = savedLevels.floor
         } else {
-            currentLevelIndex = 1
-            currentFloorIndex = 1
+            savedLevelIndex = 1
+            savedFloorIndex = 1
             saveState()
         }
     }
     
     public var currentLevelName: String {
-        return "\(currentFloorName)-level\(currentLevelIndex)"
+        return "\(currentFloorName)-level\(savedLevelIndex)"
     }
     
     public var currentFloorName: String {
-        return "floor\(currentFloorIndex)"
+        return "floor\(savedFloorIndex)"
     }
     
     public func nextLevel() {
-        if currentLevelIndex == 12 {
-            currentLevelIndex = 1
-            currentFloorIndex += 1
+        if savedLevelIndex == 12 {
+            savedLevelIndex = 1
+            savedFloorIndex += 1
         } else {
-            currentLevelIndex += 1
+            savedLevelIndex += 1
         }
         
         saveState()
     }
     
     public func setLevel(index: Int) {
-        currentLevelIndex = index
+        savedLevelIndex = index
         saveState()
     }
     
     public func setFloor(index: Int) {
-        currentFloorIndex = index
+        savedFloorIndex = index
         saveState()
     }
     
     public func getLevel() -> Int {
-        return currentLevelIndex
+        return savedLevelIndex
     }
     
     public func getFloor() -> Int {
-        return currentFloorIndex
+        return savedFloorIndex
     }
     
     private func saveState() {
-        let savedLevels = SavedLevels(level: currentLevelIndex, floor: currentFloorIndex)
+        let savedLevels = SavedLevels(level: savedLevelIndex, floor: savedFloorIndex)
         
         if let encodedData = try? JSONEncoder().encode(savedLevels) {
             try? encodedData.write(to: saveURL)
@@ -77,8 +77,8 @@ public class LevelManager {
     }
     
     private func resetProgress() {
-        currentFloorIndex = 1
-        currentLevelIndex = 1
+        savedFloorIndex = 1
+        savedLevelIndex = 1
         
         saveState()
     }
