@@ -37,12 +37,12 @@ extension GameScene :SKPhysicsContactDelegate {
     }
     
     func showPopup(restartAction: @escaping () -> Void, continueAction: @escaping () -> Void) {
-        let popupView = PopupView(restartAction: restartAction, continueAction: continueAction)
+        let popupView = PopupView(homeAction: restartAction, restartAction: continueAction, closeAction: {self.hidePopup()})
         let hostingController = UIHostingController(rootView: popupView)
         
         if let view = self.view {
             hostingController.view.frame = view.bounds
-            hostingController.view.backgroundColor = .clear
+            hostingController.view.backgroundColor = UIColor.clear
             hostingController.view.isOpaque = false
             view.addSubview(hostingController.view)
         }

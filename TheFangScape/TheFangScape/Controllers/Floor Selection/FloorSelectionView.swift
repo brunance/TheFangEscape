@@ -32,34 +32,3 @@ public struct FloorSelectionView: View {
         LevelManager.shared.setFloor(index: index)
     }
 }
-
-#Preview {
-    FloorSelectionView()
-}
-
-struct PopupView: View {
-    var restartAction: () -> Void
-    var continueAction: () -> Void
-    
-    var body: some View {
-        VStack {
-            Text("Game Over")
-                .font(.title)
-                .padding()
-            HStack {
-                Button("Restart") {
-                    restartAction()
-                }
-                .padding()
-                
-                Button("Continue") {
-                    continueAction()
-                }
-                .padding()
-            }
-        }
-        .background(Color.white)
-        .cornerRadius(10)
-        .padding()
-    }
-}

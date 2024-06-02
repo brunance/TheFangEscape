@@ -24,6 +24,8 @@
 		660633CF2B093227005D184B /* SKTextureArray+TextureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */; };
 		660633E92B0AF6A6005D184B /* EnemyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633E82B0AF6A6005D184B /* EnemyEntity.swift */; };
 		660633EB2B0AFA21005D184B /* UInt32+CollisionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660633EA2B0AFA21005D184B /* UInt32+CollisionCategories.swift */; };
+		661DFBED2B34B314004C2FA9 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661DFBEC2B34B314004C2FA9 /* PopupView.swift */; };
+		661DFBEF2B34C3EA004C2FA9 /* MenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661DFBEE2B34C3EA004C2FA9 /* MenuButtons.swift */; };
 		6653EEE22B0CD13300D841FD /* TrapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653EEE12B0CD13300D841FD /* TrapEntity.swift */; };
 		6653EEE42B0CD13F00D841FD /* BulletEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653EEE32B0CD13F00D841FD /* BulletEntity.swift */; };
 		6653EEE62B0CD23A00D841FD /* ShootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653EEE52B0CD23A00D841FD /* ShootComponent.swift */; };
@@ -116,6 +118,8 @@
 		660633CE2B093227005D184B /* SKTextureArray+TextureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureArray+TextureBuilder.swift"; sourceTree = "<group>"; };
 		660633E82B0AF6A6005D184B /* EnemyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyEntity.swift; sourceTree = "<group>"; };
 		660633EA2B0AFA21005D184B /* UInt32+CollisionCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt32+CollisionCategories.swift"; sourceTree = "<group>"; };
+		661DFBEC2B34B314004C2FA9 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		661DFBEE2B34C3EA004C2FA9 /* MenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtons.swift; sourceTree = "<group>"; };
 		6653EEE12B0CD13300D841FD /* TrapEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapEntity.swift; sourceTree = "<group>"; };
 		6653EEE32B0CD13F00D841FD /* BulletEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletEntity.swift; sourceTree = "<group>"; };
 		6653EEE52B0CD23A00D841FD /* ShootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootComponent.swift; sourceTree = "<group>"; };
@@ -255,6 +259,8 @@
 			children = (
 				76FCDC1A2B027C2500E55B2A /* ContentView.swift */,
 				768961BB2B1A1F28005A96B8 /* HomeView.swift */,
+				661DFBEC2B34B314004C2FA9 /* PopupView.swift */,
+				661DFBEE2B34C3EA004C2FA9 /* MenuButtons.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,6 +553,7 @@
 				76FCDC762B04742E00E55B2A /* JumpComponent.swift in Sources */,
 				768961C62B1A2879005A96B8 /* FloorSelectionScene.swift in Sources */,
 				5177CFBA2B0CF7CA00896444 /* IsItemComponent.swift in Sources */,
+				661DFBED2B34B314004C2FA9 /* PopupView.swift in Sources */,
 				764BF4482B0CEB1E00EDB700 /* ScenarioEntity.swift in Sources */,
 				660633E92B0AF6A6005D184B /* EnemyEntity.swift in Sources */,
 				66CAD68E2B06D6F800F7940E /* WallSlidingState.swift in Sources */,
@@ -608,6 +615,7 @@
 				76FCDC7C2B080C6D00E55B2A /* ChangeStateComponent.swift in Sources */,
 				66B79AA12B10DED600E60B11 /* IsDoorComponent.swift in Sources */,
 				768961C82B1A2893005A96B8 /* ButtonNode.swift in Sources */,
+				661DFBEF2B34C3EA004C2FA9 /* MenuButtons.swift in Sources */,
 				66D45FEA2B30F22E008863A2 /* ActionsButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
